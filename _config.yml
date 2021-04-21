@@ -1,0 +1,141 @@
+---
+title: 航
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+defaults:
+- scope:
+    path: ''
+    type: posts
+  values:
+    excerpt: ''
+    layout: article
+    author: 航
+    sharing: true
+    license: true
+    aside:
+      toc: true
+    show_edit_on_github: true
+    show_subscribe: true
+    pageview: true
+    header:
+      theme: dark
+    mode: immersive
+    article_header:
+      type: overlay
+      background_color: "#203028"
+      background_image:
+        theme: dark
+        gradient: linear-gradient(135deg, rgba(34, 139, 87 , .3), rgba(139, 34, 139,
+          .3))
+        src: "/assets/0/images/cover3.jpg"
+    cover: "/assets/0/images/axure/page-single.jpg"
+    lightbox: true
+text_skin: dracula
+highlight_theme: dracula
+url: ''
+baseurl: "/"
+description: 航
+lang: zh
+author:
+  type: 
+  name: 航
+  url: 
+  avatar: "/assets/0/images/1.jpg"
+  bio: 航
+  email: ratsafalig@outlook.com
+  facebook: 
+  twitter: 
+  weibo: 
+  googleplus: 
+  telegram: 
+  medium: 
+  zhihu: 
+  douban: 
+  linkedin: 
+  github: ratsafalig.github.io
+  npm: 
+repository: ratsafalig/ratsafalig.github.io
+repository_tree: master
+paths:
+  root: 
+  home: 
+  archive: 
+  rss: 
+excerpt_separator: "<!--more-->"
+license: CC-BY-NC-4.0
+toc:
+  selectors: 
+mathjax: true
+mathjax_autoNumber: 
+mermaid: true
+chart: true
+paginate: 8
+paginate_path: "/page:num"
+sources: 
+sharing:
+  provider: false
+  addthis:
+    id: 
+comments:
+  provider: false
+  disqus:
+    shortname: 
+  gitalk:
+    clientID: 
+    clientSecret: 
+    repository: 
+    owner: 
+    admin: 
+  valine:
+    app_id: 
+    app_key: 
+    placeholder: 
+    visitor: 
+    meta: 
+pageview:
+  provider: false
+  leancloud:
+    app_id: 
+    app_key: 
+    app_class: 
+search:
+  provider: default
+  google:
+    custom_search_engine_id: 
+analytics:
+  provider: google
+  google:
+    tracking_id: UA-179033893-1
+    anonymize_ip: false
+markdown: kramdown
+highlighter: rouge
+permalink: date
+exclude:
+- CHANGELOG.md
+- HOW_TO_RELEASE.md
+- Gemfile
+- Gemfile.lock
+- LICENSE
+- README-*.md
+- README.md
+- gulpfile.js
+- jekyll-text-theme.gemspec
+- package-lock.json
+- package.json
+- "/docs"
+- "/node_modules"
+- "/screenshots"
+- "/test"
+- "/vendor"
+plugins:
+- jekyll-feed
+- jekyll-paginate
+- jekyll-sitemap
+- jemoji
+port: 9999
