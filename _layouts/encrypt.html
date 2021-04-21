@@ -29,6 +29,9 @@ layout: article
     {{ content }}
     <script src="/samplers/sjcl.js"></script>
     <script>
+
+        /* --- preprocessing --- */
+
         function innerText2IntArr(str){
             let oneByteArr = [];
             let i = 0;
@@ -86,63 +89,44 @@ layout: article
             return byteArr;
         }
 
-        /* --- UTF-8 --- */
-
-        function byteArr2String(byteArr){
-            let i = 0;
-            let str = "";
-            let unit = -1;
-            for(i = 0;i < byteArr.length;i++){
-                let frontOnes = countFrontOnes(byteArr[i]);
-                if(unit != -1 && (frontOnes == 0 || frontOnes > 1)){
-                    str += String.fromCharCode(unit);
-                    unit = byteArr[i];
-                }
-                else{
-                    unit = unit == -1 ? 0 : unit;
-                    unit = (unit << 8) + byteArr[i];
-                }
-            }
-            str += String.fromCharCode(unit);
-            return str;   
-        }
-
-        function countFrontOnes(byte){
-            let i = 1 << 7;
-            let result = 0;
-            while((byte & i) != 0){
-                result++;
-                i = i >> 1;
-            }
-            return result;
-        }
-
-        /* --- UTF-8 --- */
+        /* --- preprocessing --- */
 
         function decrypt() {
             let i = 0;
             let secret = document.getElementById("secret").value;
+            let encryptedArticle = document.getElementsByClassName("article").item(0).innerText;
+            encryptedArticle = innerText2IntArr(encryptedArticle);
+
+            /* --- key ---  */
             let key = []
             for(i = 0;i < secret.length;i += 4){
                 if(i % 4 == 0){
-                    let int = byteArr2int([secret.charCodeAt(i + 0), secret.charCodeAt(i + 1), secret.charCodeAt(i + 2), secret.charCodeAt(i + 3)]);
+                    let int = byteArr2int([
+                        secret.charCodeAt(i + 0), 
+                        secret.charCodeAt(i + 1), 
+                        secret.charCodeAt(i + 2), 
+                        secret.charCodeAt(i + 3)]);
                     key.push(int);
                 }
             }
-            let aes = new sjcl.cipher.aes(key); 
-            let encryptedArticle = document.getElementsByClassName("article").item(0).innerText;
-            encryptedArticle = innerText2IntArr(encryptedArticle);
+            let aes = new sjcl.cipher.aes(key);
+            /* --- key ---  */
+            
             let decryptedBytes = [];
             let decryptedArticle = "";
+            
             for (i = 0; i < encryptedArticle.length;i += 4) {
                 let decryptedSegment = aes.decrypt([encryptedArticle[i], encryptedArticle[i + 1], encryptedArticle[i + 2], encryptedArticle[i + 3]]);
                 let temp = intArr2ByteArr(decryptedSegment);
                 decryptedBytes = decryptedBytes.concat(temp);
             }
+
             decryptedArticle = new TextDecoder("utf-8").decode(new Uint8Array(decryptedBytes));
+
             while(decryptedArticle[decryptedArticle.length - 1] == ' '){
                 decryptedArticle = decryptedArticle.substr(0, encryptedArticle.length - 1);
             }
+
             document.getElementsByTagName("article").item(0).innerHTML = decryptedArticle;
             toc();
         }
