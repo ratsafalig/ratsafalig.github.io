@@ -1,4 +1,0 @@
----
-title: Decryption
-layout: article
----
