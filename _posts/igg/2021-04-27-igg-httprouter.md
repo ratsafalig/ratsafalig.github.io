@@ -28,4 +28,8 @@ router.GET("/:name", handler)
  /src/subdir/somefile.go   match
  */
 router.GET("/*name", handler)
+
+func handler2(w http.ReponseWriter, r * http.Request){
+    
+}
 ```
