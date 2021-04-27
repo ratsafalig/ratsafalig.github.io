@@ -7,6 +7,10 @@ collections:
   uploads:
     title: Uploads
     output: true
+  igg:
+    title: IGG
+    output: true
+    permalink: /:collection/:year/:month/:day/:name
 defaults:
 - scope:
     path: ''

@@ -1,7 +1,10 @@
 header:
-  - titles:
-      en      : &EN       Archive
-      zh-Hans : &ZH_HANS  归档
-      zh      : *ZH_HANS
+  - title: Archive
     url: /archive.html
+  - title: IGG
+    url: /igg/
+  - title: Wonderful
+    url: /wonderful/
+  - title: Lousy
+    url: /lousy/
     
