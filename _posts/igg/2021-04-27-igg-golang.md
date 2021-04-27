@@ -184,5 +184,10 @@ delete(m, key)
 # 接口
 
 ```go
+type name interface{
+    method1() return1
+    method2(param1 int)string
+}
+
 
 ```
