@@ -189,3 +189,69 @@ type name interface{
     method2(param1 int)string
 }
 ```
+
+# 错误处理
+
+```go
+type error interface{
+    Error() string
+}
+
+/****************************/
+
+func f()int, error{
+    if ...{
+        return 0, errors.New("...")
+    }
+}   
+```
+
+# 并发
+
+## 线程
+
+```go
+go funcname(param1)return1{
+    ...
+}
+```
+
+## 通道
+
+```go
+// 使用 make(chan int) 创建一个通道
+ch := make(chan int)
+// 使用 <- 从通道中传递数据
+// 把 v 传递到通道中
+ch <- v
+// 把通道中的数据传递到 v 中
+v := <-ch
+
+// !! 默认情况下,通道是同步的 !!
+// !! 带缓冲区的通道是异步的 !!
+ch := make(chan int, 100)
+
+// 通道使用 close 关闭
+ch := make(chan int, 100)
+close(ch)
+```
+
+# defer
+
+[defer](https://draveness.me/golang/docs/part2-foundation/ch05-keyword/golang-defer/)
+
+```go
+// 使用 defer 调用函数可以暂时将函数缓存起来继续执行,等到手头结束之后再执行 defer 函数
+func main() {
+	for i := 0; i < 5; i++ {
+		defer fmt.Println(i)
+	}
+}
+// 输出如下
+$ go run main.go
+4
+3
+2
+1
+0
+```
