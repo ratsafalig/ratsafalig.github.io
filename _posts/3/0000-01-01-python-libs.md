@@ -17,6 +17,13 @@ layout: article
     <meta itemprop="keywords" content="Python" /><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
 <!-- end custom article top snippet -->
+<<<<<<< HEAD
+<div class="article__content" itemprop="articleBody"><article itemscope="" itemtype="http://schema.org/Article"><meta itemprop="headline" content="Python Libs" /><meta itemprop="author" content="航" /><meta itemprop="datePublished" content="0000-01-01T08:00:00+08:00" />
+    <meta itemprop="keywords" content="Python" /><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+
+<!-- end custom article top snippet -->
+=======
+>>>>>>> 3aaf6be6636648b1ab4c90bee56e9c7e29e3ede1
 <div class="article__content" itemprop="articleBody"><p><a href="https://docs.python.org/zh-cn/3/library/os.html">os — 多种操作系统接口</a></p>
 
 <p><a href="https://cryptography.io/en/latest/">Welcome to pyca/cryptography</a></p>

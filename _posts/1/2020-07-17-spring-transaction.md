@@ -18,6 +18,13 @@ layout: article
     <meta itemprop="keywords" content="Spring,Java" /><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
 <!-- end custom article top snippet -->
+<<<<<<< HEAD
+<div class="article__content" itemprop="articleBody"><article itemscope="" itemtype="http://schema.org/Article"><meta itemprop="headline" content="Spring Transaction" /><meta itemprop="author" content="航" /><meta itemprop="datePublished" content="2020-07-17T08:00:00+08:00" />
+    <meta itemprop="keywords" content="Spring,Java" /><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+
+<!-- end custom article top snippet -->
+=======
+>>>>>>> 3aaf6be6636648b1ab4c90bee56e9c7e29e3ede1
 <div class="article__content" itemprop="articleBody"><h1 id="_0">参考地址</h1>
 
 <p><a href="https://docs.spring.io/spring/docs/5.2.7.RELEASE/spring-framework-reference/data-access.html#spring-data-tier">spring-doc-dao</a></p>

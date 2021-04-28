@@ -17,6 +17,13 @@ layout: article
     <meta itemprop="keywords" content="Java" /><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
 <!-- end custom article top snippet -->
+<<<<<<< HEAD
+<div class="article__content" itemprop="articleBody"><article itemscope="" itemtype="http://schema.org/Article"><meta itemprop="headline" content="Apache Chainsaw" /><meta itemprop="author" content="航" /><meta itemprop="datePublished" content="2020-10-20T08:00:00+08:00" />
+    <meta itemprop="keywords" content="Java" /><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+
+<!-- end custom article top snippet -->
+=======
+>>>>>>> 3aaf6be6636648b1ab4c90bee56e9c7e29e3ede1
 <div class="article__content" itemprop="articleBody"><h1 id="chainsaw是什么">Chainsaw是什么</h1>
 
 <p><code class="language-plaintext highlighter-rouge">Chainsaw</code>是一个<code class="language-plaintext highlighter-rouge">Log4j</code>的配套软件,可以提供可视化,远程的日志查看功能(见过<code class="language-plaintext highlighter-rouge">wireshark</code>吗,差不多就是这么个软件)</p>

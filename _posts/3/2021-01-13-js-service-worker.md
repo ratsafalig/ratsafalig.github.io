@@ -13,6 +13,13 @@ layout: article
     <meta itemprop="keywords" content="JS" /><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
 <!-- end custom article top snippet -->
+<<<<<<< HEAD
+<div class="article__content" itemprop="articleBody"><article itemscope="" itemtype="http://schema.org/Article"><meta itemprop="headline" content="JS Service Worker" /><meta itemprop="author" content="航" /><meta itemprop="datePublished" content="2021-01-13T08:00:00+08:00" />
+    <meta itemprop="keywords" content="JS" /><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+
+<!-- end custom article top snippet -->
+=======
+>>>>>>> 3aaf6be6636648b1ab4c90bee56e9c7e29e3ede1
 <div class="article__content" itemprop="articleBody"><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker">MDN-ServiceWorker</a></p>
 
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API">MDN-Service_Worker_API</a></p>

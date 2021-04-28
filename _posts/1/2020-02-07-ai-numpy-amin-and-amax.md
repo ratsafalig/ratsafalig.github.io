@@ -17,6 +17,13 @@ layout: article
     <meta itemprop="keywords" content="Misc" /><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
 <!-- end custom article top snippet -->
+<<<<<<< HEAD
+<div class="article__content" itemprop="articleBody"><article itemscope="" itemtype="http://schema.org/Article"><meta itemprop="headline" content="Numpy AMin Amax" /><meta itemprop="author" content="航" /><meta itemprop="datePublished" content="2020-02-07T23:34:00+08:00" />
+    <meta itemprop="keywords" content="Misc" /><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+
+<!-- end custom article top snippet -->
+=======
+>>>>>>> 3aaf6be6636648b1ab4c90bee56e9c7e29e3ede1
 <div class="article__content" itemprop="articleBody"><h1 id="_1">Numpy的amin函数和amax函数中的维度</h1>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. amin(x,n),x为数据,n为维度
