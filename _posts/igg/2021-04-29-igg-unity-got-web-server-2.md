@@ -1,5 +1,5 @@
 ---
-title: UnityGOTWebServer 2
+title: UGWS2
 tags:
 - IGG
 ---
