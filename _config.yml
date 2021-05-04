@@ -17,7 +17,7 @@ defaults:
     type: posts
   values:
     excerpt: ''
-    layout: article
+    layout: encrypt
     author: 航
     sharing: true
     license: true
