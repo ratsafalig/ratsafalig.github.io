@@ -13,13 +13,10 @@ layout: article
     <meta itemprop="keywords" content="Misc" /><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
 <!-- end custom article top snippet -->
-<<<<<<< HEAD
 <div class="article__content" itemprop="articleBody"><article itemscope="" itemtype="http://schema.org/Article"><meta itemprop="headline" content="Bilibili DanMu 弹幕" /><meta itemprop="author" content="航" /><meta itemprop="datePublished" content="2021-02-26T08:00:00+08:00" />
     <meta itemprop="keywords" content="Misc" /><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
 <!-- end custom article top snippet -->
-=======
->>>>>>> 3aaf6be6636648b1ab4c90bee56e9c7e29e3ede1
 <div class="article__content" itemprop="articleBody"><p><img src="/assets/3/bilibili-danmu/QQ截图20210226215605.png" alt="" /></p>
 
 <p><img src="/assets/3/bilibili-danmu/QQ截图20210226215638.png" alt="" /></p>

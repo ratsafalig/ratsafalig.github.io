@@ -14,13 +14,10 @@ layout: article
     <meta itemprop="keywords" content="Java,Spring" /><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
 <!-- end custom article top snippet -->
-<<<<<<< HEAD
 <div class="article__content" itemprop="articleBody"><article itemscope="" itemtype="http://schema.org/Article"><meta itemprop="headline" content="SpringMvc" /><meta itemprop="author" content="航" /><meta itemprop="datePublished" content="2021-01-11T08:00:00+08:00" />
     <meta itemprop="keywords" content="Java,Spring" /><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
 <!-- end custom article top snippet -->
-=======
->>>>>>> 3aaf6be6636648b1ab4c90bee56e9c7e29e3ede1
 <div class="article__content" itemprop="articleBody"><h1 id="servlet">Servlet</h1>
 
 <p><a href="https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-servlet">官方文档-DispatcherServlet</a></p>

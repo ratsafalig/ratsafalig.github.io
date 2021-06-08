@@ -2,9 +2,8 @@ header:
   - title: Archive
     url: /archive.html
   - title: IGG
-    url: /igg/
-  - title: Wonderful
-    url: /wonderful/
-  - title: Lousy
-    url: /lousy/
-    
+    url: /IGG/
+  - title: DrInK
+    url: /drink/
+  - title: DrUnK
+    url: /drunk/

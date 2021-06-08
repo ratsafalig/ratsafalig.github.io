@@ -13,13 +13,10 @@ layout: article
     <meta itemprop="keywords" content="JS" /><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
 <!-- end custom article top snippet -->
-<<<<<<< HEAD
 <div class="article__content" itemprop="articleBody"><article itemscope="" itemtype="http://schema.org/Article"><meta itemprop="headline" content="JS CJS AMD UMD ESM JavaScript Modules" /><meta itemprop="author" content="航" /><meta itemprop="datePublished" content="2021-01-13T08:00:00+08:00" />
     <meta itemprop="keywords" content="JS" /><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
 <!-- end custom article top snippet -->
-=======
->>>>>>> 3aaf6be6636648b1ab4c90bee56e9c7e29e3ede1
 <div class="article__content" itemprop="articleBody"><p><a href="https://dev.to/iggredible/what-the-heck-are-cjs-amd-umd-and-esm-ikm">what-the-heck-are-cjs-amd-umd-and-esm-ikm</a></p>
 
 <h1 id="cjs">CJS</h1>

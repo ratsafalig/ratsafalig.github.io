@@ -1,0 +1,10 @@
+---
+permalink: /DrInK/
+---
+
+{% for DrInK in site.DrInK %}
+    <a href="{{ DrInK.url }}">
+        {{ DrInK.date }} - {{ DrInK.title }}  
+    </a> 
+    <br>
+{% endfor %}

@@ -17,13 +17,10 @@ layout: article
     <meta itemprop="keywords" content="Misc" /><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
 <!-- end custom article top snippet -->
-<<<<<<< HEAD
 <div class="article__content" itemprop="articleBody"><article itemscope="" itemtype="http://schema.org/Article"><meta itemprop="headline" content="AutoHotKey" /><meta itemprop="author" content="航" /><meta itemprop="datePublished" content="2020-10-15T08:00:00+08:00" />
     <meta itemprop="keywords" content="Misc" /><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
 <!-- end custom article top snippet -->
-=======
->>>>>>> 3aaf6be6636648b1ab4c90bee56e9c7e29e3ede1
 <div class="article__content" itemprop="articleBody"><h1 id="autohotkey">AutoHotKey</h1>
 
 <p>AHK(AutoHotKey)是一种DSL(Domain Specific Language),同时也是一种脚本语言,专注于各种自动化执行脚本(比如绑定各种快捷键操作等等)<br />

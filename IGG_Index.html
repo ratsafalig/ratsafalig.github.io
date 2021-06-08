@@ -1,0 +1,10 @@
+---
+permalink: /IGG/
+---
+
+{% for IGG in site.IGG %}
+    <a href="{{ IGG.url }}">
+        {{ IGG.date }} - {{ IGG.title }}  
+    </a> 
+    <br>
+{% endfor %}

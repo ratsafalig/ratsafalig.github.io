@@ -14,13 +14,10 @@ layout: article
     <meta itemprop="keywords" content="Java,Spring" /><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
 <!-- end custom article top snippet -->
-<<<<<<< HEAD
 <div class="article__content" itemprop="articleBody"><article itemscope="" itemtype="http://schema.org/Article"><meta itemprop="headline" content="Spring Three Level Cache (Spring 三级缓存)" /><meta itemprop="author" content="航" /><meta itemprop="datePublished" content="2021-01-11T08:00:00+08:00" />
     <meta itemprop="keywords" content="Java,Spring" /><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
 <!-- end custom article top snippet -->
-=======
->>>>>>> 3aaf6be6636648b1ab4c90bee56e9c7e29e3ede1
 <div class="article__content" itemprop="articleBody"><h1 id="循环依赖问题">循环依赖问题</h1>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
