@@ -1,0 +1,120 @@
+---
+title: 像素化 Shader ( Pixelation Shader )
+categories: [ Shader ]
+tags: [ Shader ]
+---
+
+像素风格化shader, 思路是用 camera 的 on-render-image 进行 post-processing  
+Pixel Width 参数表示每个像素的宽度 (x 方向上把多少个像素合并成一个),  
+Pixel Height 参数表示每个像素的高度 (y 方向上把多少个像素合并成一个)  
+数值越大像素化程度越高
+
+![raw](/assets/img/shader/pixelation-shader/raw.png)
+![dst](/assets/img/shader/pixelation-shader/dst.png)
+
+```glsl
+Shader "Custom/PostProcessing"
+{
+    Properties
+    {
+        _MainTex ("MainTex", 2D) = "white" {}
+        _pw("Pixel Width", float) = 64
+        _ph("Pixel Height", float) = 64
+    }
+    SubShader
+    {
+        Tags { "RenderType"="Opaque" }
+
+        LOD 200
+
+        Cull Off ZWrite Off ZTest Always
+
+        Pass{
+            CGPROGRAM
+
+            #pragma vertex vert
+            #pragma fragment frag
+
+            #pragma target 3.0
+
+            #include "UnityCG.cginc"
+
+            sampler2D _MainTex;
+
+            float _pw;
+            float _ph;
+
+            struct appdata {
+                float4 vertex : POSITION;
+                float2 uv : TEXCOORD0;
+                float3 normal : NORMAL;
+            };
+
+            struct v2f {
+                float4 position : SV_POSITION;
+                float2 uv : TEXCOORD0;
+            };
+
+            v2f vert (appdata IN) {
+                v2f OUT;
+                
+                OUT.position = UnityObjectToClipPos(IN.vertex);
+
+                OUT.uv = IN.uv;
+
+                return OUT;
+            }
+
+            fixed4 frag (v2f IN) : SV_TARGET {
+
+                float _dx;
+                float _dy;
+
+                _dx = _pw * ( 1 / _ScreenParams.x );
+                _dy = _ph * ( 1 / _ScreenParams.y );
+                
+                float2 coord = float2(_dx * round(IN.uv.x / _dx), _dy * round(IN.uv.y / _dy));
+
+                fixed4 color = tex2D(_MainTex, coord);
+
+                return color;
+            }
+
+            ENDCG
+        }
+    }
+    FallBack "Diffuse"
+}
+```
+
+```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[ExecuteAlways]
+public class Pixelation : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public Material material;
+
+    void OnRenderImage(RenderTexture source,RenderTexture destination){
+        RenderTexture src = RenderTexture.GetTemporary(source.width, source.height);
+        material.SetTexture("_MainTex", source);
+        Graphics.Blit(source,src,material,0);
+        Graphics.Blit(src,destination,material,0);
+        RenderTexture.ReleaseTemporary(src);
+    }
+}
+```
