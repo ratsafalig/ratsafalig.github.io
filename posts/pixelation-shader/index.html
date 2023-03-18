@@ -36,25 +36,25 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="hello world" />
+<meta property="og:title" content="像素化 Shader ( Pixelation Shader )" />
 <meta property="og:locale" content="zh" />
-<meta name="description" content="hello world" />
-<meta property="og:description" content="hello world" />
-<link rel="canonical" href="http://localhost:4000/posts/hello-world/" />
-<meta property="og:url" content="http://localhost:4000/posts/hello-world/" />
+<meta name="description" content="像素风格化shader, 思路是用 camera 的 on-render-image 进行 post-processing Pixel Width 参数表示每个像素的宽度 (x 方向上把多少个像素合并成一个), Pixel Height 参数表示每个像素的高度 (y 方向上把多少个像素合并成一个) 数值越大像素化程度越高" />
+<meta property="og:description" content="像素风格化shader, 思路是用 camera 的 on-render-image 进行 post-processing Pixel Width 参数表示每个像素的宽度 (x 方向上把多少个像素合并成一个), Pixel Height 参数表示每个像素的高度 (y 方向上把多少个像素合并成一个) 数值越大像素化程度越高" />
+<link rel="canonical" href="http://localhost:4000/posts/pixelation-shader/" />
+<meta property="og:url" content="http://localhost:4000/posts/pixelation-shader/" />
 <meta property="og:site_name" content="航" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-03-11T00:00:00+08:00" />
+<meta property="article:published_time" content="2023-03-18T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="hello world" />
+<meta property="twitter:title" content="像素化 Shader ( Pixelation Shader )" />
 <meta name="twitter:site" content="@ratsafalig" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-03-11T00:00:00+08:00","datePublished":"2023-03-11T00:00:00+08:00","description":"hello world","headline":"hello world","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/hello-world/"},"url":"http://localhost:4000/posts/hello-world/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-03-18T00:00:00+08:00","datePublished":"2023-03-18T00:00:00+08:00","description":"像素风格化shader, 思路是用 camera 的 on-render-image 进行 post-processing Pixel Width 参数表示每个像素的宽度 (x 方向上把多少个像素合并成一个), Pixel Height 参数表示每个像素的高度 (y 方向上把多少个像素合并成一个) 数值越大像素化程度越高","headline":"像素化 Shader ( Pixelation Shader )","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/pixelation-shader/"},"url":"http://localhost:4000/posts/pixelation-shader/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>hello world | 航
+  <title>像素化 Shader ( Pixelation Shader ) | 航
   </title>
 
   <!--
@@ -454,7 +454,7 @@
         
 
           
-            <span>hello world</span>
+            <span>像素化 Shader ( Pixelation Shader )</span>
           
 
         
@@ -531,6 +531,159 @@
 
 
 
+  
+  
+
+  <!-- CDN URL -->
+  
+
+  <!-- Add image path -->
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    <!-- make sure the `<img>` is wrapped by `<a>` -->
+    
+
+    
+      <!-- create the image wrapper -->
+      
+    
+
+    <!-- combine -->
+    
+
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    <!-- make sure the `<img>` is wrapped by `<a>` -->
+    
+
+    
+      <!-- create the image wrapper -->
+      
+    
+
+    <!-- combine -->
+    
+
+  
+
+  
+
+
 
 <!-- Add header for code snippets -->
 
@@ -567,7 +720,7 @@
 
 <!-- return -->
 
-<h1 data-toc-skip>hello world</h1>
+<h1 data-toc-skip>像素化 Shader ( Pixelation Shader )</h1>
 
 <div class="post-meta text-muted">
     <!-- published date -->
@@ -583,10 +736,10 @@
 
 
 <em class=""
-    data-ts="1678464000"
+    data-ts="1679068800"
     data-df="DD/MM/YYYY"
     data-toggle="tooltip" data-placement="bottom">
-  11/03/2023
+  18/03/2023
 </em>
 
     </span>
@@ -634,8 +787,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="2 ">
-  <em>1 </em> </span>
+  title="397 ">
+  <em>2 </em> </span>
 
     </div>
 
@@ -644,7 +797,223 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h1 id="hello-world">hello world</h1>
+  <p>像素风格化shader, 思路是用 camera 的 on-render-image 进行 post-processing<br />
+Pixel Width 参数表示每个像素的宽度 (x 方向上把多少个像素合并成一个),<br />
+Pixel Height 参数表示每个像素的高度 (y 方向上把多少个像素合并成一个)<br />
+数值越大像素化程度越高</p>
+
+<p><a href="/assets/img/shader/pixelation-shader/raw.png" class="popup img-link "><img data-src="/assets/img/shader/pixelation-shader/raw.png" alt="raw" class="lazyload" data-proofer-ignore></a>
+<a href="/assets/img/shader/pixelation-shader/dst.png" class="popup img-link "><img data-src="/assets/img/shader/pixelation-shader/dst.png" alt="dst" class="lazyload" data-proofer-ignore></a></p>
+
+<div class="language-glsl highlighter-rouge"><div class="code-header">
+        <span data-label-text="Glsl"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+</pre></td><td class="rouge-code"><pre><span class="n">Shader</span> <span class="s">"Custom/PostProcessing"</span>
+<span class="p">{</span>
+    <span class="n">Properties</span>
+    <span class="p">{</span>
+        <span class="n">_MainTex</span> <span class="p">(</span><span class="s">"MainTex"</span><span class="p">,</span> <span class="mi">2</span><span class="n">D</span><span class="p">)</span> <span class="o">=</span> <span class="s">"white"</span> <span class="p">{}</span>
+        <span class="n">_pw</span><span class="p">(</span><span class="s">"Pixel Width"</span><span class="p">,</span> <span class="kt">float</span><span class="p">)</span> <span class="o">=</span> <span class="mi">64</span>
+        <span class="n">_ph</span><span class="p">(</span><span class="s">"Pixel Height"</span><span class="p">,</span> <span class="kt">float</span><span class="p">)</span> <span class="o">=</span> <span class="mi">64</span>
+    <span class="p">}</span>
+    <span class="n">SubShader</span>
+    <span class="p">{</span>
+        <span class="n">Tags</span> <span class="p">{</span> <span class="s">"RenderType"</span><span class="o">=</span><span class="s">"Opaque"</span> <span class="p">}</span>
+
+        <span class="n">LOD</span> <span class="mi">200</span>
+
+        <span class="n">Cull</span> <span class="n">Off</span> <span class="n">ZWrite</span> <span class="n">Off</span> <span class="n">ZTest</span> <span class="n">Always</span>
+
+        <span class="n">Pass</span><span class="p">{</span>
+            <span class="n">CGPROGRAM</span>
+
+            <span class="cp">#pragma vertex vert
+</span>            <span class="cp">#pragma fragment frag
+</span>
+            <span class="cp">#pragma target 3.0
+</span>
+            <span class="cp">#include</span> <span class="cpf">"UnityCG.cginc"</span><span class="cp">
+</span>
+            <span class="kt">sampler2D</span> <span class="n">_MainTex</span><span class="p">;</span>
+
+            <span class="kt">float</span> <span class="n">_pw</span><span class="p">;</span>
+            <span class="kt">float</span> <span class="n">_ph</span><span class="p">;</span>
+
+            <span class="k">struct</span> <span class="n">appdata</span> <span class="p">{</span>
+                <span class="n">float4</span> <span class="n">vertex</span> <span class="o">:</span> <span class="n">POSITION</span><span class="p">;</span>
+                <span class="n">float2</span> <span class="n">uv</span> <span class="o">:</span> <span class="n">TEXCOORD0</span><span class="p">;</span>
+                <span class="n">float3</span> <span class="n">normal</span> <span class="o">:</span> <span class="n">NORMAL</span><span class="p">;</span>
+            <span class="p">};</span>
+
+            <span class="k">struct</span> <span class="n">v2f</span> <span class="p">{</span>
+                <span class="n">float4</span> <span class="n">position</span> <span class="o">:</span> <span class="n">SV_POSITION</span><span class="p">;</span>
+                <span class="n">float2</span> <span class="n">uv</span> <span class="o">:</span> <span class="n">TEXCOORD0</span><span class="p">;</span>
+            <span class="p">};</span>
+
+            <span class="n">v2f</span> <span class="n">vert</span> <span class="p">(</span><span class="n">appdata</span> <span class="n">IN</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">v2f</span> <span class="n">OUT</span><span class="p">;</span>
+                
+                <span class="n">OUT</span><span class="p">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">UnityObjectToClipPos</span><span class="p">(</span><span class="n">IN</span><span class="p">.</span><span class="n">vertex</span><span class="p">);</span>
+
+                <span class="n">OUT</span><span class="p">.</span><span class="n">uv</span> <span class="o">=</span> <span class="n">IN</span><span class="p">.</span><span class="n">uv</span><span class="p">;</span>
+
+                <span class="k">return</span> <span class="n">OUT</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="n">fixed4</span> <span class="n">frag</span> <span class="p">(</span><span class="n">v2f</span> <span class="n">IN</span><span class="p">)</span> <span class="o">:</span> <span class="n">SV_TARGET</span> <span class="p">{</span>
+
+                <span class="kt">float</span> <span class="n">_dx</span><span class="p">;</span>
+                <span class="kt">float</span> <span class="n">_dy</span><span class="p">;</span>
+
+                <span class="n">_dx</span> <span class="o">=</span> <span class="n">_pw</span> <span class="o">*</span> <span class="p">(</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">_ScreenParams</span><span class="p">.</span><span class="n">x</span> <span class="p">);</span>
+                <span class="n">_dy</span> <span class="o">=</span> <span class="n">_ph</span> <span class="o">*</span> <span class="p">(</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">_ScreenParams</span><span class="p">.</span><span class="n">y</span> <span class="p">);</span>
+                
+                <span class="n">float2</span> <span class="n">coord</span> <span class="o">=</span> <span class="n">float2</span><span class="p">(</span><span class="n">_dx</span> <span class="o">*</span> <span class="n">round</span><span class="p">(</span><span class="n">IN</span><span class="p">.</span><span class="n">uv</span><span class="p">.</span><span class="n">x</span> <span class="o">/</span> <span class="n">_dx</span><span class="p">),</span> <span class="n">_dy</span> <span class="o">*</span> <span class="n">round</span><span class="p">(</span><span class="n">IN</span><span class="p">.</span><span class="n">uv</span><span class="p">.</span><span class="n">y</span> <span class="o">/</span> <span class="n">_dy</span><span class="p">));</span>
+
+                <span class="n">fixed4</span> <span class="n">color</span> <span class="o">=</span> <span class="n">tex2D</span><span class="p">(</span><span class="n">_MainTex</span><span class="p">,</span> <span class="n">coord</span><span class="p">);</span>
+
+                <span class="k">return</span> <span class="n">color</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="n">ENDCG</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">FallBack</span> <span class="s">"Diffuse"</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-cs highlighter-rouge"><div class="code-header">
+        <span data-label-text="C#"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+</pre></td><td class="rouge-code"><pre><span class="k">using</span> <span class="nn">System.Collections</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="p">[</span><span class="n">ExecuteAlways</span><span class="p">]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Pixelation</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+<span class="p">{</span>
+    <span class="c1">// Start is called before the first frame update</span>
+    <span class="k">void</span> <span class="nf">Start</span><span class="p">()</span>
+    <span class="p">{</span>
+        
+    <span class="p">}</span>
+
+    <span class="c1">// Update is called once per frame</span>
+    <span class="k">void</span> <span class="nf">Update</span><span class="p">()</span>
+    <span class="p">{</span>
+        
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="n">Material</span> <span class="n">material</span><span class="p">;</span>
+
+    <span class="k">void</span> <span class="nf">OnRenderImage</span><span class="p">(</span><span class="n">RenderTexture</span> <span class="n">source</span><span class="p">,</span><span class="n">RenderTexture</span> <span class="n">destination</span><span class="p">){</span>
+        <span class="n">RenderTexture</span> <span class="n">src</span> <span class="p">=</span> <span class="n">RenderTexture</span><span class="p">.</span><span class="nf">GetTemporary</span><span class="p">(</span><span class="n">source</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">source</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+        <span class="n">material</span><span class="p">.</span><span class="nf">SetTexture</span><span class="p">(</span><span class="s">"_MainTex"</span><span class="p">,</span> <span class="n">source</span><span class="p">);</span>
+        <span class="n">Graphics</span><span class="p">.</span><span class="nf">Blit</span><span class="p">(</span><span class="n">source</span><span class="p">,</span><span class="n">src</span><span class="p">,</span><span class="n">material</span><span class="p">,</span><span class="m">0</span><span class="p">);</span>
+        <span class="n">Graphics</span><span class="p">.</span><span class="nf">Blit</span><span class="p">(</span><span class="n">src</span><span class="p">,</span><span class="n">destination</span><span class="p">,</span><span class="n">material</span><span class="p">,</span><span class="m">0</span><span class="p">);</span>
+        <span class="n">RenderTexture</span><span class="p">.</span><span class="nf">ReleaseTemporary</span><span class="p">(</span><span class="n">src</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 </div>
 
@@ -655,7 +1024,7 @@
   <div class="post-meta mb-3">
     <i class="far fa-folder-open fa-fw mr-1"></i>
     
-      <a href='/categories/hello/'>Hello</a>
+      <a href='/categories/shader/'>Shader</a>
   </div>
   
 
@@ -664,8 +1033,8 @@
   <div class="post-tags">
     <i class="fa fa-tags fa-fw mr-1"></i>
       
-      <a href="/tags/world/"
-          class="post-tag no-text-decoration" >World</a>
+      <a href="/tags/shader/"
+          class="post-tag no-text-decoration" >Shader</a>
       
   </div>
   
@@ -690,19 +1059,19 @@
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=hello%20world%20-%20%E8%88%AA&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fhello-world%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=%E5%83%8F%E7%B4%A0%E5%8C%96%20Shader%20(%20Pixelation%20Shader%20)%20-%20%E8%88%AA&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fpixelation-shader%2F" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=hello%20world%20-%20%E8%88%AA&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fhello-world%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=%E5%83%8F%E7%B4%A0%E5%8C%96%20Shader%20(%20Pixelation%20Shader%20)%20-%20%E8%88%AA&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fpixelation-shader%2F" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fhello-world%2F&text=hello%20world%20-%20%E8%88%AA" data-toggle="tooltip" data-placement="top"
+        <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fpixelation-shader%2F&text=%E5%83%8F%E7%B4%A0%E5%8C%96%20Shader%20(%20Pixelation%20Shader%20)%20-%20%E8%88%AA" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -783,7 +1152,7 @@
 
     
       
-      <a class="post-tag" href="/tags/world/">World</a>
+      <a class="post-tag" href="/tags/shader/">Shader</a>
     
 
     </div>
@@ -926,7 +1295,7 @@
 
     
       
-      <a class="post-tag" href="/tags/world/">World</a>
+      <a class="post-tag" href="/tags/shader/">Shader</a>
     
 
     </div>
