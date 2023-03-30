@@ -9,7 +9,7 @@
 
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="zh"
+<html lang="en"
   
 >
 
@@ -31,19 +31,19 @@
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Me" />
-<meta property="og:locale" content="zh" />
+<meta property="og:locale" content="en" />
 <meta name="description" content="航" />
 <meta property="og:description" content="航" />
 <link rel="canonical" href="http://localhost:4000/about/" />
 <meta property="og:url" content="http://localhost:4000/about/" />
 <meta property="og:site_name" content="航" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-03-18T16:00:43+08:00" />
+<meta property="article:published_time" content="2023-03-30T21:58:03+08:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Me" />
 <meta name="twitter:site" content="@ratsafalig" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","dateModified":"2023-03-18T16:00:43+08:00","datePublished":"2023-03-18T16:00:43+08:00","description":"航","headline":"Me","name":"ratsafalig","sameAs":["https://github.com/ratsafalig"],"url":"http://localhost:4000/about/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","dateModified":"2023-03-30T21:58:03+08:00","datePublished":"2023-03-30T21:58:03+08:00","description":"航","headline":"Me","name":"ratsafalig","sameAs":["https://github.com/ratsafalig"],"url":"http://localhost:4000/about/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -277,7 +277,7 @@
     <li class="nav-item">
       <a href="/" class="nav-link">
         <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i>
-        <span></span>
+        <span>HOME</span>
       </a>
     </li>
     <!-- the real tabs -->
@@ -314,7 +314,7 @@
         <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i>
         
 
-        <span>ME</span>
+        <span>ABOUT</span>
       </a>
     </li> <!-- .nav-item -->
     
@@ -431,7 +431,7 @@
         
           <span>
             <a href="/">
-              
+              Home
             </a>
           </span>
 
@@ -442,7 +442,7 @@
         
 
           
-            <span>Me</span>
+            <span>About</span>
           
 
         
@@ -456,16 +456,16 @@
     <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
 
     <div id="topbar-title">
-      Me
+      About
     </div>
 
     <i id="search-trigger" class="fas fa-search fa-fw"></i>
     <span id="search-wrapper" class="align-items-center">
       <i class="fas fa-search fa-fw"></i>
       <input class="form-control" id="search-input" type="search"
-        aria-label="search" autocomplete="off" placeholder="...">
+        aria-label="search" autocomplete="off" placeholder="Search...">
     </span>
-    <span id="search-cancel" ></span>
+    <span id="search-cancel" >Cancel</span>
   </div>
 
 </div>
@@ -630,12 +630,31 @@
         
         
 
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
 
 
   <div id="access-tags">
-    <div class="panel-heading"></div>
+    <div class="panel-heading">Trending Tags</div>
     <div class="d-flex flex-wrap mt-3 mb-1 mr-3">
 
+    
+      
+      <a class="post-tag" href="/tags/mesh/">Mesh</a>
     
       
       <a class="post-tag" href="/tags/shader/">Shader</a>
@@ -688,12 +707,31 @@
         
         
 
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
 
 
   <div id="access-tags">
-    <div class="panel-heading"></div>
+    <div class="panel-heading">Trending Tags</div>
     <div class="d-flex flex-wrap mt-3 mb-1 mr-3">
 
+    
+      
+      <a class="post-tag" href="/tags/mesh/">Mesh</a>
     
       
       <a class="post-tag" href="/tags/shader/">Shader</a>
@@ -720,6 +758,9 @@
         <p class="mb-0">
           © 2023
           <a href="https://github.com/ratsafalig">ratsafalig</a>.
+          
+          <span data-toggle="tooltip" data-placement="top"
+            title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span>
           
         </p>
       </div>
@@ -750,9 +791,9 @@
           </button>
         </div>
         <div class="toast-body text-center pt-0">
-          <p class="pl-2 pr-2 mb-3"></p>
+          <p class="pl-2 pr-2 mb-3">A new version of content is available.</p>
           <button type="button" class="btn btn-primary" aria-label="Update">
-            
+            Update
           </button>
         </div>
       </div>
@@ -775,7 +816,7 @@ SimpleJekyllSearch({
   resultsContainer: document.getElementById('search-results'),
   json: '/assets/js/data/search.json',
   searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0">  <a href="{url}">{title}</a>  <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">    {categories}    {tags}  </div>  <p>{snippet}</p></div>',
-  noResultsText: '<p class="mt-5"></p>',
+  noResultsText: '<p class="mt-5">Oops! No results found.</p>',
   templateMiddleware: function(prop, value, template) {
     if (prop === 'categories') {
       if (value === '') {
