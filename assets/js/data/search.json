@@ -1,9 +1,9 @@
 [
   
   {
-    "title": "Wave Function Collapse",
+    "title": "波函数塌缩算法 (Wave Function Collapse)",
     "url": "/posts/wave-function-collapse/",
-    "categories": "",
+    "categories": "Algorithm",
     "tags": "Algorithm",
     "date": "2021-01-01 00:00:00 +0800",
     
@@ -13,8 +13,8 @@
 
 
     
-    "snippet": "",
-    "content": ""
+    "snippet": "名字起的唬人，实际上是只是一个启发式算法。",
+    "content": "名字起的唬人，实际上是只是一个启发式算法。"
   },
   
   {
@@ -37,7 +37,7 @@
   {
     "title": "渐进 Mesh 形变",
     "url": "/posts/morphing/",
-    "categories": "",
+    "categories": "Algorithm",
     "tags": "Algorithm",
     "date": "2021-01-01 00:00:00 +0800",
     
@@ -49,6 +49,23 @@
     
     "snippet": "GIF 演示Morpher 脚本using System.Collections;using System.Collections.Generic;using System.Linq;using UnityEngine;/// &lt;summary&gt;/// Vertex Pair maps two verices to each other, used to find the nea...",
     "content": "GIF 演示Morpher 脚本using System.Collections;using System.Collections.Generic;using System.Linq;using UnityEngine;/// &lt;summary&gt;/// Vertex Pair maps two verices to each other, used to find the nearest vertex to a given vertex./// &lt;/summary&gt;public class VertexPair{    public Vector3 Vertex1 { get; set; }    public Vector3 Vertex2 { get; set; }     public VertexPair(Vector3 vertex1, Vector3 vertex2)    {        Vertex1 = vertex1;        Vertex2 = vertex2;    }}/// &lt;summary&gt;/// Morpher is responsible for morphing between two meshe./// It uses the slider value to determine the percentage of the morphing./// &lt;/summary&gt;[ExecuteAlways]public class Morpher : MonoBehaviour{    public bool IsDeforming = true;    public bool Init = false;    [Tooltip(\"Mesh should be read/write enabled from the model import settings\")]    [SerializeField] private Mesh _oldMesh;    [Tooltip(\"Mesh should be read/write enabled from the model import settings\")]    [SerializeField] private Mesh _newMesh;    [SerializeField] private Material _oldMat;    [SerializeField] private Material _newMat;    [SerializeField] private MeshFilter _meshFilter;    [SerializeField] private Renderer _renderer;    [Range(0f, 1f)]    [SerializeField]     private float _slider = 0;    private Vector3[] _oldVertices;    private Vector3[] _newVertices;    private int[] _oldTriangles;    private int[] _newTriangles;    private List&lt;Vector3&gt; _finalVertices;    private Mesh _interpolatedMesh;    private List&lt;VertexPair&gt; _pairsOfVertices1;    private List&lt;VertexPair&gt; _pairsOfVertices2;    private Material _finalMaterial;    void Start()    {        _interpolatedMesh = new Mesh();        _interpolatedMesh.MarkDynamic();        if (_meshFilter!=null)        {            _meshFilter.mesh = _interpolatedMesh;        }        _oldVertices = _oldMesh.vertices;        _newVertices = _newMesh.vertices;        _oldTriangles = _oldMesh.triangles;        _newTriangles = _newMesh.triangles;        _finalVertices = new List&lt;Vector3&gt;(_oldVertices);        CreatePairs1();        CreatePairs2();        _finalMaterial = new Material(_slider&lt; 0.5? _oldMat:_newMat);    }    /// &lt;summary&gt;    /// Create pairs of vertices, each pair contains a vertex from the old mesh and a vertex from the new mesh.    /// Vertices are mapped by the nearest one to each other.    /// &lt;/summary&gt;    private void CreatePairs1()    {        _pairsOfVertices1 = new List&lt;VertexPair&gt;();        for (int i = 0; i &lt; _oldVertices.Length; i++)        {            var oldVertex = _oldVertices[i];            var nearestToOldVertex = _newVertices.OrderBy(v =&gt; Vector3.Distance(v, oldVertex)).FirstOrDefault();            _pairsOfVertices1.Add(new VertexPair(oldVertex, nearestToOldVertex));        }    }    /// &lt;summary&gt;    /// Create pairs of vertices, each pair contains a vertex from the new mesh and a vertex from the old mesh.    /// Vertices are mapped by the nearest one to each other.    /// &lt;/summary&gt;    private void CreatePairs2()    {        _pairsOfVertices2 = new List&lt;VertexPair&gt;();        for (int i = 0; i &lt; _newVertices.Length; i++)        {            var newVertex = _newVertices[i];            var nearestToNewVertex = _oldVertices.OrderBy(v =&gt; Vector3.Distance(v, newVertex)).FirstOrDefault();            _pairsOfVertices2.Add(new VertexPair(newVertex, nearestToNewVertex));        }    }    void Update()    {        if(!Init){            Start();            Init = true;        }        SetSlider(_slider);        if (IsDeforming)        {            Deform();        }    }    public void SetSlider(float slider)    {        _slider = slider;    }    /// &lt;summary&gt;    /// Deform the mesh based on the slider value.    /// &lt;/summary&gt;    private void Deform()    {        if (_slider&lt; 0.5f)        {            _finalVertices = _pairsOfVertices1.Select(p =&gt; Vector3.Lerp(p.Vertex1, p.Vertex2, _slider)).ToList();        }        else        {            _finalVertices = _pairsOfVertices2.Select(p =&gt; Vector3.Lerp(p.Vertex2, p.Vertex1, _slider)).ToList();        }        _interpolatedMesh.Clear();        _interpolatedMesh.SetVertices(_finalVertices);        _interpolatedMesh.triangles = _slider &lt; 0.5f ? _oldTriangles : _newTriangles;        _interpolatedMesh.bounds = _slider &lt; 0.5f ? _oldMesh.bounds : _newMesh.bounds;        _interpolatedMesh.uv = _slider &lt; 0.5f ? _oldMesh.uv : _newMesh.uv;        _interpolatedMesh.uv2 = _slider &lt; 0.5f ? _oldMesh.uv2 : _newMesh.uv2;        _interpolatedMesh.uv3 = _slider &lt; 0.5f ? _oldMesh.uv3 : _newMesh.uv3;        _interpolatedMesh.RecalculateNormals();        _finalMaterial.Lerp(_oldMat, _newMat, _slider);        _finalMaterial.SetTexture(\"_MainTex\", _slider &lt; 0.5f ?_oldMat.GetTexture(\"_MainTex\"): _newMat.GetTexture(\"_MainTex\"));        //_finalMaterial.SetTexture(\"_BumpMap\", _slider &lt; 0.5f ? _oldMat.GetTexture(\"_BumpMap\") : _newMat.GetTexture(\"_BumpMap\"));        //_finalMaterial.SetTexture(\"_MetallicGlossMap\", _slider &lt; 0.5f ? _oldMat.GetTexture(\"_MetallicGlossMap\") : _newMat.GetTexture(\"_MetallicGlossMap\"));        //_finalMaterial.SetTexture(\"_OcclusionMap\", _slider &lt; 0.5f ? _oldMat.GetTexture(\"_OcclusionMap\") : _newMat.GetTexture(\"_OcclusionMap\"));        //_finalMaterial.SetTexture(\"_EmissionMap\", _slider &lt; 0.5f ? _oldMat.GetTexture(\"_EmissionMap\") : _newMat.GetTexture(\"_EmissionMap\"));                _renderer.material = _finalMaterial;    }}"
+  },
+  
+  {
+    "title": "Diffusion 模型",
+    "url": "/posts/diffusion/",
+    "categories": "AI",
+    "tags": "AI",
+    "date": "2021-01-01 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "傻瓜原理抓一个 diffusion 模型的代码实现来说一说 diffusion 模型的实现。代码完整详见 Link给定一个 (x, y) 的图像，生成一个 (x, y) 的 noise，然后计算 alpha * img(x,y) + beta * noise(x,y), 这个过程叫做加噪声, 因为 noise 是纯随机生成, 所以 noise 的内容可以看作是正态分布的.重复这个加噪声的过程...",
+    "content": "傻瓜原理抓一个 diffusion 模型的代码实现来说一说 diffusion 模型的实现。代码完整详见 Link给定一个 (x, y) 的图像，生成一个 (x, y) 的 noise，然后计算 alpha * img(x,y) + beta * noise(x,y), 这个过程叫做加噪声, 因为 noise 是纯随机生成, 所以 noise 的内容可以看作是正态分布的.重复这个加噪声的过程, 再重复了 n 次之后, 最终的结果回导致 img 的信息全部丧失, 只剩下了 noise现在定义重复 n 次加噪声之后的图像 noiseized-img = noiseize(img, t), 那么原图就是 noiseize(img, 0), 经过 10 次加噪声的图像就是 noiseize(img, 10)现在构建一个模型, 模型的 output 是 N(0,1) 的正态分布, 模型的 input 是 noiseize(img, t), 然后以 model 输出的噪声和 N(0, 1) 的差距作为优化目标, 就得到了 diffusion 模型beta = [0.1, 0.2, 0.3 ... ] def noiseize(img, t, noise = None, depth):    if t == depth:        return img, noise    if noise == None:        noise = torch.randn_like(img)    b = beta[depth]    a = 1 - b    return noiseize(        a * img +  b * noise,         t,         noise,         depth + 1    )# 优化目标def goal(model, img, t):    noiseize_img, noise = noiseize(img, t)    noise_pred = model(img, t)    return F.l1_loss(noiseize_img, noise_pred)其中 beta 数组的每一个元素表示每一次噪声的强度, 只要保证噪声强度随着每一次噪声都逐渐增加即可. 相比较 noiseize 的递归版本, noiseize 可以被优化成beta = [0.1, 0.2, 0.3 ... ] # Pre-calculate different terms for closed formalphas = 1. - betasalphas_cumprod = torch.cumprod(alphas, axis=0)alphas_cumprod_prev = F.pad(alphas_cumprod[:-1], (1, 0), value=1.0)sqrt_recip_alphas = torch.sqrt(1.0 / alphas)sqrt_alphas_cumprod = torch.sqrt(alphas_cumprod)sqrt_one_minus_alphas_cumprod = torch.sqrt(1. - alphas_cumprod)posterior_variance = betas * (1. - alphas_cumprod_prev) / (1. - alphas_cumprod)def noiseize(img, t);    sqrt_alphas_cumprod_t = sqrt_alphas_cumprod[t]    sqrt_one_minus_alphas_cumprod_t = sqrt_one_minus_alphas_cumprod[t]    # mean + variance    return sqrt_alphas_cumprod_t * img + sqrt_one_minus_alphas_cumprod_t * noise, noiseLinkhttps://colab.research.google.com/drive/1sjy9odlSSy0RBVgMTgP7s99NXsqglsUL?usp=sharing#scrollTo=2fUPyJghdoUAhttps://www.youtube.com/watch?v=a4Yfz2FxXiY&amp;t=1274s&amp;ab_channel=DeepFindr"
   }
   
 ]
