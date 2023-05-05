@@ -1213,6 +1213,20 @@
 
 
 
+  <div id="access-lastmod" class="post">
+    <div class="panel-heading">Recently Updated</div>
+    <ul class="post-content pl-0 pb-1 ml-1 mt-2">
+      
+        
+        
+        
+      <li><a href="/posts/pixelation-shader/">像素化 Shader ( Pixelation Shader )</a></li>
+      
+    </ul>
+  </div> <!-- #access-lastmod -->
+
+
+
       
 
 
@@ -1459,57 +1473,17 @@
 
 
 
-                全局像素化 ( Global Pixelation )
+                局部像素化 ( Local Pixelation )
 
-借助 on-render-image, 可以简单的实现场景的全局像素风格化
-成品如下
-代码如下
+如果要实现，某个物体是像素化的，其他物体是正常渲染的，可以使用局部像素化的技术：
 
 
 
+实现方法如下：
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42...
+
+  给想要像素化的 GameObject 打上 tag，比如 pixel tag
+  创建三个 Camera，一个渲染 pixel tag 的 GameObject （ pixel camera ），一个渲染 pixel tag ...
               </p>
             </div>
           </div>
