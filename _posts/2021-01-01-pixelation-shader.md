@@ -1,16 +1,21 @@
 ---
 title: 像素化 Shader ( Pixelation Shader )
 categories: [ Shader ]
-tags: [ Shader ]
+author: 航
+tags:
+- Shader
+layout: post
+toc: true
 ---
 
-像素风格化shader, 思路是用 camera 的 on-render-image 进行 post-processing  
-Pixel Width 参数表示每个像素的宽度 (x 方向上把多少个像素合并成一个),  
-Pixel Height 参数表示每个像素的高度 (y 方向上把多少个像素合并成一个)  
-数值越大像素化程度越高
+# 全局像素化 ( Global Pixelation )
 
-![raw](/assets/img/shader/pixelation-shader/raw.png)
-![dst](/assets/img/shader/pixelation-shader/dst.png)
+借助 on-render-image, 可以简单的实现场景的全局像素风格化  
+成品如下  
+代码如下  
+
+![raw](/assets/img/pixelation-shader/raw.png)
+![dst](/assets/img/pixelation-shader/dst.png)
 
 ```glsl
 Shader "Custom/PostProcessing"
@@ -118,3 +123,5 @@ public class Pixelation : MonoBehaviour
     }
 }
 ```
+
+# 局部像素化 ( Local Pixelation )

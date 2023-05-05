@@ -1,11 +1,12 @@
-{% assign enable_toc = false %}
-{% if site.toc and page.toc %}
-  {% if page.content contains '<h2' or page.content contains '<h3' %}
-    {% assign enable_toc = true %}
-  {% endif %}
+{% assign enable_toc = true %}
+{% if !site.toc or !page.toc %}
+  <!-- {% if page.content contains '<h2' or page.content contains '<h3' %} -->
+  {% assign enable_toc = false %}
+  <!-- {% endif %} -->
 {% endif %}
 
 {% if enable_toc %}
+
 <!-- BS-toc.js will be loaded at medium priority -->
 <script src="{{ site.data.assets[origin].bootstrap-toc.js | relative_url }}"></script>
 
