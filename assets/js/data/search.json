@@ -1,11 +1,11 @@
 [
   
   {
-    "title": "渐进 Mesh 形变",
-    "url": "/posts/morphing/",
+    "title": "Wave Function Collapse",
+    "url": "/posts/wave-function-collapse/",
     "categories": "",
-    "tags": "Mesh",
-    "date": "2023-03-30 00:00:00 +0800",
+    "tags": "Algorithm",
+    "date": "2021-01-01 00:00:00 +0800",
     
 
 
@@ -13,8 +13,8 @@
 
 
     
-    "snippet": "using System.Collections;using System.Collections.Generic;using UnityEngine;[ExecuteAlways]public class NewBehaviourScript : MonoBehaviour{    public Mesh m_Src;    public Mesh m_Dst;    // Start i...",
-    "content": "using System.Collections;using System.Collections.Generic;using UnityEngine;[ExecuteAlways]public class NewBehaviourScript : MonoBehaviour{    public Mesh m_Src;    public Mesh m_Dst;    // Start is called before the first frame update    void Start()    {            }    public bool m_Init = false;    // Update is called once per frame    void Init(){            }    void Update()    {        if(!m_Init){            Init();            m_Init = true;            }    }}"
+    "snippet": "",
+    "content": ""
   },
   
   {
@@ -22,7 +22,7 @@
     "url": "/posts/pixelation-shader/",
     "categories": "Shader",
     "tags": "Shader",
-    "date": "2023-03-18 00:00:00 +0800",
+    "date": "2021-01-01 00:00:00 +0800",
     
 
 
@@ -32,6 +32,23 @@
     
     "snippet": "全局像素化 ( Global Pixelation )借助 on-render-image, 可以简单的实现场景的全局像素风格化成品如下代码如下Shader \"Custom/PostProcessing\"{    Properties    {        _MainTex (\"MainTex\", 2D) = \"white\" {}        _pw(\"Pixel Width\", flo...",
     "content": "全局像素化 ( Global Pixelation )借助 on-render-image, 可以简单的实现场景的全局像素风格化成品如下代码如下Shader \"Custom/PostProcessing\"{    Properties    {        _MainTex (\"MainTex\", 2D) = \"white\" {}        _pw(\"Pixel Width\", float) = 64        _ph(\"Pixel Height\", float) = 64    }    SubShader    {        Tags { \"RenderType\"=\"Opaque\" }        LOD 200        Cull Off ZWrite Off ZTest Always        Pass{            CGPROGRAM            #pragma vertex vert            #pragma fragment frag            #pragma target 3.0            #include \"UnityCG.cginc\"            sampler2D _MainTex;            float _pw;            float _ph;            struct appdata {                float4 vertex : POSITION;                float2 uv : TEXCOORD0;                float3 normal : NORMAL;            };            struct v2f {                float4 position : SV_POSITION;                float2 uv : TEXCOORD0;            };            v2f vert (appdata IN) {                v2f OUT;                                OUT.position = UnityObjectToClipPos(IN.vertex);                OUT.uv = IN.uv;                return OUT;            }            fixed4 frag (v2f IN) : SV_TARGET {                float _dx;                float _dy;                _dx = _pw * ( 1 / _ScreenParams.x );                _dy = _ph * ( 1 / _ScreenParams.y );                                float2 coord = float2(_dx * round(IN.uv.x / _dx), _dy * round(IN.uv.y / _dy));                fixed4 color = tex2D(_MainTex, coord);                return color;            }            ENDCG        }    }    FallBack \"Diffuse\"}using System.Collections;using System.Collections.Generic;using UnityEngine;[ExecuteAlways]public class Pixelation : MonoBehaviour{    // Start is called before the first frame update    void Start()    {            }    // Update is called once per frame    void Update()    {            }    public Material material;    void OnRenderImage(RenderTexture source,RenderTexture destination){        RenderTexture src = RenderTexture.GetTemporary(source.width, source.height);        material.SetTexture(\"_MainTex\", source);        Graphics.Blit(source,src,material,0);        Graphics.Blit(src,destination,material,0);        RenderTexture.ReleaseTemporary(src);    }}局部像素化 ( Local Pixelation )"
+  },
+  
+  {
+    "title": "渐进 Mesh 形变",
+    "url": "/posts/morphing/",
+    "categories": "",
+    "tags": "Algorithm",
+    "date": "2021-01-01 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "GIF 演示Morpher 脚本using System.Collections;using System.Collections.Generic;using System.Linq;using UnityEngine;/// &lt;summary&gt;/// Vertex Pair maps two verices to each other, used to find the nea...",
+    "content": "GIF 演示Morpher 脚本using System.Collections;using System.Collections.Generic;using System.Linq;using UnityEngine;/// &lt;summary&gt;/// Vertex Pair maps two verices to each other, used to find the nearest vertex to a given vertex./// &lt;/summary&gt;public class VertexPair{    public Vector3 Vertex1 { get; set; }    public Vector3 Vertex2 { get; set; }     public VertexPair(Vector3 vertex1, Vector3 vertex2)    {        Vertex1 = vertex1;        Vertex2 = vertex2;    }}/// &lt;summary&gt;/// Morpher is responsible for morphing between two meshe./// It uses the slider value to determine the percentage of the morphing./// &lt;/summary&gt;[ExecuteAlways]public class Morpher : MonoBehaviour{    public bool IsDeforming = true;    public bool Init = false;    [Tooltip(\"Mesh should be read/write enabled from the model import settings\")]    [SerializeField] private Mesh _oldMesh;    [Tooltip(\"Mesh should be read/write enabled from the model import settings\")]    [SerializeField] private Mesh _newMesh;    [SerializeField] private Material _oldMat;    [SerializeField] private Material _newMat;    [SerializeField] private MeshFilter _meshFilter;    [SerializeField] private Renderer _renderer;    [Range(0f, 1f)]    [SerializeField]     private float _slider = 0;    private Vector3[] _oldVertices;    private Vector3[] _newVertices;    private int[] _oldTriangles;    private int[] _newTriangles;    private List&lt;Vector3&gt; _finalVertices;    private Mesh _interpolatedMesh;    private List&lt;VertexPair&gt; _pairsOfVertices1;    private List&lt;VertexPair&gt; _pairsOfVertices2;    private Material _finalMaterial;    void Start()    {        _interpolatedMesh = new Mesh();        _interpolatedMesh.MarkDynamic();        if (_meshFilter!=null)        {            _meshFilter.mesh = _interpolatedMesh;        }        _oldVertices = _oldMesh.vertices;        _newVertices = _newMesh.vertices;        _oldTriangles = _oldMesh.triangles;        _newTriangles = _newMesh.triangles;        _finalVertices = new List&lt;Vector3&gt;(_oldVertices);        CreatePairs1();        CreatePairs2();        _finalMaterial = new Material(_slider&lt; 0.5? _oldMat:_newMat);    }    /// &lt;summary&gt;    /// Create pairs of vertices, each pair contains a vertex from the old mesh and a vertex from the new mesh.    /// Vertices are mapped by the nearest one to each other.    /// &lt;/summary&gt;    private void CreatePairs1()    {        _pairsOfVertices1 = new List&lt;VertexPair&gt;();        for (int i = 0; i &lt; _oldVertices.Length; i++)        {            var oldVertex = _oldVertices[i];            var nearestToOldVertex = _newVertices.OrderBy(v =&gt; Vector3.Distance(v, oldVertex)).FirstOrDefault();            _pairsOfVertices1.Add(new VertexPair(oldVertex, nearestToOldVertex));        }    }    /// &lt;summary&gt;    /// Create pairs of vertices, each pair contains a vertex from the new mesh and a vertex from the old mesh.    /// Vertices are mapped by the nearest one to each other.    /// &lt;/summary&gt;    private void CreatePairs2()    {        _pairsOfVertices2 = new List&lt;VertexPair&gt;();        for (int i = 0; i &lt; _newVertices.Length; i++)        {            var newVertex = _newVertices[i];            var nearestToNewVertex = _oldVertices.OrderBy(v =&gt; Vector3.Distance(v, newVertex)).FirstOrDefault();            _pairsOfVertices2.Add(new VertexPair(newVertex, nearestToNewVertex));        }    }    void Update()    {        if(!Init){            Start();            Init = true;        }        SetSlider(_slider);        if (IsDeforming)        {            Deform();        }    }    public void SetSlider(float slider)    {        _slider = slider;    }    /// &lt;summary&gt;    /// Deform the mesh based on the slider value.    /// &lt;/summary&gt;    private void Deform()    {        if (_slider&lt; 0.5f)        {            _finalVertices = _pairsOfVertices1.Select(p =&gt; Vector3.Lerp(p.Vertex1, p.Vertex2, _slider)).ToList();        }        else        {            _finalVertices = _pairsOfVertices2.Select(p =&gt; Vector3.Lerp(p.Vertex2, p.Vertex1, _slider)).ToList();        }        _interpolatedMesh.Clear();        _interpolatedMesh.SetVertices(_finalVertices);        _interpolatedMesh.triangles = _slider &lt; 0.5f ? _oldTriangles : _newTriangles;        _interpolatedMesh.bounds = _slider &lt; 0.5f ? _oldMesh.bounds : _newMesh.bounds;        _interpolatedMesh.uv = _slider &lt; 0.5f ? _oldMesh.uv : _newMesh.uv;        _interpolatedMesh.uv2 = _slider &lt; 0.5f ? _oldMesh.uv2 : _newMesh.uv2;        _interpolatedMesh.uv3 = _slider &lt; 0.5f ? _oldMesh.uv3 : _newMesh.uv3;        _interpolatedMesh.RecalculateNormals();        _finalMaterial.Lerp(_oldMat, _newMat, _slider);        _finalMaterial.SetTexture(\"_MainTex\", _slider &lt; 0.5f ?_oldMat.GetTexture(\"_MainTex\"): _newMat.GetTexture(\"_MainTex\"));        //_finalMaterial.SetTexture(\"_BumpMap\", _slider &lt; 0.5f ? _oldMat.GetTexture(\"_BumpMap\") : _newMat.GetTexture(\"_BumpMap\"));        //_finalMaterial.SetTexture(\"_MetallicGlossMap\", _slider &lt; 0.5f ? _oldMat.GetTexture(\"_MetallicGlossMap\") : _newMat.GetTexture(\"_MetallicGlossMap\"));        //_finalMaterial.SetTexture(\"_OcclusionMap\", _slider &lt; 0.5f ? _oldMat.GetTexture(\"_OcclusionMap\") : _newMat.GetTexture(\"_OcclusionMap\"));        //_finalMaterial.SetTexture(\"_EmissionMap\", _slider &lt; 0.5f ? _oldMat.GetTexture(\"_EmissionMap\") : _newMat.GetTexture(\"_EmissionMap\"));                _renderer.material = _finalMaterial;    }}"
   }
   
 ]

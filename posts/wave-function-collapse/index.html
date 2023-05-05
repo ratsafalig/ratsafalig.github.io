@@ -23,6 +23,12 @@
 
   
 
+    
+
+    
+
+  
+
   
 
   
@@ -30,24 +36,25 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Shader" />
+<meta property="og:title" content="Wave Function Collapse" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="航" />
-<meta property="og:description" content="航" />
-<link rel="canonical" href="http://localhost:4000/categories/shader/" />
-<meta property="og:url" content="http://localhost:4000/categories/shader/" />
+<meta name="description" content="1" />
+<meta property="og:description" content="1" />
+<link rel="canonical" href="http://localhost:4000/posts/wave-function-collapse/" />
+<meta property="og:url" content="http://localhost:4000/posts/wave-function-collapse/" />
 <meta property="og:site_name" content="航" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-01-01T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Shader" />
+<meta property="twitter:title" content="Wave Function Collapse" />
 <meta name="twitter:site" content="@ratsafalig" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"航","headline":"Shader","url":"http://localhost:4000/categories/shader/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-01-01T00:00:00+08:00","datePublished":"2021-01-01T00:00:00+08:00","description":"1","headline":"Wave Function Collapse","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/wave-function-collapse/"},"url":"http://localhost:4000/posts/wave-function-collapse/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>Shader | 航
+  <title>Wave Function Collapse | 航
   </title>
 
   <!--
@@ -101,7 +108,12 @@
   <link rel="stylesheet" href="/assets/css/style.css">
 
   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css">
+  
 
+  
+    <!-- Manific Popup -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css">
   
 
   <!-- JavaScript -->
@@ -436,19 +448,13 @@
       
 
         
-          <span>
-            <a href="/categories">
-              Categories
-            </a>
-          </span>
-        
 
       
 
         
 
           
-            <span>Shader</span>
+            <span>Wave Function Collapse</span>
           
 
         
@@ -462,7 +468,7 @@
     <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
 
     <div id="topbar-title">
-      Category
+      Post
     </div>
 
     <i id="search-trigger" class="fas fa-search fa-fw"></i>
@@ -496,18 +502,77 @@
     
       
       
-        <div id="page-category">
-  <h1 class="pl-lg-2">
-    <i class="far fa-folder-open fa-fw text-muted"></i>
-    Shader
-    <span class="lead text-muted pl-2">1</span>
-  </h1>
+        <!--
+  Refactor the HTML structure.
+-->
 
-  <ul class="post-content pl-0">
-    
-    <li class="d-flex justify-content-between pl-md-3 pr-md-3">
-      <a href="/posts/pixelation-shader/">像素化 Shader ( Pixelation Shader )</a>
-      <span class="dash flex-grow-1"></span>
+
+
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
+
+
+
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+<!-- Change the icon of checkbox -->
+
+
+<!-- images -->
+
+
+
+
+
+<!-- Add header for code snippets -->
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+<!-- return -->
+
+<h1 data-toc-skip>Wave Function Collapse</h1>
+
+<div class="post-meta text-muted">
+    <!-- published date -->
+    <span>
+      Posted
       <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
@@ -517,17 +582,154 @@
 
 
 
-<span class="text-muted small"
+<em class=""
     data-ts="1609430400"
     data-df="ll"
-    >
+    data-toggle="tooltip" data-placement="bottom">
   Jan  1, 2021
-</span>
+</em>
 
-    </li>
+    </span>
+
+    <!-- lastmod date -->
     
-  </ul>
+
+  
+
+  <div class="d-flex justify-content-between">
+    <!-- author(s) -->
+    <span>
+      
+
+      By
+
+      <em>
+      
+        <a href="https://github.com/ratsafalig">ratsafalig</a>
+      
+      </em>
+    </span>
+
+    <div>
+      <!-- page views -->
+      
+
+      <!-- read time -->
+      <!--
+  Calculate the post's reading time, and display the word count in tooltip
+ -->
+
+
+
+<!-- words per minute  -->
+
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span class="readtime" data-toggle="tooltip" data-placement="bottom"
+  title="1 words">
+  <em>1 min</em> read</span>
+
+    </div>
+
+  </div> <!-- .d-flex -->
+
+</div> <!-- .post-meta -->
+
+<div class="post-content">
+  <div class="language-cs highlighter-rouge"><div class="code-header">
+        <span data-label-text="C#"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>
+</pre></td></tr></tbody></table></code></div></div>
+
 </div>
+
+<div class="post-tail-wrapper text-muted">
+
+  <!-- categories -->
+  
+
+  <!-- tags -->
+  
+  <div class="post-tags">
+    <i class="fa fa-tags fa-fw mr-1"></i>
+      
+      <a href="/tags/algorithm/"
+          class="post-tag no-text-decoration" >Algorithm</a>
+      
+  </div>
+  
+
+  <div class="post-tail-bottom
+    d-flex justify-content-between align-items-center mt-3 pt-5 pb-2">
+    <div class="license-wrapper">
+
+      
+
+        
+
+        This post is licensed under 
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          CC BY 4.0
+        </a>
+         by the author.
+
+      
+    </div>
+
+    <!--
+ Post sharing snippet
+-->
+
+<div class="share-wrapper">
+  <span class="share-label text-muted mr-1">Share</span>
+  <span class="share-icons">
+    
+    
+    
+
+    
+      
+        <a href="https://twitter.com/intent/tweet?text=Wave%20Function%20Collapse%20-%20%E8%88%AA&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fwave-function-collapse%2F" data-toggle="tooltip" data-placement="top"
+          title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
+          <i class="fa-fw fab fa-twitter"></i>
+        </a>
+    
+      
+        <a href="https://www.facebook.com/sharer/sharer.php?title=Wave%20Function%20Collapse%20-%20%E8%88%AA&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fwave-function-collapse%2F" data-toggle="tooltip" data-placement="top"
+          title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
+          <i class="fa-fw fab fa-facebook-square"></i>
+        </a>
+    
+      
+        <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fwave-function-collapse%2F&text=Wave%20Function%20Collapse%20-%20%E8%88%AA" data-toggle="tooltip" data-placement="top"
+          title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
+          <i class="fa-fw fab fa-telegram"></i>
+        </a>
+    
+
+    <i id="copy-link" class="fa-fw fas fa-link small"
+        data-toggle="tooltip" data-placement="top"
+        title="Copy link"
+        data-title-succeed="Link copied successfully!">
+    </i>
+
+  </span>
+</div>
+
+
+  </div><!-- .post-tail-bottom -->
+
+</div><!-- div.post-tail-wrapper -->
+
 
       
     
@@ -616,11 +818,257 @@
     </div>
 
     
+      
+      
+
+  <!--  -->
+
+
+
+
+<!-- BS-toc.js will be loaded at medium priority -->
+<script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script>
+
+<div id="toc-wrapper" class="pl-0 pr-4 mb-5">
+  <div class="panel-heading pl-3 pt-2 mb-2">Contents</div>
+  <nav id="toc" data-toggle="toc"></nav>
+</div>
+
+
+    
   </div>
 
 </div>
 
 <!-- tail -->
+
+<div class="row">
+  <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 pl-3 pr-3 pr-xl-4 mt-5">
+    
+      
+      <!--
+ Recommend the other 3 posts according to the tags and categories of the current post,
+ if the number is not enough, use the other latest posts to supplement.
+-->
+
+<!-- The total size of related posts  -->
+
+
+<!-- An random integer that bigger than 0  -->
+
+
+<!-- Equals to TAG_SCORE / {max_categories_hierarchy}  -->
+
+
+
+
+
+
+
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+<!-- Fill with the other newlest posts  -->
+
+
+
+  
+    
+    
+  
+    
+    
+      
+      
+        
+        
+        
+      
+    
+  
+    
+    
+      
+      
+    
+  
+
+
+
+  <div id="related-posts" class="mb-2 mb-sm-4">
+    <h3 class="pt-2 mb-4 ml-1"
+      data-toc-skip>Further Reading</h3>
+    <div class="card-deck mb-4">
+    
+      
+      
+      <div class="card">
+        <a href="/posts/morphing/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1609430400"
+    data-df="ll"
+    >
+  Jan  1, 2021
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>渐进 Mesh 形变</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                GIF 演示
+
+
+
+Morpher 脚本
+
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
+/// &amp;lt;summary&amp;gt;
+/// Vertex Pair maps two verices to each other, used to ...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/pixelation-shader/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1609430400"
+    data-df="ll"
+    >
+  Jan  1, 2021
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>像素化 Shader ( Pixelation Shader )</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                全局像素化 ( Global Pixelation )
+
+借助 on-render-image, 可以简单的实现场景的全局像素风格化
+成品如下
+代码如下
+
+
+
+
+Shader &quot;Custom/PostProcessing&quot;
+{
+    Properties
+    {
+        _MainTex (&quot;MainTex&quot;, 2D) = &quot;white&quot; {}
+        _pw(&quot;Pix...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+    </div> <!-- .card-deck -->
+  </div> <!-- #related-posts -->
+
+
+    
+      
+      <!--
+  Navigation buttons at the bottom of the post.
+-->
+
+<div class="post-navigation d-flex justify-content-between">
+  
+  <a href="/posts/pixelation-shader/" class="btn btn-outline-primary"
+    prompt="Older">
+    <p>像素化 Shader ( Pixelation Shader )</p>
+  </a>
+  
+
+  
+  <div class="btn btn-outline-primary disabled"
+    prompt="Newer">
+    <p>-</p>
+  </div>
+  
+
+</div>
+
+    
+      
+      <!--  The comments switcher -->
+
+
+    
+  </div>
+</div>
 
 
       </div>
@@ -792,6 +1240,51 @@ SimpleJekyllSearch({
 <!-- layout specified -->
 
 
+  
+
+
+
+  <!-- image lazy-loading & popup & clipboard -->
+  
+
+  
+
+
+
+
+
+
+
+  
+    
+
+    
+
+  
+
+
+
+  
+    
+
+    
+
+  
+
+
+
+  
+    
+
+    
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/combine/npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
 
 
 
@@ -855,7 +1348,7 @@ SimpleJekyllSearch({
 
 
 
-<script defer src="/assets/js/dist/misc.min.js"></script>
+<script defer src="/assets/js/dist/post.min.js"></script>
 
 
 

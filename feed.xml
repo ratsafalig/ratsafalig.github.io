@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>航</title>
   <subtitle>航</subtitle>
-  <updated>2023-03-30T21:58:03+08:00</updated>
+  <updated>2023-05-05T13:20:44+08:00</updated>
   <author>
     <name>ratsafalig</name>
     <uri>http://localhost:4000/</uri>
@@ -20,14 +20,14 @@
 
   
   <entry>
-    <title>渐进 Mesh 形变</title>
-    <link href="http://localhost:4000/posts/morphing/" rel="alternate" type="text/html" title="渐进 Mesh 形变" />
-    <published>2023-03-30T00:00:00+08:00</published>
+    <title>Wave Function Collapse</title>
+    <link href="http://localhost:4000/posts/wave-function-collapse/" rel="alternate" type="text/html" title="Wave Function Collapse" />
+    <published>2021-01-01T00:00:00+08:00</published>
   
-    <updated>2023-03-30T00:00:00+08:00</updated>
+    <updated>2021-01-01T00:00:00+08:00</updated>
   
-    <id>http://localhost:4000/posts/morphing/</id>
-    <content src="http://localhost:4000/posts/morphing/" />
+    <id>http://localhost:4000/posts/wave-function-collapse/</id>
+    <content src="http://localhost:4000/posts/wave-function-collapse/" />
     <author>
       <name>ratsafalig</name>
     </author>
@@ -44,29 +44,9 @@
 
 
 
-      using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+      
 
-[ExecuteAlways]
-public class NewBehaviourScript : MonoBehaviour
-{
-    public Mesh m_Src;
-    public Mesh m_Dst;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    public bool m_Init = false;
-    // Update is called once per frame
-    void Init(){
-        
-    }
-
-    void...
     </summary>
   
 
@@ -76,9 +56,9 @@ public class NewBehaviourScript : MonoBehaviour
   <entry>
     <title>像素化 Shader ( Pixelation Shader )</title>
     <link href="http://localhost:4000/posts/pixelation-shader/" rel="alternate" type="text/html" title="像素化 Shader ( Pixelation Shader )" />
-    <published>2023-03-18T00:00:00+08:00</published>
+    <published>2021-01-01T00:00:00+08:00</published>
   
-    <updated>2023-03-18T00:00:00+08:00</updated>
+    <updated>2021-01-01T00:00:00+08:00</updated>
   
     <id>http://localhost:4000/posts/pixelation-shader/</id>
     <content src="http://localhost:4000/posts/pixelation-shader/" />
@@ -126,6 +106,57 @@ Shader "Custom/PostProcessing"
         Cull Off ZWrite Off ZTest Always
 
         Pass...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>渐进 Mesh 形变</title>
+    <link href="http://localhost:4000/posts/morphing/" rel="alternate" type="text/html" title="渐进 Mesh 形变" />
+    <published>2021-01-01T00:00:00+08:00</published>
+  
+    <updated>2021-01-01T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/morphing/</id>
+    <content src="http://localhost:4000/posts/morphing/" />
+    <author>
+      <name>ratsafalig</name>
+    </author>
+
+  
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      GIF 演示
+
+
+
+Morpher 脚本
+
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
+/// &amp;lt;summary&amp;gt;
+/// Vertex Pair maps two verices to each other, used to find the nearest vertex to a given vertex.
+/// &amp;lt;/summary&amp;gt;
+public class VertexPair
+{
+    public Vector3 Vertex1 { get; set; }
+    public Vector3 Vertex2 { get; set; }
+
+     public VertexPair(Vect...
     </summary>
   
 
