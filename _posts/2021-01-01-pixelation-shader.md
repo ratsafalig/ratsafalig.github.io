@@ -14,8 +14,8 @@ toc: true
 成品如下  
 代码如下  
 
-![raw](/assets/img/pixelation-shader/raw.png)
-![dst](/assets/img/pixelation-shader/dst.png)
+![raw](/assets/img/2021-01-01-pixelation-shader/raw.png)
+![dst](/assets/img/2021-01-01-pixelation-shader/dst.png)
 
 ```glsl
 Shader "Custom/PostProcessing"
