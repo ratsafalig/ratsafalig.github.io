@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>航</title>
   <subtitle>航</subtitle>
-  <updated>2023-05-05T19:44:34+08:00</updated>
+  <updated>2023-05-05T20:02:27+08:00</updated>
   <author>
     <name>ratsafalig</name>
     <uri>http://localhost:4000/</uri>
@@ -191,7 +191,7 @@ public class VertexPair
 抓一个 diffusion 模型的代码实现来说一说 diffusion 模型的实现。代码完整详见 Link
 
 给定一个 (x, y) 的图像，生成一个 (x, y) 的 noise，然后计算 alpha * img(x,y) + beta * noise(x,y), 这个过程叫做加噪声, 因为 noise 是纯随机生成, 所以 noise 的内容可以看作是正态分布的.
-重复这个加噪声的过程, 再重复了 n 次之后, 最终的结果回导致 img 的信息全部丧失, 只剩下了 noise
+重复这个加噪声的过程, 再重复了 n 次之后, 最终的结果会导致 img 的信息全部丧失, 只剩下了 noise
 
 现在定义重复 n 次加噪声之后的图像 noiseized-img = noiseize(img, t), 那么原图就是 noiseize(img, 0), 经过 10 次加噪声的图像就是 noiseize(img, 10)
 
