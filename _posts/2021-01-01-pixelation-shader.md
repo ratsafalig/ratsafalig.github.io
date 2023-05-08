@@ -1,11 +1,10 @@
 ---
 title: 像素化 Shader ( Pixelation Shader )
-categories: [ Shader ]
+categories:
+- Shader
 author: 航
 tags:
 - Shader
-layout: post
-toc: true
 ---
 
 
