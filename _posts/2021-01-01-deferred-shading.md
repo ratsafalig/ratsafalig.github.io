@@ -42,9 +42,7 @@ For each light:
 -Combine light contribution within shader
 ```
 
-# GeometryPass
-
-## VertexShader
+# Geometry Pass
 
 ```glsl
 #version 330 core
@@ -73,8 +71,6 @@ void main()
 }
 ```
 
-## FragmentShader
-
 ```glsl
 #version 330 core
 layout (location = 0) out vec3 gPosition;
@@ -101,9 +97,7 @@ void main()
 }
 ```
 
-# LightingPass
-
-## VertexShader
+# Lighting Pass
 
 ```glsl
 #version 330 core
@@ -118,8 +112,6 @@ void main()
     gl_Position = vec4(aPos, 1.0);
 }
 ```
-
-## FragmentShader
 
 ```glsl
 #version 330 core
