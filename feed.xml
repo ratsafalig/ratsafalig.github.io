@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>航</title>
   <subtitle>航</subtitle>
-  <updated>2023-05-05T20:02:27+08:00</updated>
+  <updated>2023-05-09T13:09:35+08:00</updated>
   <author>
     <name>ratsafalig</name>
     <uri>http://localhost:4000/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/posts/wave-function-collapse/" rel="alternate" type="text/html" title="波函数塌缩算法 (Wave Function Collapse)" />
     <published>2021-01-01T00:00:00+08:00</published>
   
-    <updated>2021-01-01T00:00:00+08:00</updated>
+    <updated>2023-05-08T14:52:13+08:00</updated>
   
     <id>http://localhost:4000/posts/wave-function-collapse/</id>
     <content src="http://localhost:4000/posts/wave-function-collapse/" />
@@ -46,10 +46,150 @@
 
 
 
-      名字起的唬人，实际上是只是一个启发式算法。
+      实际上是只是一个启发式算法。
+
+演示
+
+给定几个 tile，和 tile 之间的拼接规则，生成一张地图
 
 
 
+
+
+
+
+
+
+
+
+
+
+原理
+
+
+
+
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Transformer</title>
+    <link href="http://localhost:4000/posts/transformer/" rel="alternate" type="text/html" title="Transformer" />
+    <published>2021-01-01T00:00:00+08:00</published>
+  
+    <updated>2021-01-01T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/transformer/</id>
+    <content src="http://localhost:4000/posts/transformer/" />
+    <author>
+      <name>ratsafalig</name>
+    </author>
+
+  
+    
+    <category term="AI" />
+    
+    <category term="Transformer" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Transformer 模型是一种用于自然语言处理的深度学习模型，其基本思想是引入了 self-attention 机制来解决传统的 RNN 和 CNN 模型在文本长度较长时的信息传递困难的问题。
+
+Transformer 模型中主要包含了 Encoder 和 Decoder 两个部分，Encoder 作用是将输入的文本转换为一个语义空间的向量表示，Decoder 则将 Encoder 的输出进行解码，生成目标语言的文本。在 Transformer 模型中，Encoder 和 Decoder 都是基于 self-attention 机制实现的，通过自注意力机制，能够高效地对输入序列进行建模，并减少信息流失。
+
+具体来说，Transformer 模型中的 self-attention 机制通过计算输入序列中每个元素与所有元素之间的相似度，来确定每个元素所对应的权重，然后根据权重对输入序...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Textual Inversion</title>
+    <link href="http://localhost:4000/posts/textual-inversion/" rel="alternate" type="text/html" title="Textual Inversion" />
+    <published>2021-01-01T00:00:00+08:00</published>
+  
+    <updated>2021-01-01T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/textual-inversion/</id>
+    <content src="http://localhost:4000/posts/textual-inversion/" />
+    <author>
+      <name>ratsafalig</name>
+    </author>
+
+  
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      
+
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Stable Diffusion Webui</title>
+    <link href="http://localhost:4000/posts/stable-diffusion-webui/" rel="alternate" type="text/html" title="Stable Diffusion Webui" />
+    <published>2021-01-01T00:00:00+08:00</published>
+  
+    <updated>2021-01-01T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/stable-diffusion-webui/</id>
+    <content src="http://localhost:4000/posts/stable-diffusion-webui/" />
+    <author>
+      <name>ratsafalig</name>
+    </author>
+
+  
+    
+    <category term="AI" />
+    
+    <category term="Diffusion" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Link
+
+mixture-of-diffusers
+
+multidiffusion-upscaler-for-automatic1111
+
+sd-webui-controlnet
+
+stable-diffusion-webui
+
+multidiffusion
+
+how-stable-diffusion-work
 
     </summary>
   
@@ -62,7 +202,7 @@
     <link href="http://localhost:4000/posts/pixelation-shader/" rel="alternate" type="text/html" title="像素化 Shader ( Pixelation Shader )" />
     <published>2021-01-01T00:00:00+08:00</published>
   
-    <updated>2023-05-05T14:40:23+08:00</updated>
+    <updated>2023-05-08T14:52:13+08:00</updated>
   
     <id>http://localhost:4000/posts/pixelation-shader/</id>
     <content src="http://localhost:4000/posts/pixelation-shader/" />
@@ -100,102 +240,6 @@
  
  
       main camera 的 culling mask 设置成除了 p...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>渐进 Mesh 形变</title>
-    <link href="http://localhost:4000/posts/morphing/" rel="alternate" type="text/html" title="渐进 Mesh 形变" />
-    <published>2021-01-01T00:00:00+08:00</published>
-  
-    <updated>2021-01-01T00:00:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/morphing/</id>
-    <content src="http://localhost:4000/posts/morphing/" />
-    <author>
-      <name>ratsafalig</name>
-    </author>
-
-  
-    
-    <category term="Algorithm" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      GIF 演示
-
-
-
-Morpher 脚本
-
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
-
-/// &amp;lt;summary&amp;gt;
-/// Vertex Pair maps two verices to each other, used to find the nearest vertex to a given vertex.
-/// &amp;lt;/summary&amp;gt;
-public class VertexPair
-{
-    public Vector3 Vertex1 { get; set; }
-    public Vector3 Vertex2 { get; set; }
-
-     public VertexPair(Vect...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Diffusion 模型</title>
-    <link href="http://localhost:4000/posts/diffusion/" rel="alternate" type="text/html" title="Diffusion 模型" />
-    <published>2021-01-01T00:00:00+08:00</published>
-  
-    <updated>2021-01-01T00:00:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/diffusion/</id>
-    <content src="http://localhost:4000/posts/diffusion/" />
-    <author>
-      <name>ratsafalig</name>
-    </author>
-
-  
-    
-    <category term="AI" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      傻瓜原理
-
-抓一个 diffusion 模型的代码实现来说一说 diffusion 模型的实现。代码完整详见 Link
-
-给定一个 (x, y) 的图像，生成一个 (x, y) 的 noise，然后计算 alpha * img(x,y) + beta * noise(x,y), 这个过程叫做加噪声, 因为 noise 是纯随机生成, 所以 noise 的内容可以看作是正态分布的.
-重复这个加噪声的过程, 再重复了 n 次之后, 最终的结果会导致 img 的信息全部丧失, 只剩下了 noise
-
-现在定义重复 n 次加噪声之后的图像 noiseized-img = noiseize(img, t), 那么原图就是 noiseize(img, 0), 经过 10 次加噪声的图像就是 noiseize(img, 10)
-
-现在构建一个模型, 模型的 output 是 N(0,1) 的正态分...
     </summary>
   
 

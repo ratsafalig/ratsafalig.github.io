@@ -13,8 +13,59 @@
 
 
     
-    "snippet": "名字起的唬人，实际上是只是一个启发式算法。",
-    "content": "名字起的唬人，实际上是只是一个启发式算法。"
+    "snippet": "实际上是只是一个启发式算法。演示给定几个 tile，和 tile 之间的拼接规则，生成一张地图原理",
+    "content": "实际上是只是一个启发式算法。演示给定几个 tile，和 tile 之间的拼接规则，生成一张地图原理"
+  },
+  
+  {
+    "title": "Transformer",
+    "url": "/posts/transformer/",
+    "categories": "AI, Transformer",
+    "tags": "AI, Transformer",
+    "date": "2021-01-01 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Transformer 模型是一种用于自然语言处理的深度学习模型，其基本思想是引入了 self-attention 机制来解决传统的 RNN 和 CNN 模型在文本长度较长时的信息传递困难的问题。Transformer 模型中主要包含了 Encoder 和 Decoder 两个部分，Encoder 作用是将输入的文本转换为一个语义空间的向量表示，Decoder 则将 Encoder 的输出进...",
+    "content": "Transformer 模型是一种用于自然语言处理的深度学习模型，其基本思想是引入了 self-attention 机制来解决传统的 RNN 和 CNN 模型在文本长度较长时的信息传递困难的问题。Transformer 模型中主要包含了 Encoder 和 Decoder 两个部分，Encoder 作用是将输入的文本转换为一个语义空间的向量表示，Decoder 则将 Encoder 的输出进行解码，生成目标语言的文本。在 Transformer 模型中，Encoder 和 Decoder 都是基于 self-attention 机制实现的，通过自注意力机制，能够高效地对输入序列进行建模，并减少信息流失。具体来说，Transformer 模型中的 self-attention 机制通过计算输入序列中每个元素与所有元素之间的相似度，来确定每个元素所对应的权重，然后根据权重对输入序列中的元素进行加权求和，生成对输入序列进行自注意力加权的结果。除了 self-attention 机制之外，Transformer 模型中还使用了多头注意力机制、残差连接和层归一化等技术，进一步提高了模型的性能。同时，Transformer 模型采用了基于位置编码的方法来处理输入序列的位置信息，从而使得模型具有一定的位置感知能力。总的来说，Transformer 模型通过引入 self-attention 机制和其他多种技术手段，有效地解决了传统的 RNN 和 CNN 模型在建模长文本序列时的问题，成为了自然语言处理领域中广泛应用的深度学习模型之一。"
+  },
+  
+  {
+    "title": "Textual Inversion",
+    "url": "/posts/textual-inversion/",
+    "categories": "",
+    "tags": "",
+    "date": "2021-01-01 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "",
+    "content": ""
+  },
+  
+  {
+    "title": "Stable Diffusion Webui",
+    "url": "/posts/stable-diffusion-webui/",
+    "categories": "AI, Diffusion",
+    "tags": "AI, Diffusion",
+    "date": "2021-01-01 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Linkmixture-of-diffusersmultidiffusion-upscaler-for-automatic1111sd-webui-controlnetstable-diffusion-webuimultidiffusionhow-stable-diffusion-work",
+    "content": "Linkmixture-of-diffusersmultidiffusion-upscaler-for-automatic1111sd-webui-controlnetstable-diffusion-webuimultidiffusionhow-stable-diffusion-work"
   },
   
   {
@@ -47,15 +98,15 @@
 
 
     
-    "snippet": "GIF 演示Morpher 脚本using System.Collections;using System.Collections.Generic;using System.Linq;using UnityEngine;/// &lt;summary&gt;/// Vertex Pair maps two verices to each other, used to find the nea...",
-    "content": "GIF 演示Morpher 脚本using System.Collections;using System.Collections.Generic;using System.Linq;using UnityEngine;/// &lt;summary&gt;/// Vertex Pair maps two verices to each other, used to find the nearest vertex to a given vertex./// &lt;/summary&gt;public class VertexPair{    public Vector3 Vertex1 { get; set; }    public Vector3 Vertex2 { get; set; }     public VertexPair(Vector3 vertex1, Vector3 vertex2)    {        Vertex1 = vertex1;        Vertex2 = vertex2;    }}/// &lt;summary&gt;/// Morpher is responsible for morphing between two meshe./// It uses the slider value to determine the percentage of the morphing./// &lt;/summary&gt;[ExecuteAlways]public class Morpher : MonoBehaviour{    public bool IsDeforming = true;    public bool Init = false;    [Tooltip(\"Mesh should be read/write enabled from the model import settings\")]    [SerializeField] private Mesh _oldMesh;    [Tooltip(\"Mesh should be read/write enabled from the model import settings\")]    [SerializeField] private Mesh _newMesh;    [SerializeField] private Material _oldMat;    [SerializeField] private Material _newMat;    [SerializeField] private MeshFilter _meshFilter;    [SerializeField] private Renderer _renderer;    [Range(0f, 1f)]    [SerializeField]     private float _slider = 0;    private Vector3[] _oldVertices;    private Vector3[] _newVertices;    private int[] _oldTriangles;    private int[] _newTriangles;    private List&lt;Vector3&gt; _finalVertices;    private Mesh _interpolatedMesh;    private List&lt;VertexPair&gt; _pairsOfVertices1;    private List&lt;VertexPair&gt; _pairsOfVertices2;    private Material _finalMaterial;    void Start()    {        _interpolatedMesh = new Mesh();        _interpolatedMesh.MarkDynamic();        if (_meshFilter!=null)        {            _meshFilter.mesh = _interpolatedMesh;        }        _oldVertices = _oldMesh.vertices;        _newVertices = _newMesh.vertices;        _oldTriangles = _oldMesh.triangles;        _newTriangles = _newMesh.triangles;        _finalVertices = new List&lt;Vector3&gt;(_oldVertices);        CreatePairs1();        CreatePairs2();        _finalMaterial = new Material(_slider&lt; 0.5? _oldMat:_newMat);    }    /// &lt;summary&gt;    /// Create pairs of vertices, each pair contains a vertex from the old mesh and a vertex from the new mesh.    /// Vertices are mapped by the nearest one to each other.    /// &lt;/summary&gt;    private void CreatePairs1()    {        _pairsOfVertices1 = new List&lt;VertexPair&gt;();        for (int i = 0; i &lt; _oldVertices.Length; i++)        {            var oldVertex = _oldVertices[i];            var nearestToOldVertex = _newVertices.OrderBy(v =&gt; Vector3.Distance(v, oldVertex)).FirstOrDefault();            _pairsOfVertices1.Add(new VertexPair(oldVertex, nearestToOldVertex));        }    }    /// &lt;summary&gt;    /// Create pairs of vertices, each pair contains a vertex from the new mesh and a vertex from the old mesh.    /// Vertices are mapped by the nearest one to each other.    /// &lt;/summary&gt;    private void CreatePairs2()    {        _pairsOfVertices2 = new List&lt;VertexPair&gt;();        for (int i = 0; i &lt; _newVertices.Length; i++)        {            var newVertex = _newVertices[i];            var nearestToNewVertex = _oldVertices.OrderBy(v =&gt; Vector3.Distance(v, newVertex)).FirstOrDefault();            _pairsOfVertices2.Add(new VertexPair(newVertex, nearestToNewVertex));        }    }    void Update()    {        if(!Init){            Start();            Init = true;        }        SetSlider(_slider);        if (IsDeforming)        {            Deform();        }    }    public void SetSlider(float slider)    {        _slider = slider;    }    /// &lt;summary&gt;    /// Deform the mesh based on the slider value.    /// &lt;/summary&gt;    private void Deform()    {        if (_slider&lt; 0.5f)        {            _finalVertices = _pairsOfVertices1.Select(p =&gt; Vector3.Lerp(p.Vertex1, p.Vertex2, _slider)).ToList();        }        else        {            _finalVertices = _pairsOfVertices2.Select(p =&gt; Vector3.Lerp(p.Vertex2, p.Vertex1, _slider)).ToList();        }        _interpolatedMesh.Clear();        _interpolatedMesh.SetVertices(_finalVertices);        _interpolatedMesh.triangles = _slider &lt; 0.5f ? _oldTriangles : _newTriangles;        _interpolatedMesh.bounds = _slider &lt; 0.5f ? _oldMesh.bounds : _newMesh.bounds;        _interpolatedMesh.uv = _slider &lt; 0.5f ? _oldMesh.uv : _newMesh.uv;        _interpolatedMesh.uv2 = _slider &lt; 0.5f ? _oldMesh.uv2 : _newMesh.uv2;        _interpolatedMesh.uv3 = _slider &lt; 0.5f ? _oldMesh.uv3 : _newMesh.uv3;        _interpolatedMesh.RecalculateNormals();        _finalMaterial.Lerp(_oldMat, _newMat, _slider);        _finalMaterial.SetTexture(\"_MainTex\", _slider &lt; 0.5f ?_oldMat.GetTexture(\"_MainTex\"): _newMat.GetTexture(\"_MainTex\"));        //_finalMaterial.SetTexture(\"_BumpMap\", _slider &lt; 0.5f ? _oldMat.GetTexture(\"_BumpMap\") : _newMat.GetTexture(\"_BumpMap\"));        //_finalMaterial.SetTexture(\"_MetallicGlossMap\", _slider &lt; 0.5f ? _oldMat.GetTexture(\"_MetallicGlossMap\") : _newMat.GetTexture(\"_MetallicGlossMap\"));        //_finalMaterial.SetTexture(\"_OcclusionMap\", _slider &lt; 0.5f ? _oldMat.GetTexture(\"_OcclusionMap\") : _newMat.GetTexture(\"_OcclusionMap\"));        //_finalMaterial.SetTexture(\"_EmissionMap\", _slider &lt; 0.5f ? _oldMat.GetTexture(\"_EmissionMap\") : _newMat.GetTexture(\"_EmissionMap\"));                _renderer.material = _finalMaterial;    }}"
+    "snippet": "GIFCodeusing System.Collections;using System.Collections.Generic;using System.Linq;using UnityEngine;/// &lt;summary&gt;/// Vertex Pair maps two verices to each other, used to find the nearest vert...",
+    "content": "GIFCodeusing System.Collections;using System.Collections.Generic;using System.Linq;using UnityEngine;/// &lt;summary&gt;/// Vertex Pair maps two verices to each other, used to find the nearest vertex to a given vertex./// &lt;/summary&gt;public class VertexPair{    public Vector3 Vertex1 { get; set; }    public Vector3 Vertex2 { get; set; }     public VertexPair(Vector3 vertex1, Vector3 vertex2)    {        Vertex1 = vertex1;        Vertex2 = vertex2;    }}/// &lt;summary&gt;/// Morpher is responsible for morphing between two meshe./// It uses the slider value to determine the percentage of the morphing./// &lt;/summary&gt;[ExecuteAlways]public class Morpher : MonoBehaviour{    public bool IsDeforming = true;    public bool Init = false;    [Tooltip(\"Mesh should be read/write enabled from the model import settings\")]    [SerializeField] private Mesh _oldMesh;    [Tooltip(\"Mesh should be read/write enabled from the model import settings\")]    [SerializeField] private Mesh _newMesh;    [SerializeField] private Material _oldMat;    [SerializeField] private Material _newMat;    [SerializeField] private MeshFilter _meshFilter;    [SerializeField] private Renderer _renderer;    [Range(0f, 1f)]    [SerializeField]     private float _slider = 0;    private Vector3[] _oldVertices;    private Vector3[] _newVertices;    private int[] _oldTriangles;    private int[] _newTriangles;    private List&lt;Vector3&gt; _finalVertices;    private Mesh _interpolatedMesh;    private List&lt;VertexPair&gt; _pairsOfVertices1;    private List&lt;VertexPair&gt; _pairsOfVertices2;    private Material _finalMaterial;    void Start()    {        _interpolatedMesh = new Mesh();        _interpolatedMesh.MarkDynamic();        if (_meshFilter!=null)        {            _meshFilter.mesh = _interpolatedMesh;        }        _oldVertices = _oldMesh.vertices;        _newVertices = _newMesh.vertices;        _oldTriangles = _oldMesh.triangles;        _newTriangles = _newMesh.triangles;        _finalVertices = new List&lt;Vector3&gt;(_oldVertices);        CreatePairs1();        CreatePairs2();        _finalMaterial = new Material(_slider&lt; 0.5? _oldMat:_newMat);    }    /// &lt;summary&gt;    /// Create pairs of vertices, each pair contains a vertex from the old mesh and a vertex from the new mesh.    /// Vertices are mapped by the nearest one to each other.    /// &lt;/summary&gt;    private void CreatePairs1()    {        _pairsOfVertices1 = new List&lt;VertexPair&gt;();        for (int i = 0; i &lt; _oldVertices.Length; i++)        {            var oldVertex = _oldVertices[i];            var nearestToOldVertex = _newVertices.OrderBy(v =&gt; Vector3.Distance(v, oldVertex)).FirstOrDefault();            _pairsOfVertices1.Add(new VertexPair(oldVertex, nearestToOldVertex));        }    }    /// &lt;summary&gt;    /// Create pairs of vertices, each pair contains a vertex from the new mesh and a vertex from the old mesh.    /// Vertices are mapped by the nearest one to each other.    /// &lt;/summary&gt;    private void CreatePairs2()    {        _pairsOfVertices2 = new List&lt;VertexPair&gt;();        for (int i = 0; i &lt; _newVertices.Length; i++)        {            var newVertex = _newVertices[i];            var nearestToNewVertex = _oldVertices.OrderBy(v =&gt; Vector3.Distance(v, newVertex)).FirstOrDefault();            _pairsOfVertices2.Add(new VertexPair(newVertex, nearestToNewVertex));        }    }    void Update()    {        if(!Init){            Start();            Init = true;        }        SetSlider(_slider);        if (IsDeforming)        {            Deform();        }    }    public void SetSlider(float slider)    {        _slider = slider;    }    /// &lt;summary&gt;    /// Deform the mesh based on the slider value.    /// &lt;/summary&gt;    private void Deform()    {        if (_slider&lt; 0.5f)        {            _finalVertices = _pairsOfVertices1.Select(p =&gt; Vector3.Lerp(p.Vertex1, p.Vertex2, _slider)).ToList();        }        else        {            _finalVertices = _pairsOfVertices2.Select(p =&gt; Vector3.Lerp(p.Vertex2, p.Vertex1, _slider)).ToList();        }        _interpolatedMesh.Clear();        _interpolatedMesh.SetVertices(_finalVertices);        _interpolatedMesh.triangles = _slider &lt; 0.5f ? _oldTriangles : _newTriangles;        _interpolatedMesh.bounds = _slider &lt; 0.5f ? _oldMesh.bounds : _newMesh.bounds;        _interpolatedMesh.uv = _slider &lt; 0.5f ? _oldMesh.uv : _newMesh.uv;        _interpolatedMesh.uv2 = _slider &lt; 0.5f ? _oldMesh.uv2 : _newMesh.uv2;        _interpolatedMesh.uv3 = _slider &lt; 0.5f ? _oldMesh.uv3 : _newMesh.uv3;        _interpolatedMesh.RecalculateNormals();        _finalMaterial.Lerp(_oldMat, _newMat, _slider);        _finalMaterial.SetTexture(\"_MainTex\", _slider &lt; 0.5f ?_oldMat.GetTexture(\"_MainTex\"): _newMat.GetTexture(\"_MainTex\"));        //_finalMaterial.SetTexture(\"_BumpMap\", _slider &lt; 0.5f ? _oldMat.GetTexture(\"_BumpMap\") : _newMat.GetTexture(\"_BumpMap\"));        //_finalMaterial.SetTexture(\"_MetallicGlossMap\", _slider &lt; 0.5f ? _oldMat.GetTexture(\"_MetallicGlossMap\") : _newMat.GetTexture(\"_MetallicGlossMap\"));        //_finalMaterial.SetTexture(\"_OcclusionMap\", _slider &lt; 0.5f ? _oldMat.GetTexture(\"_OcclusionMap\") : _newMat.GetTexture(\"_OcclusionMap\"));        //_finalMaterial.SetTexture(\"_EmissionMap\", _slider &lt; 0.5f ? _oldMat.GetTexture(\"_EmissionMap\") : _newMat.GetTexture(\"_EmissionMap\"));                _renderer.material = _finalMaterial;    }}"
   },
   
   {
-    "title": "Diffusion 模型",
-    "url": "/posts/diffusion/",
-    "categories": "AI",
-    "tags": "AI",
+    "title": "LoRA",
+    "url": "/posts/lora/",
+    "categories": "AI, Diffusion",
+    "tags": "AI, Diffusion",
     "date": "2021-01-01 00:00:00 +0800",
     
 
@@ -64,8 +115,42 @@
 
 
     
-    "snippet": "傻瓜原理抓一个 diffusion 模型的代码实现来说一说 diffusion 模型的实现。代码完整详见 Link给定一个 (x, y) 的图像，生成一个 (x, y) 的 noise，然后计算 alpha * img(x,y) + beta * noise(x,y), 这个过程叫做加噪声, 因为 noise 是纯随机生成, 所以 noise 的内容可以看作是正态分布的.重复这个加噪声的过程...",
-    "content": "傻瓜原理抓一个 diffusion 模型的代码实现来说一说 diffusion 模型的实现。代码完整详见 Link给定一个 (x, y) 的图像，生成一个 (x, y) 的 noise，然后计算 alpha * img(x,y) + beta * noise(x,y), 这个过程叫做加噪声, 因为 noise 是纯随机生成, 所以 noise 的内容可以看作是正态分布的.重复这个加噪声的过程, 再重复了 n 次之后, 最终的结果会导致 img 的信息全部丧失, 只剩下了 noise现在定义重复 n 次加噪声之后的图像 noiseized-img = noiseize(img, t), 那么原图就是 noiseize(img, 0), 经过 10 次加噪声的图像就是 noiseize(img, 10)现在构建一个模型, 模型的 output 是 N(0,1) 的正态分布, 模型的 input 是 noiseize(img, t), 然后以 model 输出的噪声和 N(0, 1) 的差距作为优化目标, 就得到了 diffusion 模型beta = [0.1, 0.2, 0.3 ... ] def noiseize(img, t, noise = None, depth):    if t == depth:        return img, noise    if noise == None:        noise = torch.randn_like(img)    b = beta[depth]    a = 1 - b    return noiseize(        a * img +  b * noise,         t,         noise,         depth + 1    )# 优化目标def goal(model, img, t):    noiseize_img, noise = noiseize(img, t)    noise_pred = model(img, t)    return F.l1_loss(noiseize_img, noise_pred)其中 beta 数组的每一个元素表示每一次噪声的强度, 只要保证噪声强度随着每一次噪声都逐渐增加即可. 相比较 noiseize 的递归版本, noiseize 可以被优化成beta = [0.1, 0.2, 0.3 ... ] # Pre-calculate different terms for closed formalphas = 1. - betasalphas_cumprod = torch.cumprod(alphas, axis=0)alphas_cumprod_prev = F.pad(alphas_cumprod[:-1], (1, 0), value=1.0)sqrt_recip_alphas = torch.sqrt(1.0 / alphas)sqrt_alphas_cumprod = torch.sqrt(alphas_cumprod)sqrt_one_minus_alphas_cumprod = torch.sqrt(1. - alphas_cumprod)posterior_variance = betas * (1. - alphas_cumprod_prev) / (1. - alphas_cumprod)def noiseize(img, t);    sqrt_alphas_cumprod_t = sqrt_alphas_cumprod[t]    sqrt_one_minus_alphas_cumprod_t = sqrt_one_minus_alphas_cumprod[t]    # mean + variance    return sqrt_alphas_cumprod_t * img + sqrt_one_minus_alphas_cumprod_t * noise, noiseLinkhttps://colab.research.google.com/drive/1sjy9odlSSy0RBVgMTgP7s99NXsqglsUL?usp=sharing#scrollTo=2fUPyJghdoUAhttps://www.youtube.com/watch?v=a4Yfz2FxXiY&amp;t=1274s&amp;ab_channel=DeepFindr"
+    "snippet": "lora",
+    "content": "lora"
+  },
+  
+  {
+    "title": "Diffusion 模型",
+    "url": "/posts/diffusion/",
+    "categories": "AI, Diffusion",
+    "tags": "AI, Diffusion",
+    "date": "2021-01-01 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Diffusion Model（扩散模型）是一种生成模型，用于对高维数据分布进行建模。它最初是由Tieleman和Hinton提出的，其目的是解决一些传统机器学习技术在处理大规模高维数据方面效果不佳的问题。Diffusion Model的核心思想是通过迭代 diffusing（扩散）噪声分布来逐渐逼近目标数据分布。Diffusion Model的一个重要组成部分是Diffusion Proc...",
+    "content": "Diffusion Model（扩散模型）是一种生成模型，用于对高维数据分布进行建模。它最初是由Tieleman和Hinton提出的，其目的是解决一些传统机器学习技术在处理大规模高维数据方面效果不佳的问题。Diffusion Model的核心思想是通过迭代 diffusing（扩散）噪声分布来逐渐逼近目标数据分布。Diffusion Model的一个重要组成部分是Diffusion Process。它从噪声分布开始，每次应用一系列可逆转换（如双向LSTM），每一步都会将噪声“扩散”一段距离到达“目标分布”。最终，Diffusion Process通过多次迭代之后，得到了一个可以近似地表示目标数据分布的随机变量。Diffusion Model主要用于生成高维连续数据，这包括生成图像、音频等数据类型。它具有很强的模型表达能力和生成能力，被广泛应用于计算机视觉、自然语言处理等领域。傻瓜原理抓一个 diffusion 模型的代码实现来说一说 diffusion 模型的实现。代码完整详见 Link给定一个 (x, y) 的图像，生成一个 (x, y) 的 noise，然后计算 alpha * img(x,y) + beta * noise(x,y), 这个过程叫做加噪声, 因为 noise 是纯随机生成, 所以 noise 的内容可以看作是正态分布的.重复这个加噪声的过程, 再重复了 n 次之后, 最终的结果会导致 img 的信息全部丧失, 只剩下了 noise现在定义重复 n 次加噪声之后的图像 noiseized-img = noiseize(img, t), 那么原图就是 noiseize(img, 0), 经过 10 次加噪声的图像就是 noiseize(img, 10)现在构建一个模型, 模型的 output 是 N(0,1) 的正态分布, 模型的 input 是 noiseize(img, t), 然后以 model 输出的噪声和 N(0, 1) 的差距作为优化目标, 就得到了 diffusion 模型beta = [0.1, 0.2, 0.3 ... ] def noiseize(img, t, noise = None, depth):    if t == depth:        return img, noise    if noise == None:        noise = torch.randn_like(img)    b = beta[depth]    a = 1 - b    return noiseize(        a * img +  b * noise,         t,         noise,         depth + 1    )# 优化目标def goal(model, img, t):    noiseize_img, noise = noiseize(img, t)    noise_pred = model(img, t)    return F.l1_loss(noiseize_img, noise_pred)其中 beta 数组的每一个元素表示每一次噪声的强度, 只要保证噪声强度随着每一次噪声都逐渐增加即可. 相比较 noiseize 的递归版本, noiseize 可以被优化成beta = [0.1, 0.2, 0.3 ... ] # Pre-calculate different terms for closed formalphas = 1. - betasalphas_cumprod = torch.cumprod(alphas, axis=0)alphas_cumprod_prev = F.pad(alphas_cumprod[:-1], (1, 0), value=1.0)sqrt_recip_alphas = torch.sqrt(1.0 / alphas)sqrt_alphas_cumprod = torch.sqrt(alphas_cumprod)sqrt_one_minus_alphas_cumprod = torch.sqrt(1. - alphas_cumprod)posterior_variance = betas * (1. - alphas_cumprod_prev) / (1. - alphas_cumprod)def noiseize(img, t);    sqrt_alphas_cumprod_t = sqrt_alphas_cumprod[t]    sqrt_one_minus_alphas_cumprod_t = sqrt_one_minus_alphas_cumprod[t]    # mean + variance    return sqrt_alphas_cumprod_t * img + sqrt_one_minus_alphas_cumprod_t * noise, noiseLinkhttps://colab.research.google.com/drive/1sjy9odlSSy0RBVgMTgP7s99NXsqglsUL?usp=sharing#scrollTo=2fUPyJghdoUAhttps://www.youtube.com/watch?v=a4Yfz2FxXiY&amp;t=1274s&amp;ab_channel=DeepFindr"
+  },
+  
+  {
+    "title": "Deferred Shading",
+    "url": "/posts/deferred-shading/",
+    "categories": "AI, Game",
+    "tags": "GL, Game",
+    "date": "2021-01-01 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Deferred shading和Forward shading是两种3D图形渲染技术。在Forward shading中，所有物体都将进行逐像素着色，所以它直接使用几何中的信息。每个像素都被处理，以确定它是最终图像中的颜色。Forward shading的主要优点是它在实时渲染方面的速度非常快，但缺点是它在真正大型场景中的效率可能会下降。相比而言，Deferred shading只需要对每...",
+    "content": "Deferred shading和Forward shading是两种3D图形渲染技术。在Forward shading中，所有物体都将进行逐像素着色，所以它直接使用几何中的信息。每个像素都被处理，以确定它是最终图像中的颜色。Forward shading的主要优点是它在实时渲染方面的速度非常快，但缺点是它在真正大型场景中的效率可能会下降。相比而言，Deferred shading只需要对每个像素一个基本的几何信息。这个g-buffer包含了几何信息如深度、法线和材质信息，后续的lighting和shading处理是针对每个像素的各种属性，而不是基本几何信息。Deferred shading可以实现大型场景下实时渲染，并且因为不需要对每个物体都进行逐像素着色，因此它可以使用非常大的照明数据集，而且不会影响性能。不过，Deferred shading需要比Forward shading更多的内存，并有需要创建额外Render pass的额外开销。以下是示例（出自Unity官方文档）：在Deferred Shading中，几何渲染到GBuffer中，然后照明和材质计算在延迟阶段进行：Geometry Pass:Render scene geometry to GBuffer-Depth-Normal-Albedo-Specular/Metallic (packed into Alpha)Lighting Pass:For each light:-Render light geometry to the stencil buffer (where the light is)-Add light contribution to light accumulation buffer (with stencil mask)在Forward Shading中，对于每个像素，直接使用自身的几何信息，对其进行光照和材质渲染。Per-pixel RenderingFor each light:-Render scene geometry-Compute diffuse and specular light contribution for each light -Combine light contribution within shaderGeometry Pass#version 330 corelayout (location = 0) in vec3 aPos;layout (location = 1) in vec3 aNormal;layout (location = 2) in vec2 aTexCoords;out vec3 FragPos;out vec2 TexCoords;out vec3 Normal;uniform mat4 model;uniform mat4 view;uniform mat4 projection;void main(){    vec4 worldPos = model * vec4(aPos, 1.0);    FragPos = worldPos.xyz;     TexCoords = aTexCoords;        mat3 normalMatrix = transpose(inverse(mat3(model)));    Normal = normalMatrix * aNormal;    gl_Position = projection * view * worldPos;}#version 330 corelayout (location = 0) out vec3 gPosition;layout (location = 1) out vec3 gNormal;layout (location = 2) out vec4 gAlbedoSpec;in vec2 TexCoords;in vec3 FragPos;in vec3 Normal;uniform sampler2D texture_diffuse1;uniform sampler2D texture_specular1;void main(){        // store the fragment position vector in the first gbuffer texture    gPosition = FragPos;    // also store the per-fragment normals into the gbuffer    gNormal = normalize(Normal);    // and the diffuse per-fragment color    gAlbedoSpec.rgb = texture(texture_diffuse1, TexCoords).rgb;    // store specular intensity in gAlbedoSpec's alpha component    gAlbedoSpec.a = texture(texture_specular1, TexCoords).r;}Lighting Pass#version 330 corelayout (location = 0) in vec3 aPos;layout (location = 1) in vec2 aTexCoords;out vec2 TexCoords;void main(){    TexCoords = aTexCoords;    gl_Position = vec4(aPos, 1.0);}#version 330 coreout vec4 FragColor;in vec2 TexCoords;uniform sampler2D gPosition;uniform sampler2D gNormal;uniform sampler2D gAlbedoSpec;struct Light {    vec3 Position;    vec3 Color;        float Linear;    float Quadratic;};const int NR_LIGHTS = 32;uniform Light lights[NR_LIGHTS];uniform vec3 viewPos;void main(){                 // retrieve data from gbuffer    vec3 FragPos = texture(gPosition, TexCoords).rgb;    vec3 Normal = texture(gNormal, TexCoords).rgb;    vec3 Diffuse = texture(gAlbedoSpec, TexCoords).rgb;    float Specular = texture(gAlbedoSpec, TexCoords).a;        // then calculate lighting as usual    vec3 lighting  = Diffuse * 0.1; // hard-coded ambient component    vec3 viewDir  = normalize(viewPos - FragPos);    for(int i = 0; i &lt; NR_LIGHTS; ++i)    {        // diffuse        vec3 lightDir = normalize(lights[i].Position - FragPos);        vec3 diffuse = max(dot(Normal, lightDir), 0.0) * Diffuse * lights[i].Color;        // specular        vec3 halfwayDir = normalize(lightDir + viewDir);          float spec = pow(max(dot(Normal, halfwayDir), 0.0), 16.0);        vec3 specular = lights[i].Color * spec * Specular;        // attenuation        float distance = length(lights[i].Position - FragPos);        float attenuation = 1.0 / (1.0 + lights[i].Linear * distance + lights[i].Quadratic * distance * distance);        diffuse *= attenuation;        specular *= attenuation;        lighting += diffuse + specular;            }    FragColor = vec4(lighting, 1.0);}"
   }
   
 ]
