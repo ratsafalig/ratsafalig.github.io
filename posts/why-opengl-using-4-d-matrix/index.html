@@ -36,25 +36,25 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Diffusion 模型" />
+<meta property="og:title" content="OpenGL 矩阵" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Diffusion Model（扩散模型）是一种生成模型，用于对高维数据分布进行建模。它最初是由Tieleman和Hinton提出的，其目的是解决一些传统机器学习技术在处理大规模高维数据方面效果不佳的问题。Diffusion Model的核心思想是通过迭代 diffusing（扩散）噪声分布来逐渐逼近目标数据分布。" />
-<meta property="og:description" content="Diffusion Model（扩散模型）是一种生成模型，用于对高维数据分布进行建模。它最初是由Tieleman和Hinton提出的，其目的是解决一些传统机器学习技术在处理大规模高维数据方面效果不佳的问题。Diffusion Model的核心思想是通过迭代 diffusing（扩散）噪声分布来逐渐逼近目标数据分布。" />
-<link rel="canonical" href="http://localhost:4000/posts/diffusion/" />
-<meta property="og:url" content="http://localhost:4000/posts/diffusion/" />
+<meta name="description" content="正常情况下 3 * 3 矩阵已经足够表现 3d 空间内的线性变换 但线性变换有两个前提" />
+<meta property="og:description" content="正常情况下 3 * 3 矩阵已经足够表现 3d 空间内的线性变换 但线性变换有两个前提" />
+<link rel="canonical" href="http://localhost:4000/posts/why-opengl-using-4-d-matrix/" />
+<meta property="og:url" content="http://localhost:4000/posts/why-opengl-using-4-d-matrix/" />
 <meta property="og:site_name" content="航" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-01-01T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Diffusion 模型" />
+<meta property="twitter:title" content="OpenGL 矩阵" />
 <meta name="twitter:site" content="@ratsafalig" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-01-01T00:00:00+08:00","datePublished":"2021-01-01T00:00:00+08:00","description":"Diffusion Model（扩散模型）是一种生成模型，用于对高维数据分布进行建模。它最初是由Tieleman和Hinton提出的，其目的是解决一些传统机器学习技术在处理大规模高维数据方面效果不佳的问题。Diffusion Model的核心思想是通过迭代 diffusing（扩散）噪声分布来逐渐逼近目标数据分布。","headline":"Diffusion 模型","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/diffusion/"},"url":"http://localhost:4000/posts/diffusion/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-01-01T00:00:00+08:00","datePublished":"2021-01-01T00:00:00+08:00","description":"正常情况下 3 * 3 矩阵已经足够表现 3d 空间内的线性变换 但线性变换有两个前提","headline":"OpenGL 矩阵","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/why-opengl-using-4-d-matrix/"},"url":"http://localhost:4000/posts/why-opengl-using-4-d-matrix/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>Diffusion 模型 | 航
+  <title>OpenGL 矩阵 | 航
   </title>
 
   <!--
@@ -454,7 +454,7 @@
         
 
           
-            <span>Diffusion 模型</span>
+            <span>OpenGL 矩阵</span>
           
 
         
@@ -531,6 +531,159 @@
 
 
 
+  
+  
+
+  <!-- CDN URL -->
+  
+
+  <!-- Add image path -->
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    <!-- make sure the `<img>` is wrapped by `<a>` -->
+    
+
+    
+      <!-- create the image wrapper -->
+      
+    
+
+    <!-- combine -->
+    
+
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    <!-- make sure the `<img>` is wrapped by `<a>` -->
+    
+
+    
+      <!-- create the image wrapper -->
+      
+    
+
+    <!-- combine -->
+    
+
+  
+
+  
+
+
 
 <!-- Add header for code snippets -->
 
@@ -567,7 +720,7 @@
 
 <!-- return -->
 
-<h1 data-toc-skip>Diffusion 模型</h1>
+<h1 data-toc-skip>OpenGL 矩阵</h1>
 
 <div class="post-meta text-muted">
     <!-- published date -->
@@ -634,8 +787,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="779 words">
-  <em>4 min</em> read</span>
+  title="492 words">
+  <em>2 min</em> read</span>
 
     </div>
 
@@ -644,26 +797,68 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <p>Diffusion Model（扩散模型）是一种生成模型，用于对高维数据分布进行建模。它最初是由Tieleman和Hinton提出的，其目的是解决一些传统机器学习技术在处理大规模高维数据方面效果不佳的问题。Diffusion Model的核心思想是通过迭代 diffusing（扩散）噪声分布来逐渐逼近目标数据分布。</p>
+  <p>正常情况下 3 * 3 矩阵已经足够表现 3d 空间内的线性变换<br />
+但线性变换有两个前提</p>
 
-<p>Diffusion Model的一个重要组成部分是Diffusion Process。它从噪声分布开始，每次应用一系列可逆转换（如双向LSTM），每一步都会将噪声“扩散”一段距离到达“目标分布”。最终，Diffusion Process通过多次迭代之后，得到了一个可以近似地表示目标数据分布的随机变量。</p>
+<ol>
+  <li>原点在线性变换后还是原点</li>
+  <li>任何直线在线性变换后还是直线</li>
+</ol>
 
-<p>Diffusion Model主要用于生成高维连续数据，这包括生成图像、音频等数据类型。它具有很强的模型表达能力和生成能力，被广泛应用于计算机视觉、自然语言处理等领域。</p>
+<p>但 opengl 不仅仅需要线性变换, 比如</p>
 
-<h1 id="傻瓜原理">傻瓜原理</h1>
+<ol>
+  <li>平移变换</li>
+  <li>投影变换</li>
+  <li>旋转变换</li>
+</ol>
 
-<p>抓一个 diffusion 模型的代码实现来说一说 diffusion 模型的实现。代码完整详见 <a href="#link">Link</a></p>
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>[ 1, 0, 0, x ]
+[ 0, 1, 0, y ]
+[ 0, 0, 1, z ]
+[ 0, 0, 0, 1 ]
 
-<p>给定一个 (x, y) 的图像，生成一个 (x, y) 的 noise，然后计算 alpha * img(x,y) + beta * noise(x,y), 这个过程叫做加噪声, 因为 noise 是纯随机生成, 所以 noise 的内容可以看作是正态分布的.</p>
+矩阵将坐标平移 (x, y, z)  
+</pre></td></tr></tbody></table></code></div></div>
 
-<p>重复这个加噪声的过程, 再重复了 n 次之后, 最终的结果会导致 img 的信息全部丧失, 只剩下了 noise</p>
+<p>所以需要定义第四个分量 w ( 齐次坐标 ),<br />
+当 w != 1 的时候, 需要将向量 / w</p>
 
-<p>现在定义重复 n 次加噪声之后的图像 noiseized-img = noiseize(img, t), 那么原图就是 noiseize(img, 0), 经过 10 次加噪声的图像就是 noiseize(img, 10)</p>
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>(x*w, y*w, z*w, w) / w = (x, y, z, 1)  
+</pre></td></tr></tbody></table></code></div></div>
 
-<p>现在构建一个模型, 模型的 output 是 N(0,1) 的正态分布, 模型的 input 是 noiseize(img, t), 然后以 model 输出的噪声和 N(0, 1) 的差距作为优化目标, 就得到了 diffusion 模型</p>
+<h1 id="mvp-矩阵">MVP 矩阵</h1>
 
-<div class="language-py highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code small"></i></span>
+<p>在 opengl 里有几个坐标系</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>model pos: 模型建模的坐标  
+world pos: 模型在世界里的位置坐标
+camera pos: 玩家眼睛的位置
+view dir: 玩家眼睛看向的方向  
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>所以把一个物体 ( model ) 转换到屏幕上需要做几次坐标转换<br />
+这个坐标转换的过程通过乘以一个 MVP ( model view projection ) 矩阵来达到</p>
+
+<div class="language-glsl highlighter-rouge"><div class="code-header">
+        <span data-label-text="Glsl"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -671,108 +866,48 @@
 5
 6
 7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-</pre></td><td class="rouge-code"><pre><span class="n">beta</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span> <span class="p">...</span> <span class="p">]</span> 
-
-<span class="k">def</span> <span class="nf">noiseize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">noise</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">depth</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">t</span> <span class="o">==</span> <span class="n">depth</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">img</span><span class="p">,</span> <span class="n">noise</span>
-    <span class="k">if</span> <span class="n">noise</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
-        <span class="n">noise</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">randn_like</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-
-    <span class="n">b</span> <span class="o">=</span> <span class="n">beta</span><span class="p">[</span><span class="n">depth</span><span class="p">]</span>
-
-    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">b</span>
-
-    <span class="k">return</span> <span class="nf">noiseize</span><span class="p">(</span>
-        <span class="n">a</span> <span class="o">*</span> <span class="n">img</span> <span class="o">+</span>  <span class="n">b</span> <span class="o">*</span> <span class="n">noise</span><span class="p">,</span> 
-        <span class="n">t</span><span class="p">,</span> 
-        <span class="n">noise</span><span class="p">,</span> 
-        <span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="p">)</span>
-
-<span class="c1"># 优化目标
-</span><span class="k">def</span> <span class="nf">goal</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
-    <span class="n">noiseize_img</span><span class="p">,</span> <span class="n">noise</span> <span class="o">=</span> <span class="nf">noiseize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
-    <span class="n">noise_pred</span> <span class="o">=</span> <span class="nf">model</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">F</span><span class="p">.</span><span class="nf">l1_loss</span><span class="p">(</span><span class="n">noiseize_img</span><span class="p">,</span> <span class="n">noise_pred</span><span class="p">)</span>
+</pre></td><td class="rouge-code"><pre><span class="c1">// position 模型坐标变换</span>
+<span class="c1">// model 世界坐标变换</span>
+<span class="c1">// view 摄像机坐标变换</span>
+<span class="c1">// proj 投影矩阵</span>
+<span class="kt">void</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nb">gl_Position</span> <span class="o">=</span> <span class="n">proj</span> <span class="o">*</span> <span class="n">view</span> <span class="o">*</span> <span class="n">model</span> <span class="o">*</span> <span class="kt">vec4</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>其中 beta 数组的每一个元素表示每一次噪声的强度, 只要保证噪声强度随着每一次噪声都逐渐增加即可. 相比较 noiseize 的递归版本, noiseize 可以被优化成</p>
+<h1 id="model-matrix">Model Matrix</h1>
 
-<div class="language-py highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-</pre></td><td class="rouge-code"><pre><span class="n">beta</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span> <span class="p">...</span> <span class="p">]</span> 
+<p>model 矩阵可以通过简单的坐标转换得到</p>
 
-<span class="c1"># Pre-calculate different terms for closed form
-</span><span class="n">alphas</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">-</span> <span class="n">betas</span>
+<h1 id="view-matrix">View Matrix</h1>
 
-<span class="n">alphas_cumprod</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">cumprod</span><span class="p">(</span><span class="n">alphas</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<p>view 矩阵需要 camera 的位置和 view-dir来计算 (实际上还需要一个 up 向量, 来标识 camera 的 z 轴是哪个方向)<br />
+up 向量和 view-dir 是新坐标系的 z, x 轴, camera-pos 是新坐标系的原点<br />
+所以 view 矩阵是一个坐标轴变换 + 旋转的矩阵</p>
 
-<span class="n">alphas_cumprod_prev</span> <span class="o">=</span> <span class="n">F</span><span class="p">.</span><span class="nf">pad</span><span class="p">(</span><span class="n">alphas_cumprod</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<h1 id="projection-matrix">Projection Matrix</h1>
 
-<span class="n">sqrt_recip_alphas</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">alphas</span><span class="p">)</span>
+<p>projection 矩阵把 camera 投影到屏幕空间</p>
 
-<span class="n">sqrt_alphas_cumprod</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">alphas_cumprod</span><span class="p">)</span>
+<p>取决于投影方式, 投影方式有 透视投影 和 正交投影</p>
 
-<span class="n">sqrt_one_minus_alphas_cumprod</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="mf">1.</span> <span class="o">-</span> <span class="n">alphas_cumprod</span><span class="p">)</span>
+<p><a href="/assets/img/2021-01-01-why-opengl-using-4-d-matrix/perspective.png" class="popup img-link "><img data-src="/assets/img/2021-01-01-why-opengl-using-4-d-matrix/perspective.png" alt="" class="lazyload" data-proofer-ignore></a></p>
 
-<span class="n">posterior_variance</span> <span class="o">=</span> <span class="n">betas</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">-</span> <span class="n">alphas_cumprod_prev</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">-</span> <span class="n">alphas_cumprod</span><span class="p">)</span>
+<p><a href="/assets/img/2021-01-01-why-opengl-using-4-d-matrix/orth.png" class="popup img-link "><img data-src="/assets/img/2021-01-01-why-opengl-using-4-d-matrix/orth.png" alt="" class="lazyload" data-proofer-ignore></a></p>
 
-<span class="k">def</span> <span class="nf">noiseize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">t</span><span class="p">);</span>
-    <span class="n">sqrt_alphas_cumprod_t</span> <span class="o">=</span> <span class="n">sqrt_alphas_cumprod</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
-
-    <span class="n">sqrt_one_minus_alphas_cumprod_t</span> <span class="o">=</span> <span class="n">sqrt_one_minus_alphas_cumprod</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
-
-    <span class="c1"># mean + variance
-</span>    <span class="k">return</span> <span class="n">sqrt_alphas_cumprod_t</span> <span class="o">*</span> <span class="n">img</span> <span class="o">+</span> <span class="n">sqrt_one_minus_alphas_cumprod_t</span> <span class="o">*</span> <span class="n">noise</span><span class="p">,</span> <span class="n">noise</span>
-</pre></td></tr></tbody></table></code></div></div>
+<p>project 矩阵的构造方法详见 Link</p>
 
 <h1 id="link">Link</h1>
 
-<p><a href="https://colab.research.google.com/drive/1sjy9odlSSy0RBVgMTgP7s99NXsqglsUL?usp=sharing#scrollTo=2fUPyJghdoUA">https://colab.research.google.com/drive/1sjy9odlSSy0RBVgMTgP7s99NXsqglsUL?usp=sharing#scrollTo=2fUPyJghdoUA</a></p>
+<p><a href="http://www.opengl-tutorial.org/beginners-tutorials/tutorial-3-matrices/">tutorial-3-matrices</a></p>
 
-<p><a href="https://www.youtube.com/watch?v=a4Yfz2FxXiY&amp;t=1274s&amp;ab_channel=DeepFindr">https://www.youtube.com/watch?v=a4Yfz2FxXiY&amp;t=1274s&amp;ab_channel=DeepFindr</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/65969162">NDC</a></p>
+
+<p><a href="https://www.zhihu.com/tardis/zm/art/73034007?source_id=1003">投影矩阵</a></p>
+
+<p><a href="https://gamedev.stackexchange.com/questions/186226/understanding-screen-position-node-in-unity-shader-graph">understanding-screen-position-node-in-unity-shader-graph</a></p>
+
+<p><a href="https://www.scratchapixel.com/lessons/3d-basic-rendering/perspective-and-orthographic-projection-matrix/opengl-perspective-projection-matrix.html">opengl-perspective-projection-matrix</a></p>
 
 </div>
 
@@ -780,24 +915,17 @@
 
   <!-- categories -->
   
-  <div class="post-meta mb-3">
-    <i class="far fa-folder-open fa-fw mr-1"></i>
-    
-      <a href='/categories/ai/'>AI</a>,
-      <a href='/categories/diffusion/'>Diffusion</a>
-  </div>
-  
 
   <!-- tags -->
   
   <div class="post-tags">
     <i class="fa fa-tags fa-fw mr-1"></i>
       
-      <a href="/tags/ai/"
-          class="post-tag no-text-decoration" >AI</a>
+      <a href="/tags/gl/"
+          class="post-tag no-text-decoration" >GL</a>
       
-      <a href="/tags/diffusion/"
-          class="post-tag no-text-decoration" >Diffusion</a>
+      <a href="/tags/game/"
+          class="post-tag no-text-decoration" >Game</a>
       
   </div>
   
@@ -832,19 +960,19 @@
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=Diffusion%20%E6%A8%A1%E5%9E%8B%20-%20%E8%88%AA&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fdiffusion%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=OpenGL%20%E7%9F%A9%E9%98%B5%20-%20%E8%88%AA&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fwhy-opengl-using-4-d-matrix%2F" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=Diffusion%20%E6%A8%A1%E5%9E%8B%20-%20%E8%88%AA&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fdiffusion%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=OpenGL%20%E7%9F%A9%E9%98%B5%20-%20%E8%88%AA&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fwhy-opengl-using-4-d-matrix%2F" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fdiffusion%2F&text=Diffusion%20%E6%A8%A1%E5%9E%8B%20-%20%E8%88%AA" data-toggle="tooltip" data-placement="top"
+        <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fwhy-opengl-using-4-d-matrix%2F&text=OpenGL%20%E7%9F%A9%E9%98%B5%20-%20%E8%88%AA" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -1251,124 +1379,124 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -1392,6 +1520,19 @@
 
 
 
+  
+    
+    
+  
+    
+    
+      
+      
+        
+        
+        
+          
+
 
 
   <div id="related-posts" class="mb-2 mb-sm-4">
@@ -1402,7 +1543,7 @@
       
       
       <div class="card">
-        <a href="/posts/lora/">
+        <a href="/posts/shaderlab/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1420,7 +1561,7 @@
   Jan  1, 2021
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>LoRA</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>ShaderLab</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1429,8 +1570,16 @@
 
 
 
-                lora
+                Shader &quot;&amp;lt;name&amp;gt;&quot;
+{
+    &amp;lt;optional: Material properties&amp;gt;
+    &amp;lt;One or more SubShader definitions&amp;gt;
+    &amp;lt;optional: custom editor&amp;gt;
+    &amp;lt;optional: fallback&amp;gt;
+} 
 
+
+Signature	Fun...
               </p>
             </div>
           </div>
@@ -1440,7 +1589,7 @@
       
       
       <div class="card">
-        <a href="/posts/stable-diffusion-webui/">
+        <a href="/posts/deferred-shading/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1458,7 +1607,7 @@
   Jan  1, 2021
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Stable Diffusion Webui</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Deferred Shading</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1467,20 +1616,11 @@
 
 
 
-                Link
+                Deferred shading和Forward shading是两种3D图形渲染技术。
 
-mixture-of-diffusers
+在Forward shading中，所有物体都将进行逐像素着色，所以它直接使用几何中的信息。每个像素都被处理，以确定它是最终图像中的颜色。Forward shading的主要优点是它在实时渲染方面的速度非常快，但缺点是它在真正大型场景中的效率可能会下降。
 
-multidiffusion-upscaler-for-automatic1111
-
-sd-webui-controlnet
-
-stable-diffusion-webui
-
-multidiffusion
-
-how-stable-diffusion-work
-
+相比而言，Deferred shading只...
               </p>
             </div>
           </div>
@@ -1490,7 +1630,7 @@ how-stable-diffusion-work
       
       
       <div class="card">
-        <a href="/posts/transformer/">
+        <a href="/posts/wave-function-collapse/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1508,7 +1648,7 @@ how-stable-diffusion-work
   Jan  1, 2021
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Transformer</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>波函数塌缩算法 (Wave Function Collapse)</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1517,9 +1657,32 @@ how-stable-diffusion-work
 
 
 
-                Transformer 模型是一种用于自然语言处理的深度学习模型，其基本思想是引入了 self-attention 机制来解决传统的 RNN 和 CNN 模型在文本长度较长时的信息传递困难的问题。
+                实际上是只是一个启发式算法。
 
-Transformer 模型中主要包含了 Encoder 和 Decoder 两个部分，Encoder 作用是将输入的文本转换为一个语义空间的向量表示，Decoder 则将 Encoder 的输...
+演示
+
+给定几个 tile，和 tile 之间的拼接规则，生成一张地图
+
+
+
+
+
+
+
+
+
+
+
+
+
+原理
+
+cell.py
+
+
+# --------------------------------------------------------------------------------- #
+# required libraries
+import pyga...
               </p>
             </div>
           </div>
@@ -1538,17 +1701,17 @@ Transformer 模型中主要包含了 Encoder 和 Decoder 两个部分，Encoder 
 
 <div class="post-navigation d-flex justify-content-between">
   
-  <a href="/posts/deferred-shading/" class="btn btn-outline-primary"
+  <a href="/posts/wave-function-collapse/" class="btn btn-outline-primary"
     prompt="Older">
-    <p>Deferred Shading</p>
+    <p>波函数塌缩算法 (Wave Function Collapse)</p>
   </a>
   
 
   
-  <a href="/posts/lora/" class="btn btn-outline-primary"
+  <div class="btn btn-outline-primary disabled"
     prompt="Newer">
-    <p>LoRA</p>
-  </a>
+    <p>-</p>
+  </div>
   
 
 </div>

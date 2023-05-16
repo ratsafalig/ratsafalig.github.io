@@ -49,7 +49,7 @@
 <meta property="twitter:title" content="Deferred Shading" />
 <meta name="twitter:site" content="@ratsafalig" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-01-01T00:00:00+08:00","datePublished":"2021-01-01T00:00:00+08:00","description":"Deferred shading和Forward shading是两种3D图形渲染技术。","headline":"Deferred Shading","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/deferred-shading/"},"url":"http://localhost:4000/posts/deferred-shading/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-09T13:11:19+08:00","datePublished":"2021-01-01T00:00:00+08:00","description":"Deferred shading和Forward shading是两种3D图形渲染技术。","headline":"Deferred Shading","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/deferred-shading/"},"url":"http://localhost:4000/posts/deferred-shading/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -593,6 +593,26 @@
 
     <!-- lastmod date -->
     
+    <span>
+      Updated
+      <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1683609079"
+    data-df="ll"
+    data-toggle="tooltip" data-placement="bottom">
+  May  9, 2023
+</em>
+
+    </span>
+    
 
   
 
@@ -1057,6 +1077,11 @@ For each light:
         
         
         
+      <li><a href="/posts/deferred-shading/">Deferred Shading</a></li>
+      
+        
+        
+        
       <li><a href="/posts/morphing/">渐进 Mesh 形变</a></li>
       
         
@@ -1128,49 +1153,6 @@ For each light:
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1187,11 +1169,6 @@ For each light:
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -1235,6 +1212,30 @@ For each light:
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1246,6 +1247,74 @@ For each light:
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1284,19 +1353,22 @@ For each light:
       <a class="post-tag" href="/tags/diffusion/">Diffusion</a>
     
       
-      <a class="post-tag" href="/tags/algorithm/">Algorithm</a>
-    
-      
       <a class="post-tag" href="/tags/game/">Game</a>
     
       
       <a class="post-tag" href="/tags/gl/">GL</a>
     
       
+      <a class="post-tag" href="/tags/algorithm/">Algorithm</a>
+    
+      
       <a class="post-tag" href="/tags/shader/">Shader</a>
     
       
       <a class="post-tag" href="/tags/transformer/">Transformer</a>
+    
+      
+      <a class="post-tag" href="/tags/unity/">Unity</a>
     
 
     </div>
@@ -1461,6 +1533,32 @@ For each light:
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
 
 
@@ -1478,6 +1576,120 @@ For each light:
     <h3 class="pt-2 mb-4 ml-1"
       data-toc-skip>Further Reading</h3>
     <div class="card-deck mb-4">
+    
+      
+      
+      <div class="card">
+        <a href="/posts/why-opengl-using-4-d-matrix/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1609430400"
+    data-df="ll"
+    >
+  Jan  1, 2021
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>OpenGL 矩阵</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                正常情况下 3 * 3 矩阵已经足够表现 3d 空间内的线性变换
+但线性变换有两个前提
+
+
+  原点在线性变换后还是原点
+  任何直线在线性变换后还是直线
+
+
+但 opengl 不仅仅需要线性变换, 比如
+
+
+  平移变换
+  投影变换
+  旋转变换
+
+
+1
+2
+3
+4
+5
+6
+[ 1, 0, 0, x ]
+[ 0, 1, 0, y ]
+[ 0, 0, 1, z ]
+[ 0, 0, 0, 1...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/shaderlab/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1609430400"
+    data-df="ll"
+    >
+  Jan  1, 2021
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>ShaderLab</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                1
+2
+3
+4
+5
+6
+7
+Shader &quot;&amp;lt;name&amp;gt;&quot;
+{
+    &amp;lt;optional: Material properties&amp;gt;
+    &amp;lt;One or more SubShader definitions&amp;gt;
+    &amp;lt;optional: custom editor&amp;gt;
+    &amp;lt;optional: fallback&amp;gt;
+} 
+
+...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
     
       
       
@@ -1512,94 +1724,6 @@ For each light:
                 Diffusion Model（扩散模型）是一种生成模型，用于对高维数据分布进行建模。它最初是由Tieleman和Hinton提出的，其目的是解决一些传统机器学习技术在处理大规模高维数据方面效果不佳的问题。Diffusion Model的核心思想是通过迭代 diffusing（扩散）噪声分布来逐渐逼近目标数据分布。
 
 Diffusion Model的一个重要组成部分是Diffusion Pr...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/lora/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1609430400"
-    data-df="ll"
-    >
-  Jan  1, 2021
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>LoRA</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                lora
-
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/stable-diffusion-webui/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1609430400"
-    data-df="ll"
-    >
-  Jan  1, 2021
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Stable Diffusion Webui</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                Link
-
-mixture-of-diffusers
-
-multidiffusion-upscaler-for-automatic1111
-
-sd-webui-controlnet
-
-stable-diffusion-webui
-
-multidiffusion
-
-how-stable-diffusion-work
-
               </p>
             </div>
           </div>
@@ -1705,49 +1829,6 @@ how-stable-diffusion-work
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1764,11 +1845,6 @@ how-stable-diffusion-work
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -1812,6 +1888,30 @@ how-stable-diffusion-work
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1823,6 +1923,74 @@ how-stable-diffusion-work
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1861,19 +2029,22 @@ how-stable-diffusion-work
       <a class="post-tag" href="/tags/diffusion/">Diffusion</a>
     
       
-      <a class="post-tag" href="/tags/algorithm/">Algorithm</a>
-    
-      
       <a class="post-tag" href="/tags/game/">Game</a>
     
       
       <a class="post-tag" href="/tags/gl/">GL</a>
     
       
+      <a class="post-tag" href="/tags/algorithm/">Algorithm</a>
+    
+      
       <a class="post-tag" href="/tags/shader/">Shader</a>
     
       
       <a class="post-tag" href="/tags/transformer/">Transformer</a>
+    
+      
+      <a class="post-tag" href="/tags/unity/">Unity</a>
     
 
     </div>

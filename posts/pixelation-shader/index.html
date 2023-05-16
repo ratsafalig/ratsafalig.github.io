@@ -1528,6 +1528,11 @@
         
         
         
+      <li><a href="/posts/deferred-shading/">Deferred Shading</a></li>
+      
+        
+        
+        
       <li><a href="/posts/morphing/">渐进 Mesh 形变</a></li>
       
         
@@ -1599,49 +1604,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1658,11 +1620,6 @@
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -1706,6 +1663,30 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1717,6 +1698,74 @@
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1755,19 +1804,22 @@
       <a class="post-tag" href="/tags/diffusion/">Diffusion</a>
     
       
-      <a class="post-tag" href="/tags/algorithm/">Algorithm</a>
-    
-      
       <a class="post-tag" href="/tags/game/">Game</a>
     
       
       <a class="post-tag" href="/tags/gl/">GL</a>
     
       
+      <a class="post-tag" href="/tags/algorithm/">Algorithm</a>
+    
+      
       <a class="post-tag" href="/tags/shader/">Shader</a>
     
       
       <a class="post-tag" href="/tags/transformer/">Transformer</a>
+    
+      
+      <a class="post-tag" href="/tags/unity/">Unity</a>
     
 
     </div>
@@ -1823,6 +1875,32 @@
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -1983,6 +2061,68 @@
       
       
       <div class="card">
+        <a href="/posts/why-opengl-using-4-d-matrix/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1609430400"
+    data-df="ll"
+    >
+  Jan  1, 2021
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>OpenGL 矩阵</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                正常情况下 3 * 3 矩阵已经足够表现 3d 空间内的线性变换
+但线性变换有两个前提
+
+
+  原点在线性变换后还是原点
+  任何直线在线性变换后还是直线
+
+
+但 opengl 不仅仅需要线性变换, 比如
+
+
+  平移变换
+  投影变换
+  旋转变换
+
+
+1
+2
+3
+4
+5
+6
+[ 1, 0, 0, x ]
+[ 0, 1, 0, y ]
+[ 0, 0, 1, z ]
+[ 0, 0, 0, 1...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
         <a href="/posts/wave-function-collapse/">
           <div class="card-body">
             <!--
@@ -2030,10 +2170,52 @@
 
 原理
 
+cell.py
+
 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
 
-
-
+#...
               </p>
             </div>
           </div>
@@ -2079,44 +2261,6 @@ Transformer 模型中主要包含了 Encoder 和 Decoder 两个部分，Encoder 
         </a>
       </div>
     
-      
-      
-      <div class="card">
-        <a href="/posts/textual-inversion/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1609430400"
-    data-df="ll"
-    >
-  Jan  1, 2021
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Textual Inversion</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                
-
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
     </div> <!-- .card-deck -->
   </div> <!-- #related-posts -->
 
@@ -2136,9 +2280,9 @@ Transformer 模型中主要包含了 Encoder 和 Decoder 两个部分，Encoder 
   
 
   
-  <a href="/posts/stable-diffusion-webui/" class="btn btn-outline-primary"
+  <a href="/posts/shaderlab/" class="btn btn-outline-primary"
     prompt="Newer">
-    <p>Stable Diffusion Webui</p>
+    <p>ShaderLab</p>
   </a>
   
 
@@ -2216,49 +2360,6 @@ Transformer 模型中主要包含了 Encoder 和 Decoder 两个部分，Encoder 
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2275,11 +2376,6 @@ Transformer 模型中主要包含了 Encoder 和 Decoder 两个部分，Encoder 
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -2323,6 +2419,30 @@ Transformer 模型中主要包含了 Encoder 和 Decoder 两个部分，Encoder 
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2334,6 +2454,74 @@ Transformer 模型中主要包含了 Encoder 和 Decoder 两个部分，Encoder 
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2372,19 +2560,22 @@ Transformer 模型中主要包含了 Encoder 和 Decoder 两个部分，Encoder 
       <a class="post-tag" href="/tags/diffusion/">Diffusion</a>
     
       
-      <a class="post-tag" href="/tags/algorithm/">Algorithm</a>
-    
-      
       <a class="post-tag" href="/tags/game/">Game</a>
     
       
       <a class="post-tag" href="/tags/gl/">GL</a>
     
       
+      <a class="post-tag" href="/tags/algorithm/">Algorithm</a>
+    
+      
       <a class="post-tag" href="/tags/shader/">Shader</a>
     
       
       <a class="post-tag" href="/tags/transformer/">Transformer</a>
+    
+      
+      <a class="post-tag" href="/tags/unity/">Unity</a>
     
 
     </div>
