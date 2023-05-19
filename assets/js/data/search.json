@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "AI 生成动画",
+    "url": "/posts/ai-animation/",
+    "categories": "AI, Game",
+    "tags": "AI, Game",
+    "date": "2023-05-19 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "工具checkpoints: delibrate_v2.safetensorslora: Small_Monstersv2textual inversion: mechasoulallhttps://www.remove.bg/zh/upload流程第一步prompt 是 mantis  mechasoulall &lt;lora:Small_Mostersv2:1&gt; 用 contro...",
+    "content": "工具checkpoints: delibrate_v2.safetensorslora: Small_Monstersv2textual inversion: mechasoulallhttps://www.remove.bg/zh/upload流程第一步prompt 是 mantis  mechasoulall &lt;lora:Small_Mostersv2:1&gt; 用 controlnet 参数这一步生成的结果如下controlnet 使用的基准图是这张图也是拿AI生成的, 或者也可以直接上网搜一个第二步把图传到 image2image, 找一张合适的 pose, 用 openpose controlnet 生成动画的开始帧数因为我要做一个格斗动画, 所以我使用了侧面站立的图使用的 prompt 还是 mantis  mechasoulall &lt;lora:Small_Mostersv2:1&gt;使用的 controlnet 参数这一步得到的图像是这个大概是我想要的开始帧数动作, 下载下来图片, 去掉背景, 得到  ( 这里我换了一张图片, 也是AI生成的 )第三步把无背景的图片上传到 inpaint, 看到上面去掉背景的图少了手臂, 重绘一下手臂.这一步不要 controlnet, prompt 还是一样 mantis  mechasoulall &lt;lora:Small_Mostersv2:1&gt;得到的图像是这就是第一帧的图片后续接下来的步骤是重复把第一帧的图片用 sketch inpaint 修改大致的动作, 制作出第二帧"
+  },
+  
+  {
     "title": "OpenGL 矩阵",
     "url": "/posts/why-opengl-using-4-d-matrix/",
     "categories": "",

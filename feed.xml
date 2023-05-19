@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>航</title>
   <subtitle>航</subtitle>
-  <updated>2023-05-16T20:39:07+08:00</updated>
+  <updated>2023-05-19T11:50:41+08:00</updated>
   <author>
     <name>ratsafalig</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,73 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>AI 生成动画</title>
+    <link href="http://localhost:4000/posts/ai-animation/" rel="alternate" type="text/html" title="AI 生成动画" />
+    <published>2023-05-19T00:00:00+08:00</published>
+  
+    <updated>2023-05-19T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/ai-animation/</id>
+    <content src="http://localhost:4000/posts/ai-animation/" />
+    <author>
+      <name>ratsafalig</name>
+    </author>
+
+  
+    
+    <category term="AI" />
+    
+    <category term="Game" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      工具
+
+checkpoints: delibrate_v2.safetensors
+lora: Small_Monstersv2
+textual inversion: mechasoulall
+https://www.remove.bg/zh/upload
+
+流程
+
+第一步
+
+prompt 是 mantis  mechasoulall &amp;lt;lora:Small_Mostersv2:1&amp;gt; 
+用 controlnet 参数
+
+
+
+这一步生成的结果如下
+
+
+
+controlnet 使用的基准图是
+
+
+
+这张图也是拿AI生成的, 或者也可以直接上网搜一个
+
+第二步
+
+把图传到 image2image, 找一张合适的 pose, 用 openpose controlnet 生成动画的开始帧数
+因为我要做一个格斗动画, 所以我使用了侧面站立的图
+
+使用的 prompt 还是 manti...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -221,55 +288,6 @@ Transformer 模型中主要包含了 Encoder 和 Decoder 两个部分，Encoder 
 
 
       
-
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Stable Diffusion Webui</title>
-    <link href="http://localhost:4000/posts/stable-diffusion-webui/" rel="alternate" type="text/html" title="Stable Diffusion Webui" />
-    <published>2021-01-01T00:00:00+08:00</published>
-  
-    <updated>2021-01-01T00:00:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/stable-diffusion-webui/</id>
-    <content src="http://localhost:4000/posts/stable-diffusion-webui/" />
-    <author>
-      <name>ratsafalig</name>
-    </author>
-
-  
-    
-    <category term="AI" />
-    
-    <category term="Diffusion" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Link
-
-mixture-of-diffusers
-
-multidiffusion-upscaler-for-automatic1111
-
-sd-webui-controlnet
-
-stable-diffusion-webui
-
-multidiffusion
-
-how-stable-diffusion-work
 
     </summary>
   
