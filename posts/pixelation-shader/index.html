@@ -52,13 +52,13 @@
 <meta property="og:url" content="http://localhost:4000/posts/pixelation-shader/" />
 <meta property="og:site_name" content="航" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-01-01T00:00:00+08:00" />
+<meta property="article:published_time" content="2023-05-01T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="像素化 Shader ( Pixelation Shader )" />
 <meta name="twitter:site" content="@ratsafalig" />
 <meta name="twitter:creator" content="@航" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"航"},"dateModified":"2023-05-08T14:52:13+08:00","datePublished":"2021-01-01T00:00:00+08:00","description":"局部像素化 ( Local Pixelation )","headline":"像素化 Shader ( Pixelation Shader )","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/pixelation-shader/"},"url":"http://localhost:4000/posts/pixelation-shader/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"航"},"dateModified":"2023-05-01T00:00:00+08:00","datePublished":"2023-05-01T00:00:00+08:00","description":"局部像素化 ( Local Pixelation )","headline":"像素化 Shader ( Pixelation Shader )","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/pixelation-shader/"},"url":"http://localhost:4000/posts/pixelation-shader/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -1105,42 +1105,18 @@
 
 <em
   class=""
-  data-ts="1609430400"
+  data-ts="1682870400"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Jan  1, 2021
+  May  1, 2023
 </em>
 
     </span>
 
     <!-- lastmod date -->
-    
-    <span>
-      Updated
-      <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class=""
-  data-ts="1683528733"
-  data-df="ll"
-  
-    data-bs-toggle="tooltip" data-bs-placement="bottom"
-  
->
-  May  8, 2023
-</em>
-
-    </span>
     
 
   
@@ -1202,7 +1178,7 @@
 
 <p>如果要实现，某个物体是像素化的，其他物体是正常渲染的，可以使用局部像素化的技术：</p>
 
-<p><a href="/assets/img/2021-01-01-pixelation-shader/pixelation.gif" class="popup img-link "><img data-src="/assets/img/2021-01-01-pixelation-shader/pixelation.gif" alt="" class="lazyload" data-proofer-ignore></a></p>
+<p><a href="/assets/img/2023-05-01-pixelation-shader/pixelation.gif" class="popup img-link "><img data-src="/assets/img/2023-05-01-pixelation-shader/pixelation.gif" alt="" class="lazyload" data-proofer-ignore></a></p>
 
 <p>实现方法如下：</p>
 
@@ -1211,14 +1187,14 @@
   <li>创建三个 Camera，一个渲染 pixel tag 的 GameObject （ pixel camera ），一个渲染 pixel tag 的深度 （ depth camera ），一个渲染最终游戏画面 （ main camera ）
     <ul>
       <li>pixel camera 和 depth camera 的 culling mask 设置城 pixel tag，并把结果分别渲染到 pixel texture 和 depth texture
- <a href="/assets/img/2021-01-01-pixelation-shader/pixel-camera.png" class="popup img-link "><img data-src="/assets/img/2021-01-01-pixelation-shader/pixel-camera.png" alt="" class="lazyload" data-proofer-ignore></a>
- <a href="/assets/img/2021-01-01-pixelation-shader/depth-camera.png" class="popup img-link "><img data-src="/assets/img/2021-01-01-pixelation-shader/depth-camera.png" alt="" class="lazyload" data-proofer-ignore></a></li>
+ <a href="/assets/img/2023-05-01-pixelation-shader/pixel-camera.png" class="popup img-link "><img data-src="/assets/img/2023-05-01-pixelation-shader/pixel-camera.png" alt="" class="lazyload" data-proofer-ignore></a>
+ <a href="/assets/img/2023-05-01-pixelation-shader/depth-camera.png" class="popup img-link "><img data-src="/assets/img/2023-05-01-pixelation-shader/depth-camera.png" alt="" class="lazyload" data-proofer-ignore></a></li>
       <li>main camera 的 culling mask 设置成除了 pixel tag 外的所有 Game Object
- <a href="/assets/img/2021-01-01-pixelation-shader/main-camera.png" class="popup img-link "><img data-src="/assets/img/2021-01-01-pixelation-shader/main-camera.png" alt="" class="lazyload" data-proofer-ignore></a></li>
+ <a href="/assets/img/2023-05-01-pixelation-shader/main-camera.png" class="popup img-link "><img data-src="/assets/img/2023-05-01-pixelation-shader/main-camera.png" alt="" class="lazyload" data-proofer-ignore></a></li>
     </ul>
   </li>
   <li>在 main camera 前加一个 canvas，在上面把 depth texture 当作深度测试，把 pixel texture 画出来
-<a href="/assets/img/2021-01-01-pixelation-shader/canvas.png" class="popup img-link "><img data-src="/assets/img/2021-01-01-pixelation-shader/canvas.png" alt="" class="lazyload" data-proofer-ignore></a></li>
+<a href="/assets/img/2023-05-01-pixelation-shader/canvas.png" class="popup img-link "><img data-src="/assets/img/2023-05-01-pixelation-shader/canvas.png" alt="" class="lazyload" data-proofer-ignore></a></li>
 </ol>
 
 <h1 id="全局像素化--global-pixelation-">全局像素化 ( Global Pixelation )</h1>
@@ -1227,11 +1203,11 @@
 
 <p>像素化前：</p>
 
-<p><a href="/assets/img/2021-01-01-pixelation-shader/raw.png" class="popup img-link "><img data-src="/assets/img/2021-01-01-pixelation-shader/raw.png" alt="raw" class="lazyload" data-proofer-ignore></a></p>
+<p><a href="/assets/img/2023-05-01-pixelation-shader/raw.png" class="popup img-link "><img data-src="/assets/img/2023-05-01-pixelation-shader/raw.png" alt="raw" class="lazyload" data-proofer-ignore></a></p>
 
 <p>像素化后：</p>
 
-<p><a href="/assets/img/2021-01-01-pixelation-shader/dst.png" class="popup img-link "><img data-src="/assets/img/2021-01-01-pixelation-shader/dst.png" alt="dst" class="lazyload" data-proofer-ignore></a></p>
+<p><a href="/assets/img/2023-05-01-pixelation-shader/dst.png" class="popup img-link "><img data-src="/assets/img/2023-05-01-pixelation-shader/dst.png" alt="dst" class="lazyload" data-proofer-ignore></a></p>
 
 <div class="language-glsl highlighter-rouge"><div class="code-header">
         <span data-label-text="Glsl"><i class="fas fa-code fa-fw small"></i></span>
@@ -1602,13 +1578,6 @@
           <a href="/posts/deferred-shading/">Deferred Shading</a>
         </li>
       
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/pixelation-shader/">像素化 Shader ( Pixelation Shader )</a>
-        </li>
-      
     </ul>
   </div>
   <!-- #access-lastmod -->
@@ -1972,79 +1941,79 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -2288,21 +2257,21 @@ prompt 是 mantis  mechasoulall &amp;lt;lora:Small_Mostersv2:1&amp;g...
 <div class="post-navigation d-flex justify-content-between">
   
     <a
-      href="/posts/lora/"
+      href="/posts/morphing/"
       class="btn btn-outline-primary"
       prompt="Older"
     >
-      <p>LoRA</p>
+      <p>渐进 Mesh 形变</p>
     </a>
   
 
   
     <a
-      href="/posts/shaderlab/"
+      href="/posts/wave-function-collapse/"
       class="btn btn-outline-primary"
       prompt="Newer"
     >
-      <p>ShaderLab</p>
+      <p>波函数塌缩算法 (Wave Function Collapse)</p>
     </a>
   
 </div>

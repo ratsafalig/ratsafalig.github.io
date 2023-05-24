@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>航</title>
   <subtitle>航</subtitle>
-  <updated>2023-05-24T15:06:59+08:00</updated>
+  <updated>2023-05-24T15:10:40+08:00</updated>
   <author>
     <name>ratsafalig</name>
     <uri>http://localhost:4000/</uri>
@@ -256,21 +256,21 @@ font = pygame.font.Font("./assets/custom_fonts/Poppins/Poppins-Light.ttf", 16)
 
   
   <entry>
-    <title>渐进 Mesh 形变</title>
-    <link href="http://localhost:4000/posts/morphing/" rel="alternate" type="text/html" title="渐进 Mesh 形变" />
+    <title>像素化 Shader ( Pixelation Shader )</title>
+    <link href="http://localhost:4000/posts/pixelation-shader/" rel="alternate" type="text/html" title="像素化 Shader ( Pixelation Shader )" />
     <published>2023-05-01T00:00:00+08:00</published>
   
     <updated>2023-05-01T00:00:00+08:00</updated>
   
-    <id>http://localhost:4000/posts/morphing/</id>
-    <content src="http://localhost:4000/posts/morphing/" />
+    <id>http://localhost:4000/posts/pixelation-shader/</id>
+    <content src="http://localhost:4000/posts/pixelation-shader/" />
     <author>
-      <name>ratsafalig</name>
+      <name>航</name>
     </author>
 
   
     
-    <category term="Algorithm" />
+    <category term="Shader" />
     
   
 
@@ -282,26 +282,22 @@ font = pygame.font.Font("./assets/custom_fonts/Poppins/Poppins-Light.ttf", 16)
 
 
 
-      GIF
+      局部像素化 ( Local Pixelation )
+
+如果要实现，某个物体是像素化的，其他物体是正常渲染的，可以使用局部像素化的技术：
 
 
 
-Code
+实现方法如下：
 
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
 
-/// &amp;lt;summary&amp;gt;
-/// Vertex Pair maps two verices to each other, used to find the nearest vertex to a given vertex.
-/// &amp;lt;/summary&amp;gt;
-public class VertexPair
-{
-    public Vector3 Vertex1 { get; set; }
-    public Vector3 Vertex2 { get; set; }
-
-     public VertexPair(Vector3 verte...
+  给想要像素化的 GameObject 打上 tag，比如 pixel tag
+  创建三个 Camera，一个渲染 pixel tag 的 GameObject （ pixel camera ），一个渲染 pixel tag 的深度 （ depth camera ），一个渲染最终游戏画面 （ main camera ）
+    
+      pixel camera 和 depth camera 的 culling mask 设置城 pixel tag，并把结果分别渲染到 pixel texture 和 depth texture
+ 
+ 
+      main camera 的 culling mask 设置成除了 p...
     </summary>
   
 
