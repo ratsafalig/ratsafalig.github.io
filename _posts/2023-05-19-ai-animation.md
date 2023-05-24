@@ -1,5 +1,6 @@
 ---
 title: AI生成动画帧的一次尝试
+pin: true
 tags:
 - AI
 - Game
