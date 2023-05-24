@@ -5,6 +5,8 @@ categories:
 author: 航
 tags:
 - Shader
+image:
+    path: /assets/img/2023-05-01-pixelation-shader/pixelation.gif
 ---
 
 
@@ -12,19 +14,19 @@ tags:
 
 如果要实现，某个物体是像素化的，其他物体是正常渲染的，可以使用局部像素化的技术：  
 
-![](/assets/img/2021-01-01-pixelation-shader/pixelation.gif)
+![](/assets/img/2023-05-01-pixelation-shader/pixelation.gif)
 
 实现方法如下：  
 
 1. 给想要像素化的 GameObject 打上 tag，比如 pixel tag
 2. 创建三个 Camera，一个渲染 pixel tag 的 GameObject （ pixel camera ），一个渲染 pixel tag 的深度 （ depth camera ），一个渲染最终游戏画面 （ main camera ）
     - pixel camera 和 depth camera 的 culling mask 设置城 pixel tag，并把结果分别渲染到 pixel texture 和 depth texture
-    ![](/assets/img/2021-01-01-pixelation-shader/pixel-camera.png)
-    ![](/assets/img/2021-01-01-pixelation-shader/depth-camera.png)
+    ![](/assets/img/2023-05-01-pixelation-shader/pixel-camera.png)
+    ![](/assets/img/2023-05-01-pixelation-shader/depth-camera.png)
     - main camera 的 culling mask 设置成除了 pixel tag 外的所有 Game Object
-    ![](/assets/img/2021-01-01-pixelation-shader/main-camera.png)
+    ![](/assets/img/2023-05-01-pixelation-shader/main-camera.png)
 3. 在 main camera 前加一个 canvas，在上面把 depth texture 当作深度测试，把 pixel texture 画出来
-![](/assets/img/2021-01-01-pixelation-shader/canvas.png)
+![](/assets/img/2023-05-01-pixelation-shader/canvas.png)
 
 # 全局像素化 ( Global Pixelation )
 
@@ -32,11 +34,11 @@ tags:
 
 像素化前：
 
-![raw](/assets/img/2021-01-01-pixelation-shader/raw.png)
+![raw](/assets/img/2023-05-01-pixelation-shader/raw.png)
 
 像素化后：
 
-![dst](/assets/img/2021-01-01-pixelation-shader/dst.png)
+![dst](/assets/img/2023-05-01-pixelation-shader/dst.png)
 
 ```glsl
 Shader "Custom/PostProcessing"
