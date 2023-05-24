@@ -1,24 +1,26 @@
 ---
 title: AI生成动画帧的一次尝试
-pin: true
+toc: true
 tags:
 - AI
 - Game
 categories:
 - AI
 - Game
+image:
+    path: /assets/img/2023-05-19-ai-animation/frame_0.png
 ---
 
 # 工具
 
-checkpoints: delibrate_v2.safetensors
-lora: Small_Monstersv2
-textual inversion: mechasoulall
-[https://www.remove.bg/zh/upload](https://www.remove.bg/zh/upload)
+checkpoints: delibrate_v2.safetensors  
+lora: Small_Monstersv2  
+textual inversion: mechasoulall  
+[https://www.remove.bg/zh/upload](https://www.remove.bg/zh/upload)  
 
 # 流程
 
-# 第一步
+## 第一步
 
 prompt 是 `mantis  mechasoulall <lora:Small_Mostersv2:1> `
 用 controlnet 参数  
@@ -35,7 +37,7 @@ controlnet 使用的基准图是
 
 这张图也是拿AI生成的, 或者也可以直接上网搜一个
 
-# 第二步
+## 第二步
 
 把图传到 image2image, 找一张合适的 pose, 用 openpose controlnet 生成动画的开始帧数  
 因为我要做一个格斗动画, 所以我使用了侧面站立的图  
@@ -54,7 +56,7 @@ controlnet 使用的基准图是
 
 ![](/assets/img/2023-05-19-ai-animation/download.png)  ( 这里我换了一张图片, 也是AI生成的 )  
 
-# 第三步  
+## 第三步  
 
 把无背景的图片上传到 inpaint, 看到上面去掉背景的图少了手臂, 重绘一下手臂.  
 
@@ -68,7 +70,7 @@ controlnet 使用的基准图是
 
 这就是第一帧的图片  
 
-# 后续  
+## 后续  
 
 接下来的步骤是重复把第一帧的图片用 sketch inpaint 修改大致的动作, 制作出第二帧  
 
