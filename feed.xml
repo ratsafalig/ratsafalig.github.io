@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>航</title>
   <subtitle>航</subtitle>
-  <updated>2023-05-19T14:21:04+08:00</updated>
+  <updated>2023-05-24T12:55:44+08:00</updated>
   <author>
     <name>ratsafalig</name>
     <uri>http://localhost:4000/</uri>
@@ -20,8 +20,50 @@
 
   
   <entry>
-    <title>AI 生成动画</title>
-    <link href="http://localhost:4000/posts/ai-animation/" rel="alternate" type="text/html" title="AI 生成动画" />
+    <title>AI生成动画帧的第二次尝试</title>
+    <link href="http://localhost:4000/posts/ai-animation-second-try/" rel="alternate" type="text/html" title="AI生成动画帧的第二次尝试" />
+    <published>2023-05-24T00:00:00+08:00</published>
+  
+    <updated>2023-05-24T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/ai-animation-second-try/</id>
+    <content src="http://localhost:4000/posts/ai-animation-second-try/" />
+    <author>
+      <name>ratsafalig</name>
+    </author>
+
+  
+    
+    <category term="AI" />
+    
+    <category term="Game" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      第一次尝试思路是 使用 control-net 生成第一帧, 动过 photoshop 稍微修改然后扔进 inpaint 去生成第二帧
+这一次尝试使用多个pose结合成的 controlnet open-pose 一次性生成多个 pose 然后直接拼接
+
+
+
+
+
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>AI生成动画帧的一次尝试</title>
+    <link href="http://localhost:4000/posts/ai-animation/" rel="alternate" type="text/html" title="AI生成动画帧的一次尝试" />
     <published>2023-05-19T00:00:00+08:00</published>
   
     <updated>2023-05-19T00:00:00+08:00</updated>
@@ -160,7 +202,7 @@ view ...
     <link href="http://localhost:4000/posts/wave-function-collapse/" rel="alternate" type="text/html" title="波函数塌缩算法 (Wave Function Collapse)" />
     <published>2021-01-01T00:00:00+08:00</published>
   
-    <updated>2023-05-08T14:52:13+08:00</updated>
+    <updated>2023-05-24T12:32:35+08:00</updated>
   
     <id>http://localhost:4000/posts/wave-function-collapse/</id>
     <content src="http://localhost:4000/posts/wave-function-collapse/" />
@@ -256,39 +298,6 @@ font = pygame.font.Font("./assets/custom_fonts/Poppins/Poppins-Light.ttf", 16)
 Transformer 模型中主要包含了 Encoder 和 Decoder 两个部分，Encoder 作用是将输入的文本转换为一个语义空间的向量表示，Decoder 则将 Encoder 的输出进行解码，生成目标语言的文本。在 Transformer 模型中，Encoder 和 Decoder 都是基于 self-attention 机制实现的，通过自注意力机制，能够高效地对输入序列进行建模，并减少信息流失。
 
 具体来说，Transformer 模型中的 self-attention 机制通过计算输入序列中每个元素与所有元素之间的相似度，来确定每个元素所对应的权重，然后根据权重对输入序...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Textual Inversion</title>
-    <link href="http://localhost:4000/posts/textual-inversion/" rel="alternate" type="text/html" title="Textual Inversion" />
-    <published>2021-01-01T00:00:00+08:00</published>
-  
-    <updated>2021-01-01T00:00:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/textual-inversion/</id>
-    <content src="http://localhost:4000/posts/textual-inversion/" />
-    <author>
-      <name>ratsafalig</name>
-    </author>
-
-  
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      
-
     </summary>
   
 
