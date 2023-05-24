@@ -1198,6 +1198,65 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+
+    
+
+  
 
   
   
@@ -1338,7 +1397,7 @@ textual inversion: mechasoulall<br />
 
 <h1 id="流程">流程</h1>
 
-<h1 id="第一步">第一步</h1>
+<h2 id="第一步"><span class="me-2">第一步</span><a href="#第一步" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>prompt 是 <code class="language-plaintext highlighter-rouge">mantis  mechasoulall &lt;lora:Small_Mostersv2:1&gt; </code>
 用 controlnet 参数</p>
@@ -1355,7 +1414,7 @@ textual inversion: mechasoulall<br />
 
 <p>这张图也是拿AI生成的, 或者也可以直接上网搜一个</p>
 
-<h1 id="第二步">第二步</h1>
+<h2 id="第二步"><span class="me-2">第二步</span><a href="#第二步" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>把图传到 image2image, 找一张合适的 pose, 用 openpose controlnet 生成动画的开始帧数<br />
 因为我要做一个格斗动画, 所以我使用了侧面站立的图</p>
@@ -1374,7 +1433,7 @@ textual inversion: mechasoulall<br />
 
 <p><a href="/assets/img/2023-05-19-ai-animation/download.png" class="popup img-link "><img data-src="/assets/img/2023-05-19-ai-animation/download.png" alt="" class="lazyload" data-proofer-ignore></a>  ( 这里我换了一张图片, 也是AI生成的 )</p>
 
-<h1 id="第三步">第三步</h1>
+<h2 id="第三步"><span class="me-2">第三步</span><a href="#第三步" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>把无背景的图片上传到 inpaint, 看到上面去掉背景的图少了手臂, 重绘一下手臂.</p>
 
@@ -1388,7 +1447,7 @@ textual inversion: mechasoulall<br />
 
 <p>这就是第一帧的图片</p>
 
-<h1 id="后续">后续</h1>
+<h2 id="后续"><span class="me-2">后续</span><a href="#后续" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>接下来的步骤是重复把第一帧的图片用 sketch inpaint 修改大致的动作, 制作出第二帧</p>
 
@@ -1855,6 +1914,11 @@ textual inversion: mechasoulall<br />
 
 
 
+  <div id="toc-wrapper" class="ps-0 pe-4 mb-5">
+    <div class="panel-heading ps-3 pt-2 mb-2">Contents</div>
+    <nav id="toc"></nav>
+  </div>
+
 
     
   </div>
@@ -2083,9 +2147,16 @@ textual inversion: mechasoulall<br />
 
 
 
-                  第一次尝试思路是 使用 control-net 生成第一帧, 动过 photoshop 稍微修改然后扔进 inpaint 去生成第二帧
+                  
+  
+
+
+Previous
+
+第一次尝试思路是 使用 control-net 生成第一帧, 动过 photoshop 稍微修改然后扔进 inpaint 去生成第二帧
 这一次尝试使用多个pose结合成的 controlnet open-pose 一次性生成多个 pose 然后直接拼接
 
+OpenPose
 
 
 
@@ -2684,9 +2755,16 @@ textual inversion: mechasoulall<br />
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.0/dist/jquery.min.js,npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.7/dayjs.min.js,npm/dayjs@1.11.7/locale/en.min.js,npm/dayjs@1.11.7/plugin/relativeTime.min.js,npm/dayjs@1.11.7/plugin/localizedFormat.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.0/dist/jquery.min.js,npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.7/dayjs.min.js,npm/dayjs@1.11.7/locale/en.min.js,npm/dayjs@1.11.7/plugin/relativeTime.min.js,npm/dayjs@1.11.7/plugin/localizedFormat.min.js,npm/tocbot@4.21.0/dist/tocbot.min.js"></script>
 
 
 

@@ -44,8 +44,7 @@ const resource = [
         '/assets/js/dist/page.min.js',
         '/assets/js/dist/page.min.js.map',
         '/assets/js/dist/post.min.js',
-        '/assets/js/dist/post.min.js.map',
-        '/assets/js/dist/pvreport.min.js'
+        '/assets/js/dist/post.min.js.map'
 ];
 
 /* The request url with below domain will be cached */
