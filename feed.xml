@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>航</title>
   <subtitle>航</subtitle>
-  <updated>2023-05-24T14:41:11+08:00</updated>
+  <updated>2023-05-24T15:06:59+08:00</updated>
   <author>
     <name>ratsafalig</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,65 @@
 
   
   <entry>
+    <title>Unity URP 定制渲染管线</title>
+    <link href="http://localhost:4000/posts/custom-urp/" rel="alternate" type="text/html" title="Unity URP 定制渲染管线" />
+    <published>2023-05-24T00:00:00+08:00</published>
+  
+    <updated>2023-05-24T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/custom-urp/</id>
+    <content src="http://localhost:4000/posts/custom-urp/" />
+    <author>
+      <name>ratsafalig</name>
+    </author>
+
+  
+    
+    <category term="Unity" />
+    
+    <category term="Game" />
+    
+    <category term="GL" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      本意是想做一个渲染效果, 几个 camera 始终在同一个 transform, 各自渲染到各自的 render-texture, 然后把每一个 camera 的 render-texture 做一个融合.
+然后按照各自的 depth-texture 决定哪个像素点显示在上面
+
+因为我一直用 URP ( 因为 shader graph ), 所以要达到这样的效果必须定制管线了
+
+例子
+
+红绿方块在不同的 camera 的不同 render-texture 里, 让它在主相机里用 depth 做融合
+
+
+
+思路
+
+为每一个 camera 准备两个 render-texture, color-rt 和 depth-rt,
+每一个 camera 渲染结束之后都把 camera 的 color-target 和 depth-target 存放到对应的 rt 里.
+
+等到 main-camer...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>AI生成动画帧的第二次尝试</title>
     <link href="http://localhost:4000/posts/ai-animation-second-try/" rel="alternate" type="text/html" title="AI生成动画帧的第二次尝试" />
     <published>2023-05-24T00:00:00+08:00</published>
   
-    <updated>2023-05-24T00:00:00+08:00</updated>
+    <updated>2023-05-24T14:42:17+08:00</updated>
   
     <id>http://localhost:4000/posts/ai-animation-second-try/</id>
     <content src="http://localhost:4000/posts/ai-animation-second-try/" />
@@ -72,7 +126,7 @@ OpenPose
     <link href="http://localhost:4000/posts/ai-animation/" rel="alternate" type="text/html" title="AI生成动画帧的一次尝试" />
     <published>2023-05-19T00:00:00+08:00</published>
   
-    <updated>2023-05-24T13:00:51+08:00</updated>
+    <updated>2023-05-24T14:42:17+08:00</updated>
   
     <id>http://localhost:4000/posts/ai-animation/</id>
     <content src="http://localhost:4000/posts/ai-animation/" />
@@ -248,75 +302,6 @@ public class VertexPair
     public Vector3 Vertex2 { get; set; }
 
      public VertexPair(Vector3 verte...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>OpenGL 矩阵</title>
-    <link href="http://localhost:4000/posts/why-opengl-using-4-d-matrix/" rel="alternate" type="text/html" title="OpenGL 矩阵" />
-    <published>2021-01-01T00:00:00+08:00</published>
-  
-    <updated>2021-01-01T00:00:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/why-opengl-using-4-d-matrix/</id>
-    <content src="http://localhost:4000/posts/why-opengl-using-4-d-matrix/" />
-    <author>
-      <name>ratsafalig</name>
-    </author>
-
-  
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      正常情况下 3 * 3 矩阵已经足够表现 3d 空间内的线性变换
-但线性变换有两个前提
-
-
-  原点在线性变换后还是原点
-  任何直线在线性变换后还是直线
-
-
-但 opengl 不仅仅需要线性变换, 比如
-
-
-  平移变换
-  投影变换
-  旋转变换
-
-
-[ 1, 0, 0, x ]
-[ 0, 1, 0, y ]
-[ 0, 0, 1, z ]
-[ 0, 0, 0, 1 ]
-
-矩阵将坐标平移 (x, y, z)  
-
-
-所以需要定义第四个分量 w ( 齐次坐标 ),
-当 w != 1 的时候, 需要将向量 / w
-
-(x*w, y*w, z*w, w) / w = (x, y, z, 1)  
-
-
-MVP 矩阵
-
-在 opengl 里有几个坐标系
-
-model pos: 模型建模的坐标  
-world pos: 模型在世界里的位置坐标
-camera pos: 玩家眼睛的位置
-view ...
     </summary>
   
 
