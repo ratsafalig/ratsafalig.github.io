@@ -1440,17 +1440,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1475,30 +1464,20 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1528,6 +1507,11 @@
     
     
     
+  
+    
+    
+    
+    
       
         
         
@@ -1542,6 +1526,11 @@
     
     
     
+  
+    
+    
+    
+    
       
     
   
@@ -1564,6 +1553,15 @@
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -1660,10 +1658,10 @@
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/ai/">AI</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/game/">Game</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/game/">Game</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/ai/">AI</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/gl/">GL</a>
@@ -1672,10 +1670,10 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/shader/">Shader</a>
@@ -1725,6 +1723,18 @@
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
@@ -2030,6 +2040,59 @@ cell.py
         
         
         <div class="col">
+          <a href="/posts/urp-conv/" class="card post-preview h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class="small"
+  data-ts="1684944000"
+  data-df="ll"
+  
+>
+  May 25, 2023
+</em>
+
+              <h4 class="pt-0 my-2" data-toc-skip>Unity 渲染管线 卷积</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  尝试一下用 Unity 渲染管线实现一些常见的图形学卷积核, 主要思路就是在渲染之后对 Camera 的 color target 做一次 self Blit 然后在 shader 里对 _CameraColorAttachmentA 做卷积
+
+Sobel 卷积
+
+一种边缘检测的图像卷积算子, 卷积核为
+
+1
+2
+3
+[ 1 0 -1 ]
+[ 2 0 -2 ]
+[ 1 0 -1 ]
+
+
+这个...
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        
+        <div class="col">
           <a href="/posts/custom-urp/" class="card post-preview h-100">
             <div class="card-body">
               <!--
@@ -2067,57 +2130,6 @@ cell.py
 例子
 
 例子...
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        
-        
-        <div class="col">
-          <a href="/posts/ai-animation-second-try/" class="card post-preview h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class="small"
-  data-ts="1684857600"
-  data-df="ll"
-  
->
-  May 24, 2023
-</em>
-
-              <h4 class="pt-0 my-2" data-toc-skip>AI生成动画帧的第二次尝试</h4>
-              <div class="text-muted small">
-                <p>
-                  
-
-
-
-
-
-                  
-  
-
-
-Previous
-
-第一次尝试思路是 使用 control-net 生成第一帧, 动过 photoshop 稍微修改然后扔进 inpaint 去生成第二帧
-这一次尝试使用多个pose结合成的 controlnet open-pose 一次性生成多个 pose 然后直接拼接
-
-OpenPose
-
-
-
                 </p>
               </div>
             </div>
@@ -2192,17 +2204,6 @@ OpenPose
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -2227,30 +2228,20 @@ OpenPose
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2280,6 +2271,11 @@ OpenPose
     
     
     
+  
+    
+    
+    
+    
       
         
         
@@ -2294,6 +2290,11 @@ OpenPose
     
     
     
+  
+    
+    
+    
+    
       
     
   
@@ -2316,6 +2317,15 @@ OpenPose
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -2412,10 +2422,10 @@ OpenPose
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/ai/">AI</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/game/">Game</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/game/">Game</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/ai/">AI</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/gl/">GL</a>
@@ -2424,10 +2434,10 @@ OpenPose
         <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/shader/">Shader</a>

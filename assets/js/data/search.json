@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "Unity 渲染管线 卷积",
+    "url": "/posts/urp-conv/",
+    "categories": "Game, GL, Unity",
+    "tags": "Game, GL, Unity",
+    "date": "2023-05-25 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "尝试一下用 Unity 渲染管线实现一些常见的图形学卷积核, 主要思路就是在渲染之后对 Camera 的 color target 做一次 self Blit 然后在 shader 里对 _CameraColorAttachmentA 做卷积Sobel 卷积一种边缘检测的图像卷积算子, 卷积核为[ 1 0 -1 ][ 2 0 -2 ][ 1 0 -1 ]这个卷积核能强化水平方向的像素RGB的...",
+    "content": "尝试一下用 Unity 渲染管线实现一些常见的图形学卷积核, 主要思路就是在渲染之后对 Camera 的 color target 做一次 self Blit 然后在 shader 里对 _CameraColorAttachmentA 做卷积Sobel 卷积一种边缘检测的图像卷积算子, 卷积核为[ 1 0 -1 ][ 2 0 -2 ][ 1 0 -1 ]这个卷积核能强化水平方向的像素RGB的差, 从而显示出水平方向的边缘同理可以得出垂直方向的 sobel 算子[ 1 2 1 ][ 0 0 0 ][ -1 -2 -1 ]水平卷积垂直卷积叠加叠加水平和垂直 sobel 算子代码实现Shader \"Custom/Sobel\"{    Properties    {        _Offset(\"Offset\", float) = 0    }    SubShader    {        Tags { \"RenderType\"=\"Opaque\" }        LOD 200        Cull Off ZWrite Off ZTest Always        Pass{            CGPROGRAM            #pragma vertex vert            #pragma fragment frag            #pragma target 3.0            #include \"UnityCG.cginc\"            sampler2D _CameraColorAttachmentA;            float _Offset;            struct appdata {                float4 vertex : POSITION;                float2 uv : TEXCOORD0;                float3 normal : NORMAL;            };            struct v2f {                float4 position : SV_POSITION;                float2 uv : TEXCOORD0;            };            v2f vert (appdata IN) {                v2f OUT;                                OUT.position = UnityObjectToClipPos(IN.vertex);                OUT.position += float4(_Offset,0,0,0);                OUT.uv = IN.uv;                return OUT;            }            float2 pixelCoord2UvCoord(float x, float y){                float width = _ScreenParams.x;                float height = _ScreenParams.y;                float2 pos = float2(float(x) / float(width), float(y) / float(height));                return pos;            }            float4 sobelHorizontal(                float4 a, float4 b, float4 c,                float4 d, float4 e, float4 f,                float4 g, float4 h, float4 i){                float4 color = a - b + 2 * d - 2 * f + g - i;                color.a = 1;                return color;            }            float4 sobelVertical(                float4 a, float4 b, float4 c,                float4 d, float4 e, float4 f,                float4 g, float4 h, float4 i){                float4 color = a + 2 * b + c - g - 2 * h - i;                color.a = 1;                return color;            }            // a b c            // d e f            // g h i            float4 frag (v2f IN) : SV_TARGET {                float x = IN.uv.x;                float y = IN.uv.y;                float width = _ScreenParams.x;                float height = _ScreenParams.y;                float pixelX = x * width;                float pixelY = y * height;                float4 a = tex2D(_CameraColorAttachmentA, pixelCoord2UvCoord(pixelX-1, pixelY-1));                float4 b = tex2D(_CameraColorAttachmentA, pixelCoord2UvCoord(pixelX, pixelY-1));                float4 c = tex2D(_CameraColorAttachmentA, pixelCoord2UvCoord(pixelX+1, pixelY-1));                float4 d = tex2D(_CameraColorAttachmentA, pixelCoord2UvCoord(pixelX-1, pixelY));                float4 e = tex2D(_CameraColorAttachmentA, pixelCoord2UvCoord(pixelX, pixelY));                float4 f = tex2D(_CameraColorAttachmentA, pixelCoord2UvCoord(pixelX+1, pixelY));                float4 g = tex2D(_CameraColorAttachmentA, pixelCoord2UvCoord(pixelX-1, pixelY+1));                float4 h = tex2D(_CameraColorAttachmentA, pixelCoord2UvCoord(pixelX, pixelY+1));                float4 i = tex2D(_CameraColorAttachmentA, pixelCoord2UvCoord(pixelX+1, pixelY+1));                float4 color = float4(0,0,0,0);                color += sobelHorizontal(a,b,c,d,e,f,g,h,i);                color += sobelVertical(a,b,c,d,e,f,g,h,i);                return color;            }            ENDCG        }    }    FallBack \"Diffuse\"}LinkURP_BlitRenderFeature"
+  },
+  
+  {
     "title": "Unity URP 定制渲染管线",
     "url": "/posts/custom-urp/",
     "categories": "Unity, Game, GL",

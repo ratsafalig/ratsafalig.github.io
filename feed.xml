@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>航</title>
   <subtitle>航</subtitle>
-  <updated>2023-05-24T21:15:16+08:00</updated>
+  <updated>2023-05-25T14:18:07+08:00</updated>
   <author>
     <name>ratsafalig</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,86 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Unity 渲染管线 卷积</title>
+    <link href="http://localhost:4000/posts/urp-conv/" rel="alternate" type="text/html" title="Unity 渲染管线 卷积" />
+    <published>2023-05-25T00:00:00+08:00</published>
+  
+    <updated>2023-05-25T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/urp-conv/</id>
+    <content src="http://localhost:4000/posts/urp-conv/" />
+    <author>
+      <name>ratsafalig</name>
+    </author>
+
+  
+    
+    <category term="Game" />
+    
+    <category term="GL" />
+    
+    <category term="Unity" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      尝试一下用 Unity 渲染管线实现一些常见的图形学卷积核, 主要思路就是在渲染之后对 Camera 的 color target 做一次 self Blit 然后在 shader 里对 _CameraColorAttachmentA 做卷积
+
+Sobel 卷积
+
+一种边缘检测的图像卷积算子, 卷积核为
+
+[ 1 0 -1 ]
+[ 2 0 -2 ]
+[ 1 0 -1 ]
+
+
+这个卷积核能强化水平方向的像素RGB的差, 从而显示出水平方向的边缘
+
+同理可以得出垂直方向的 sobel 算子
+
+[ 1 2 1 ]
+[ 0 0 0 ]
+[ -1 -2 -1 ]
+
+
+
+
+水平卷积
+
+
+
+垂直卷积
+
+
+
+叠加
+
+叠加水平和垂直 sobel 算子
+
+
+
+代码实现
+
+Shader "Custom/Sobel"
+{
+    Properties
+    {
+        _Offset("Offse...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -255,55 +335,6 @@ font = pygame.font.Font("./assets/custom_fonts/Poppins/Poppins-Light.ttf", 16)
 # --------------------------------------------------------------------------------- #
 
 #...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>像素化 Shader ( Pixelation Shader )</title>
-    <link href="http://localhost:4000/posts/pixelation-shader/" rel="alternate" type="text/html" title="像素化 Shader ( Pixelation Shader )" />
-    <published>2023-05-01T00:00:00+08:00</published>
-  
-    <updated>2023-05-01T00:00:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/pixelation-shader/</id>
-    <content src="http://localhost:4000/posts/pixelation-shader/" />
-    <author>
-      <name>航</name>
-    </author>
-
-  
-    
-    <category term="Shader" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      局部像素化 ( Local Pixelation )
-
-如果要实现，某个物体是像素化的，其他物体是正常渲染的，可以使用局部像素化的技术：
-
-
-
-实现方法如下：
-
-
-  给想要像素化的 GameObject 打上 tag，比如 pixel tag
-  创建三个 Camera，一个渲染 pixel tag 的 GameObject （ pixel camera ），一个渲染 pixel tag 的深度 （ depth camera ），一个渲染最终游戏画面 （ main camera ）
-    
-      pixel camera 和 depth camera 的 culling mask 设置城 pixel tag，并把结果分别渲染到 pixel texture 和 depth texture
- 
- 
-      main camera 的 culling mask 设置成除了 p...
     </summary>
   
 

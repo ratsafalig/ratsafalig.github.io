@@ -1044,6 +1044,89 @@
     
 
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+        <!-- add SVG placehoder -->
+        
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+      <!-- create the image wrapper -->
+      
+
+    
+
+    <!-- combine -->
+    
+
+  
 
   
 
@@ -1111,6 +1194,90 @@
 
 
 <div id="post-list">
+  
+    <a href="/posts/urp-conv/" class="card-wrapper">
+      <div class="card post-preview flex-md-row-reverse">
+        
+          
+
+          
+          
+
+          
+
+          <div class="preview-img shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 8'%3E%3C/svg%3E" data-src="/assets/img/2023-05-25-urp-conv/sobel.png" width="15" height="8" alt="Preview Image"  class="lazyload" data-proofer-ignore></div>
+        
+
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">
+            Unity 渲染管线 卷积
+          </h1>
+
+          <div class="card-text post-content mt-0 mb-2">
+            <p>
+              
+
+
+
+
+
+              尝试一下用 Unity 渲染管线实现一些常见的图形学卷积核, 主要思路就是在渲染之后对 Camera 的 color target 做一次 self Blit 然后在 shader 里对 _CameraColorAttachmentA 做卷积
+
+Sobel 卷积
+
+一种边缘检测的图像卷积算子, 卷积核为
+
+[ 1 0 -1 ]
+[ 2 0 -2 ]
+[ 1 0 -1 ]
+
+
+这个卷积核能强化...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class=""
+  data-ts="1684944000"
+  data-df="ll"
+  
+>
+  May 25, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Game,
+                    GL,
+                    Unity
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+        <!-- .card-body -->
+      </div>
+    </a>
   
     <a href="/posts/custom-urp/" class="card-wrapper">
       <div class="card post-preview flex-md-row-reverse">
@@ -1818,82 +1985,6 @@ Transformer 模型中主要包含了 Encoder 和 Decoder 两个部分，Encoder 
       </div>
     </a>
   
-    <a href="/posts/stable-diffusion-webui/" class="card-wrapper">
-      <div class="card post-preview flex-md-row-reverse">
-        
-
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">
-            Stable Diffusion Webui
-          </h1>
-
-          <div class="card-text post-content mt-0 mb-2">
-            <p>
-              
-
-
-
-
-
-              Link
-
-mixture-of-diffusers
-
-multidiffusion-upscaler-for-automatic1111
-
-sd-webui-controlnet
-
-stable-diffusion-webui
-
-multidiffusion
-
-how-stable-diffusion-work
-
-            </p>
-          </div>
-
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class=""
-  data-ts="1609430400"
-  data-df="ll"
-  
->
-  Jan  1, 2021
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    AI,
-                    Diffusion
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-        <!-- .card-body -->
-      </div>
-    </a>
-  
 </div>
 <!-- #post-list -->
 
@@ -2048,17 +2139,6 @@ how-stable-diffusion-work
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -2083,30 +2163,20 @@ how-stable-diffusion-work
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2136,6 +2206,11 @@ how-stable-diffusion-work
     
     
     
+  
+    
+    
+    
+    
       
         
         
@@ -2150,6 +2225,11 @@ how-stable-diffusion-work
     
     
     
+  
+    
+    
+    
+    
       
     
   
@@ -2172,6 +2252,15 @@ how-stable-diffusion-work
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -2268,10 +2357,10 @@ how-stable-diffusion-work
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/ai/">AI</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/game/">Game</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/game/">Game</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/ai/">AI</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/gl/">GL</a>
@@ -2280,10 +2369,10 @@ how-stable-diffusion-work
         <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/shader/">Shader</a>
@@ -2330,17 +2419,6 @@ how-stable-diffusion-work
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -2365,30 +2443,20 @@ how-stable-diffusion-work
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2418,6 +2486,11 @@ how-stable-diffusion-work
     
     
     
+  
+    
+    
+    
+    
       
         
         
@@ -2432,6 +2505,11 @@ how-stable-diffusion-work
     
     
     
+  
+    
+    
+    
+    
       
     
   
@@ -2454,6 +2532,15 @@ how-stable-diffusion-work
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -2550,10 +2637,10 @@ how-stable-diffusion-work
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/ai/">AI</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/game/">Game</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/game/">Game</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/ai/">AI</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/gl/">GL</a>
@@ -2562,10 +2649,10 @@ how-stable-diffusion-work
         <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/shader/">Shader</a>
