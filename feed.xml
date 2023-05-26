@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>航</title>
   <subtitle>航</subtitle>
-  <updated>2023-05-26T14:27:47+08:00</updated>
+  <updated>2023-05-26T16:39:33+08:00</updated>
   <author>
     <name>ratsafalig</name>
     <uri>http://localhost:4000/</uri>
@@ -20,8 +20,8 @@
 
   
   <entry>
-    <title>GPU Instancing</title>
-    <link href="http://localhost:4000/posts/gpu-instancing/" rel="alternate" type="text/html" title="GPU Instancing" />
+    <title>Batching 技术 和 GPU Instancing 技术</title>
+    <link href="http://localhost:4000/posts/gpu-instancing/" rel="alternate" type="text/html" title="Batching 技术 和 GPU Instancing 技术" />
     <published>2023-05-26T00:00:00+08:00</published>
   
     <updated>2023-05-26T00:00:00+08:00</updated>
@@ -50,27 +50,23 @@
 
 
 
-      场景里有很多 mesh 的时候, 性能下降的主要原因之一是 draw-call 过多, 如果对于每一个 mesh 都要进行一次 draw-call 性能消耗非常大.
+      Batching
+
+场景里有很多 mesh 的时候, 性能下降的主要原因之一是 draw-call 过多, 如果对于每一个 mesh 都要进行一次 draw-call 性能消耗非常大.
 
 这个时候如果多个 mesh 使用相同的 material, 原理上可以把所有相同材质的 mesh 看成一个大 mesh, 然后只进行一次 draw-call 就把这些 mesh 的所有 vertices 和 indices 都画出来
 
-这个技术就是 gpu-instancing
+这个过程就叫 batching, 通过 bake 一个大的 mesh 来只进行一次 draw-call, 但 batching 的所有物体必须是同一个 material 的才行
 
-没有 GPU-Instancing
+Batching Off
 
 不同材质的 mesh, unity 采用了两次 draw-call 来完成绘制
 
 
 
-有 GPU-Instancing
+Batching On
 
-相同材质的 mesh, unity 采用了一次 draw-call 就完成了绘制
-
-
-
-Graphics.DrawMeshInstanced
-
-Graphics.DrawMeshIns...
+相同材质的 mesh, unity 采用了一次 d...
     </summary>
   
 
@@ -222,7 +218,7 @@ Shader "Custom/Sobel"
     <link href="http://localhost:4000/posts/ai-animation-second-try/" rel="alternate" type="text/html" title="AI生成动画帧的第二次尝试" />
     <published>2023-05-24T00:00:00+08:00</published>
   
-    <updated>2023-05-24T14:42:17+08:00</updated>
+    <updated>2023-05-26T14:35:41+08:00</updated>
   
     <id>http://localhost:4000/posts/ai-animation-second-try/</id>
     <content src="http://localhost:4000/posts/ai-animation-second-try/" />

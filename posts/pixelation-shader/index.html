@@ -1679,14 +1679,14 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/ai-animation/">AI生成动画帧的一次尝试</a>
+          <a href="/posts/ai-animation-second-try/">AI生成动画帧的第二次尝试</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/ai-animation-second-try/">AI生成动画帧的第二次尝试</a>
+          <a href="/posts/ai-animation/">AI生成动画帧的一次尝试</a>
         </li>
       
         
@@ -2340,7 +2340,7 @@
   May 26, 2023
 </em>
 
-              <h4 class="pt-0 my-2" data-toc-skip>GPU Instancing</h4>
+              <h4 class="pt-0 my-2" data-toc-skip>Batching 技术 和 GPU Instancing 技术</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -2349,9 +2349,11 @@
 
 
 
-                  场景里有很多 mesh 的时候, 性能下降的主要原因之一是 draw-call 过多, 如果对于每一个 mesh 都要进行一次 draw-call 性能消耗非常大.
+                  Batching
 
-这个时候如果多个 mesh 使用相同的 material, 原理上可以把所有相同材质的 mesh 看成一个大 mesh, 然后只进行一次 draw-call 就把这些 mesh 的所有 vertices 和 indices 都...
+场景里有很多 mesh 的时候, 性能下降的主要原因之一是 draw-call 过多, 如果对于每一个 mesh 都要进行一次 draw-call 性能消耗非常大.
+
+这个时候如果多个 mesh 使用相同的 material, 原理上可以把所有相同材质的 mesh 看成一个大 mesh, 然后只进行一次 draw-call 就把这些 mesh 的所有 vertices 和...
                 </p>
               </div>
             </div>

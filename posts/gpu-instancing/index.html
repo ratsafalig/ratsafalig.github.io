@@ -55,10 +55,10 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="GPU Instancing" />
+<meta property="og:title" content="Batching 技术 和 GPU Instancing 技术" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="场景里有很多 mesh 的时候, 性能下降的主要原因之一是 draw-call 过多, 如果对于每一个 mesh 都要进行一次 draw-call 性能消耗非常大." />
-<meta property="og:description" content="场景里有很多 mesh 的时候, 性能下降的主要原因之一是 draw-call 过多, 如果对于每一个 mesh 都要进行一次 draw-call 性能消耗非常大." />
+<meta name="description" content="Batching" />
+<meta property="og:description" content="Batching" />
 <link rel="canonical" href="http://localhost:4000/posts/gpu-instancing/" />
 <meta property="og:url" content="http://localhost:4000/posts/gpu-instancing/" />
 <meta property="og:site_name" content="航" />
@@ -67,15 +67,15 @@
 <meta property="article:published_time" content="2023-05-26T00:00:00+08:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="http://localhost:4000/assets/img/2023-05-26-gpu-instancing/gpu.png" />
-<meta property="twitter:title" content="GPU Instancing" />
+<meta property="twitter:title" content="Batching 技术 和 GPU Instancing 技术" />
 <meta name="twitter:site" content="@ratsafalig" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-26T00:00:00+08:00","datePublished":"2023-05-26T00:00:00+08:00","description":"场景里有很多 mesh 的时候, 性能下降的主要原因之一是 draw-call 过多, 如果对于每一个 mesh 都要进行一次 draw-call 性能消耗非常大.","headline":"GPU Instancing","image":"http://localhost:4000/assets/img/2023-05-26-gpu-instancing/gpu.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/gpu-instancing/"},"url":"http://localhost:4000/posts/gpu-instancing/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-26T00:00:00+08:00","datePublished":"2023-05-26T00:00:00+08:00","description":"Batching","headline":"Batching 技术 和 GPU Instancing 技术","image":"http://localhost:4000/assets/img/2023-05-26-gpu-instancing/gpu.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/gpu-instancing/"},"url":"http://localhost:4000/posts/gpu-instancing/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>GPU Instancing | 航
+  <title>Batching 技术 和 GPU Instancing 技术 | 航
   </title>
 
   <!--
@@ -488,7 +488,7 @@
         
           
             
-              <span>GPU Instancing</span>
+              <span>Batching 技术 和 GPU Instancing 技术</span>
             
 
           
@@ -951,6 +951,53 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+
+    
+
+  
 
   
   
@@ -970,7 +1017,7 @@
 
 
 
-<h1 data-toc-skip>GPU Instancing</h1>
+<h1 data-toc-skip>Batching 技术 和 GPU Instancing 技术</h1>
 
 <div class="post-meta text-muted">
     <!-- published date -->
@@ -1051,9 +1098,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="301 words"
+  title="456 words"
 >
-  <em>1 min</em> read</span>
+  <em>2 min</em> read</span>
 
     </div>
 
@@ -1062,25 +1109,35 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <p>场景里有很多 mesh 的时候, 性能下降的主要原因之一是 draw-call 过多, 如果对于每一个 mesh 都要进行一次 draw-call 性能消耗非常大.</p>
+  <h2 id="batching"><span class="me-2">Batching</span><a href="#batching" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>场景里有很多 mesh 的时候, 性能下降的主要原因之一是 draw-call 过多, 如果对于每一个 mesh 都要进行一次 draw-call 性能消耗非常大.</p>
 
 <p>这个时候如果多个 mesh 使用相同的 material, 原理上可以把所有相同材质的 mesh 看成一个大 mesh, 然后只进行一次 draw-call 就把这些 mesh 的所有 vertices 和 indices 都画出来</p>
 
-<p>这个技术就是 gpu-instancing</p>
+<p>这个过程就叫 batching, 通过 bake 一个大的 mesh 来只进行一次 draw-call, 但 batching 的所有物体必须是同一个 material 的才行</p>
 
-<h2 id="没有-gpu-instancing"><span class="me-2">没有 GPU-Instancing</span><a href="#没有-gpu-instancing" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h3 id="batching-off"><span class="me-2">Batching Off</span><a href="#batching-off" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>不同材质的 mesh, unity 采用了两次 draw-call 来完成绘制</p>
 
 <p><a href="/assets/img/2023-05-26-gpu-instancing/frame_0.png" class="popup img-link "><img data-src="/assets/img/2023-05-26-gpu-instancing/frame_0.png" alt="" class="lazyload" data-proofer-ignore></a></p>
 
-<h2 id="有-gpu-instancing"><span class="me-2">有 GPU-Instancing</span><a href="#有-gpu-instancing" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h3 id="batching-on"><span class="me-2">Batching On</span><a href="#batching-on" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>相同材质的 mesh, unity 采用了一次 draw-call 就完成了绘制</p>
 
 <p><a href="/assets/img/2023-05-26-gpu-instancing/frame_1.png" class="popup img-link "><img data-src="/assets/img/2023-05-26-gpu-instancing/frame_1.png" alt="" class="lazyload" data-proofer-ignore></a></p>
 
-<h2 id="graphicsdrawmeshinstanced"><span class="me-2">Graphics.DrawMeshInstanced</span><a href="#graphicsdrawmeshinstanced" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="gpu-instancing"><span class="me-2">GPU Instancing</span><a href="#gpu-instancing" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>GPU Instancing 通常用在同样 mesh 同样材质的物体渲染上, 例如渲染一大堆的相同物体 ( TRS 矩阵可以不同 )</p>
+
+<p>因为 material 和 mesh 都相同, GPU 可以在很大的部分进行缓存 ( 例如 顶点数据, 索引数据, 材质数据 的 send-in ), 让一个 draw-call 更快来实现优化</p>
+
+<p>对比 batching, 因为不需要对 mesh 做合并, 某种程度上对 CPU 压力更小</p>
+
+<h3 id="graphicsdrawmeshinstanced"><span class="me-2">Graphics.DrawMeshInstanced</span><a href="#graphicsdrawmeshinstanced" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>Graphics.DrawMeshInstanced 提供了一种手动使用 GPU-Instanced 的方法, 代码如下</p>
 
@@ -1166,6 +1223,10 @@
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
+<h2 id="link"><span class="me-2">Link</span><a href="#link" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p><a href="https://wiki.gurbu.com/index.php?title=GPU_Instancer:Terminology">GPU_Instancer:Terminology</a></p>
+
 </div>
 
 <div class="post-tail-wrapper text-muted">
@@ -1227,7 +1288,7 @@
     
       
       <a
-        href="https://twitter.com/intent/tweet?text=GPU%20Instancing%20-%20%E8%88%AA&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fgpu-instancing%2F"
+        href="https://twitter.com/intent/tweet?text=Batching%20%E6%8A%80%E6%9C%AF%20%E5%92%8C%20GPU%20Instancing%20%E6%8A%80%E6%9C%AF%20-%20%E8%88%AA&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fgpu-instancing%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Twitter"
@@ -1240,7 +1301,7 @@
     
       
       <a
-        href="https://www.facebook.com/sharer/sharer.php?title=GPU%20Instancing%20-%20%E8%88%AA&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fgpu-instancing%2F"
+        href="https://www.facebook.com/sharer/sharer.php?title=Batching%20%E6%8A%80%E6%9C%AF%20%E5%92%8C%20GPU%20Instancing%20%E6%8A%80%E6%9C%AF%20-%20%E8%88%AA&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fgpu-instancing%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Facebook"
@@ -1253,7 +1314,7 @@
     
       
       <a
-        href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fgpu-instancing%2F&text=GPU%20Instancing%20-%20%E8%88%AA"
+        href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fgpu-instancing%2F&text=Batching%20%E6%8A%80%E6%9C%AF%20%E5%92%8C%20GPU%20Instancing%20%E6%8A%80%E6%9C%AF%20-%20%E8%88%AA"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Telegram"
@@ -1316,14 +1377,14 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/ai-animation/">AI生成动画帧的一次尝试</a>
+          <a href="/posts/ai-animation-second-try/">AI生成动画帧的第二次尝试</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/ai-animation-second-try/">AI生成动画帧的第二次尝试</a>
+          <a href="/posts/ai-animation/">AI生成动画帧的一次尝试</a>
         </li>
       
         
