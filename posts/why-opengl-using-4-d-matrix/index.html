@@ -1156,6 +1156,57 @@ up 向量和 view-dir 是新坐标系的 z, x 轴, camera-pos 是新坐标系的
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1209,52 +1260,6 @@ up 向量和 view-dir 是新坐标系的 z, x 轴, camera-pos 是新坐标系的
     
     
     
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -1317,6 +1322,54 @@ up 向量和 view-dir 是新坐标系的 z, x 轴, camera-pos 是新坐标系的
     
     
     
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1350,13 +1403,16 @@ up 向量和 view-dir 是新坐标系的 z, x 轴, camera-pos 是新坐标系的
         <a class="post-tag btn btn-outline-primary" href="/tags/gl/">GL</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/log/">Log</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/shader/">Shader</a>
@@ -1494,7 +1550,43 @@ up 向量和 view-dir 是新坐标系的 z, x 轴, camera-pos 是新坐标系的
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -1599,6 +1691,52 @@ up 向量和 view-dir 是新坐标系的 z, x 轴, camera-pos 是新坐标系的
         
         
         <div class="col">
+          <a href="/posts/custom-urp/" class="card post-preview h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class="small"
+  data-ts="1684857600"
+  data-df="ll"
+  
+>
+  May 24, 2023
+</em>
+
+              <h4 class="pt-0 my-2" data-toc-skip>Unity URP 定制渲染管线</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  本意是想做一个渲染效果, 几个 camera 始终在同一个 transform, 各自渲染到各自的 render-texture, 然后把每一个 camera 的 render-texture 做一个融合.
+然后按照各自的 depth-texture 决定哪个像素点显示在上面
+
+因为我一直用 URP ( 因为 shader graph ), 所以要达到这样的效果必须定制管线了
+
+例子
+
+例子...
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        
+        <div class="col">
           <a href="/posts/deferred-shading/" class="card post-preview h-100">
             <div class="card-body">
               <!--
@@ -1687,52 +1825,6 @@ Signature	Fun...
           </a>
         </div>
       
-        
-        
-        <div class="col">
-          <a href="/posts/custom-urp/" class="card post-preview h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class="small"
-  data-ts="1684857600"
-  data-df="ll"
-  
->
-  May 24, 2023
-</em>
-
-              <h4 class="pt-0 my-2" data-toc-skip>Unity URP 定制渲染管线</h4>
-              <div class="text-muted small">
-                <p>
-                  
-
-
-
-
-
-                  本意是想做一个渲染效果, 几个 camera 始终在同一个 transform, 各自渲染到各自的 render-texture, 然后把每一个 camera 的 render-texture 做一个融合.
-然后按照各自的 depth-texture 决定哪个像素点显示在上面
-
-因为我一直用 URP ( 因为 shader graph ), 所以要达到这样的效果必须定制管线了
-
-例子
-
-例子...
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      
     </div>
     <!-- .card-deck -->
   </div>
@@ -1756,11 +1848,11 @@ Signature	Fun...
 
   
     <a
-      href="/posts/morphing/"
+      href="/posts/camera-controller/"
       class="btn btn-outline-primary"
       prompt="Newer"
     >
-      <p>渐进 Mesh 形变</p>
+      <p>安卓手机相机控制</p>
     </a>
   
 </div>
@@ -1834,6 +1926,57 @@ Signature	Fun...
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1887,52 +2030,6 @@ Signature	Fun...
     
     
     
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -1995,6 +2092,54 @@ Signature	Fun...
     
     
     
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2028,13 +2173,16 @@ Signature	Fun...
         <a class="post-tag btn btn-outline-primary" href="/tags/gl/">GL</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/log/">Log</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/shader/">Shader</a>

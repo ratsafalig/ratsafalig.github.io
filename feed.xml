@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>航</title>
   <subtitle>航</subtitle>
-  <updated>2023-05-25T14:18:07+08:00</updated>
+  <updated>2023-05-26T14:27:47+08:00</updated>
   <author>
     <name>ratsafalig</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,64 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>GPU Instancing</title>
+    <link href="http://localhost:4000/posts/gpu-instancing/" rel="alternate" type="text/html" title="GPU Instancing" />
+    <published>2023-05-26T00:00:00+08:00</published>
+  
+    <updated>2023-05-26T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/gpu-instancing/</id>
+    <content src="http://localhost:4000/posts/gpu-instancing/" />
+    <author>
+      <name>ratsafalig</name>
+    </author>
+
+  
+    
+    <category term="Game" />
+    
+    <category term="GL" />
+    
+    <category term="Unity" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      场景里有很多 mesh 的时候, 性能下降的主要原因之一是 draw-call 过多, 如果对于每一个 mesh 都要进行一次 draw-call 性能消耗非常大.
+
+这个时候如果多个 mesh 使用相同的 material, 原理上可以把所有相同材质的 mesh 看成一个大 mesh, 然后只进行一次 draw-call 就把这些 mesh 的所有 vertices 和 indices 都画出来
+
+这个技术就是 gpu-instancing
+
+没有 GPU-Instancing
+
+不同材质的 mesh, unity 采用了两次 draw-call 来完成绘制
+
+
+
+有 GPU-Instancing
+
+相同材质的 mesh, unity 采用了一次 draw-call 就完成了绘制
+
+
+
+Graphics.DrawMeshInstanced
+
+Graphics.DrawMeshIns...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -197,6 +255,8 @@ Previous
 第一次尝试思路是 使用 control-net 生成第一帧, 动过 photoshop 稍微修改然后扔进 inpaint 去生成第二帧
 这一次尝试使用多个pose结合成的 controlnet open-pose 一次性生成多个 pose 然后直接拼接
 
+过程参照第一次尝试, 只是把 controlnet 的 openpose 图像替换成下面的图
+
 OpenPose
 
 
@@ -268,73 +328,6 @@ controlnet 使用的基准图是
 因为我要做一个格斗动画, 所以我使用了侧面站立的图
 
 使用的 prompt 还是 manti...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>波函数塌缩算法 (Wave Function Collapse)</title>
-    <link href="http://localhost:4000/posts/wave-function-collapse/" rel="alternate" type="text/html" title="波函数塌缩算法 (Wave Function Collapse)" />
-    <published>2023-05-01T00:00:00+08:00</published>
-  
-    <updated>2023-05-01T00:00:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/wave-function-collapse/</id>
-    <content src="http://localhost:4000/posts/wave-function-collapse/" />
-    <author>
-      <name>ratsafalig</name>
-    </author>
-
-  
-    
-    <category term="Algorithm" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      实际上是只是一个启发式算法。
-
-演示
-
-给定几个 tile，和 tile 之间的拼接规则，生成一张地图
-
-
-
-
-
-
-
-
-
-
-
-
-
-原理
-
-cell.py
-
-
-# --------------------------------------------------------------------------------- #
-# required libraries
-import pygame
-import random
-
-pygame.init()
-font = pygame.font.Font("./assets/custom_fonts/Poppins/Poppins-Light.ttf", 16)
-
-# --------------------------------------------------------------------------------- #
-
-#...
     </summary>
   
 

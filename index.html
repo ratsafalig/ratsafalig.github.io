@@ -1127,6 +1127,89 @@
     
 
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+        <!-- add SVG placehoder -->
+        
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+      <!-- create the image wrapper -->
+      
+
+    
+
+    <!-- combine -->
+    
+
+  
 
   
 
@@ -1194,6 +1277,81 @@
 
 
 <div id="post-list">
+  
+    <a href="/posts/gpu-instancing/" class="card-wrapper">
+      <div class="card post-preview flex-md-row-reverse">
+        
+          
+
+          
+          
+
+          
+
+          <div class="preview-img shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 8'%3E%3C/svg%3E" data-src="/assets/img/2023-05-26-gpu-instancing/gpu.png" width="15" height="8" alt="Preview Image"  class="lazyload" data-proofer-ignore></div>
+        
+
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">
+            GPU Instancing
+          </h1>
+
+          <div class="card-text post-content mt-0 mb-2">
+            <p>
+              
+
+
+
+
+
+              场景里有很多 mesh 的时候, 性能下降的主要原因之一是 draw-call 过多, 如果对于每一个 mesh 都要进行一次 draw-call 性能消耗非常大.
+
+这个时候如果多个 mesh 使用相同的 material, 原理上可以把所有相同材质的 mesh 看成一个大 mesh, 然后只进行一次 draw-call 就把这些 mesh 的所有 vertices 和 indices 都...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class=""
+  data-ts="1685030400"
+  data-df="ll"
+  
+>
+  May 26, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Game,
+                    GL,
+                    Unity
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+        <!-- .card-body -->
+      </div>
+    </a>
   
     <a href="/posts/urp-conv/" class="card-wrapper">
       <div class="card post-preview flex-md-row-reverse">
@@ -1394,10 +1552,9 @@ Previous
 第一次尝试思路是 使用 control-net 生成第一帧, 动过 photoshop 稍微修改然后扔进 inpaint 去生成第二帧
 这一次尝试使用多个pose结合成的 controlnet open-pose 一次性生成多个 pose 然后直接拼接
 
-OpenPose
+过程参照第一次尝试, 只是把 controlnet 的 openpose 图像替换成下面的图
 
-
-
+OpenP...
             </p>
           </div>
 
@@ -1786,6 +1943,77 @@ using UnityEngine;
       </div>
     </a>
   
+    <a href="/posts/camera-controller/" class="card-wrapper">
+      <div class="card post-preview flex-md-row-reverse">
+        
+
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">
+            安卓手机相机控制
+          </h1>
+
+          <div class="card-text post-content mt-0 mb-2">
+            <p>
+              
+
+
+
+
+
+              CameraController.cs
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using TouchScript.Gestures.TransformGestures;
+
+public class Camer...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class=""
+  data-ts="1682870400"
+  data-df="ll"
+  
+>
+  May  1, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Game,
+                    Unity
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+        <!-- .card-body -->
+      </div>
+    </a>
+  
     <a href="/posts/why-opengl-using-4-d-matrix/" class="card-wrapper">
       <div class="card post-preview flex-md-row-reverse">
         
@@ -1825,128 +2053,6 @@ using UnityEngine;
 [ 0, 0, 0, 1 ]
 
 矩阵将坐标平移 ...
-            </p>
-          </div>
-
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class=""
-  data-ts="1609430400"
-  data-df="ll"
-  
->
-  Jan  1, 2021
-</em>
-
-
-              <!-- categories -->
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-        <!-- .card-body -->
-      </div>
-    </a>
-  
-    <a href="/posts/transformer/" class="card-wrapper">
-      <div class="card post-preview flex-md-row-reverse">
-        
-
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">
-            Transformer
-          </h1>
-
-          <div class="card-text post-content mt-0 mb-2">
-            <p>
-              
-
-
-
-
-
-              Transformer 模型是一种用于自然语言处理的深度学习模型，其基本思想是引入了 self-attention 机制来解决传统的 RNN 和 CNN 模型在文本长度较长时的信息传递困难的问题。
-
-Transformer 模型中主要包含了 Encoder 和 Decoder 两个部分，Encoder 作用是将输入的文本转换为一个语义空间的向量表示，Decoder 则将 Encoder 的输...
-            </p>
-          </div>
-
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class=""
-  data-ts="1609430400"
-  data-df="ll"
-  
->
-  Jan  1, 2021
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    AI,
-                    Transformer
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-        <!-- .card-body -->
-      </div>
-    </a>
-  
-    <a href="/posts/textual-inversion/" class="card-wrapper">
-      <div class="card post-preview flex-md-row-reverse">
-        
-
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">
-            Textual Inversion
-          </h1>
-
-          <div class="card-text post-content mt-0 mb-2">
-            <p>
-              
-
-
-
-
-
-              
-
             </p>
           </div>
 
@@ -2172,6 +2278,57 @@ Transformer 模型中主要包含了 Encoder 和 Decoder 两个部分，Encoder 
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2225,52 +2382,6 @@ Transformer 模型中主要包含了 Encoder 和 Decoder 两个部分，Encoder 
     
     
     
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -2333,6 +2444,54 @@ Transformer 模型中主要包含了 Encoder 和 Decoder 两个部分，Encoder 
     
     
     
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2366,13 +2525,16 @@ Transformer 模型中主要包含了 Encoder 和 Decoder 两个部分，Encoder 
         <a class="post-tag btn btn-outline-primary" href="/tags/gl/">GL</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/log/">Log</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/shader/">Shader</a>
@@ -2452,6 +2614,57 @@ Transformer 模型中主要包含了 Encoder 和 Decoder 两个部分，Encoder 
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2505,52 +2718,6 @@ Transformer 模型中主要包含了 Encoder 和 Decoder 两个部分，Encoder 
     
     
     
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -2613,6 +2780,54 @@ Transformer 模型中主要包含了 Encoder 和 Decoder 两个部分，Encoder 
     
     
     
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2646,13 +2861,16 @@ Transformer 模型中主要包含了 Encoder 和 Decoder 两个部分，Encoder 
         <a class="post-tag btn btn-outline-primary" href="/tags/gl/">GL</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/log/">Log</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/shader/">Shader</a>

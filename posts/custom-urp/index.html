@@ -2222,6 +2222,57 @@
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2275,52 +2326,6 @@
     
     
     
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -2383,6 +2388,54 @@
     
     
     
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2416,13 +2469,16 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/gl/">GL</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/log/">Log</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/shader/">Shader</a>
@@ -2493,7 +2549,43 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -2771,7 +2863,7 @@ Sobel 卷积
         
         
         <div class="col">
-          <a href="/posts/why-opengl-using-4-d-matrix/" class="card post-preview h-100">
+          <a href="/posts/gpu-instancing/" class="card post-preview h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2784,14 +2876,14 @@ Sobel 卷积
 
 <em
   class="small"
-  data-ts="1609430400"
+  data-ts="1685030400"
   data-df="ll"
   
 >
-  Jan  1, 2021
+  May 26, 2023
 </em>
 
-              <h4 class="pt-0 my-2" data-toc-skip>OpenGL 矩阵</h4>
+              <h4 class="pt-0 my-2" data-toc-skip>GPU Instancing</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -2800,28 +2892,9 @@ Sobel 卷积
 
 
 
-                  正常情况下 3 * 3 矩阵已经足够表现 3d 空间内的线性变换
-但线性变换有两个前提
+                  场景里有很多 mesh 的时候, 性能下降的主要原因之一是 draw-call 过多, 如果对于每一个 mesh 都要进行一次 draw-call 性能消耗非常大.
 
-
-  原点在线性变换后还是原点
-  任何直线在线性变换后还是直线
-
-
-但 opengl 不仅仅需要线性变换, 比如
-
-
-  平移变换
-  投影变换
-  旋转变换
-
-
-[ 1, 0, 0, x ]
-[ 0, 1, 0, y ]
-[ 0, 0, 1, z ]
-[ 0, 0, 0, 1 ]
-
-矩阵将坐标平移 ...
+这个时候如果多个 mesh 使用相同的 material, 原理上可以把所有相同材质的 mesh 看成一个大 mesh, 然后只进行一次 draw-call 就把这些 mesh 的所有 vertices 和 indices 都...
                 </p>
               </div>
             </div>
@@ -2929,6 +3002,57 @@ Sobel 卷积
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2982,52 +3106,6 @@ Sobel 卷积
     
     
     
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -3090,6 +3168,54 @@ Sobel 卷积
     
     
     
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -3123,13 +3249,16 @@ Sobel 卷积
         <a class="post-tag btn btn-outline-primary" href="/tags/gl/">GL</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/log/">Log</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/shader/">Shader</a>

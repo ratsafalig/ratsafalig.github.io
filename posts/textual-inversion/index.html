@@ -882,6 +882,57 @@
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -935,52 +986,6 @@
     
     
     
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -1043,6 +1048,54 @@
     
     
     
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1076,13 +1129,16 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/gl/">GL</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/log/">Log</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/shader/">Shader</a>
@@ -1244,7 +1300,43 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -1355,6 +1447,47 @@
         
         
         <div class="col">
+          <a href="/posts/gpu-instancing/" class="card post-preview h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class="small"
+  data-ts="1685030400"
+  data-df="ll"
+  
+>
+  May 26, 2023
+</em>
+
+              <h4 class="pt-0 my-2" data-toc-skip>GPU Instancing</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  场景里有很多 mesh 的时候, 性能下降的主要原因之一是 draw-call 过多, 如果对于每一个 mesh 都要进行一次 draw-call 性能消耗非常大.
+
+这个时候如果多个 mesh 使用相同的 material, 原理上可以把所有相同材质的 mesh 看成一个大 mesh, 然后只进行一次 draw-call 就把这些 mesh 的所有 vertices 和 indices 都...
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        
+        <div class="col">
           <a href="/posts/urp-conv/" class="card post-preview h-100">
             <div class="card-body">
               <!--
@@ -1445,57 +1578,6 @@ Sobel 卷积
 例子
 
 例子...
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        
-        
-        <div class="col">
-          <a href="/posts/ai-animation-second-try/" class="card post-preview h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class="small"
-  data-ts="1684857600"
-  data-df="ll"
-  
->
-  May 24, 2023
-</em>
-
-              <h4 class="pt-0 my-2" data-toc-skip>AI生成动画帧的第二次尝试</h4>
-              <div class="text-muted small">
-                <p>
-                  
-
-
-
-
-
-                  
-  
-
-
-Previous
-
-第一次尝试思路是 使用 control-net 生成第一帧, 动过 photoshop 稍微修改然后扔进 inpaint 去生成第二帧
-这一次尝试使用多个pose结合成的 controlnet open-pose 一次性生成多个 pose 然后直接拼接
-
-OpenPose
-
-
-
                 </p>
               </div>
             </div>
@@ -1603,6 +1685,57 @@ OpenPose
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1656,52 +1789,6 @@ OpenPose
     
     
     
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -1764,6 +1851,54 @@ OpenPose
     
     
     
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1797,13 +1932,16 @@ OpenPose
         <a class="post-tag btn btn-outline-primary" href="/tags/gl/">GL</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/log/">Log</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/shader/">Shader</a>
