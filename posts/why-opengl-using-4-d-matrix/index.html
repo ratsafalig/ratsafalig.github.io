@@ -1147,6 +1147,55 @@ up 向量和 view-dir 是新坐标系的 z, x 轴, camera-pos 是新坐标系的
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
       
         
         
@@ -1197,55 +1246,6 @@ up 向量和 view-dir 是新坐标系的 z, x 轴, camera-pos 是新坐标系的
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -1377,6 +1377,66 @@ up 向量和 view-dir 是新坐标系的 z, x 轴, camera-pos 是新坐标系的
     
     
       
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -1397,13 +1457,13 @@ up 向量和 view-dir 是新坐标系的 z, x 轴, camera-pos 是新坐标系的
         <a class="post-tag btn btn-outline-primary" href="/tags/game/">Game</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/ai/">AI</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/gl/">GL</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
@@ -1419,6 +1479,9 @@ up 向量和 view-dir 是新坐标系的 z, x 轴, camera-pos 是新坐标系的
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/transformer/">Transformer</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/util/">Util</a>
       
     </div>
   </div>
@@ -1574,7 +1637,31 @@ up 向量和 view-dir 是新坐标系的 z, x 轴, camera-pos 是新坐标系的
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -1737,6 +1824,59 @@ up 向量和 view-dir 是新坐标系的 z, x 轴, camera-pos 是新坐标系的
         
         
         <div class="col">
+          <a href="/posts/urp-conv/" class="card post-preview h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class="small"
+  data-ts="1684944000"
+  data-df="ll"
+  
+>
+  May 25, 2023
+</em>
+
+              <h4 class="pt-0 my-2" data-toc-skip>Unity 渲染管线 卷积</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  尝试一下用 Unity 渲染管线实现一些常见的图形学卷积核, 主要思路就是在渲染之后对 Camera 的 color target 做一次 self Blit 然后在 shader 里对 _CameraColorAttachmentA 做卷积
+
+Sobel 卷积
+
+一种边缘检测的图像卷积算子, 卷积核为
+
+1
+2
+3
+[ 1 0 -1 ]
+[ 2 0 -2 ]
+[ 1 0 -1 ]
+
+
+这个...
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        
+        <div class="col">
           <a href="/posts/deferred-shading/" class="card post-preview h-100">
             <div class="card-body">
               <!--
@@ -1771,54 +1911,6 @@ up 向量和 view-dir 是新坐标系的 z, x 轴, camera-pos 是新坐标系的
 在Forward shading中，所有物体都将进行逐像素着色，所以它直接使用几何中的信息。每个像素都被处理，以确定它是最终图像中的颜色。Forward shading的主要优点是它在实时渲染方面的速度非常快，但缺点是它在真正大型场景中的效率可能会下降。
 
 相比而言，Deferred shading只...
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        
-        
-        <div class="col">
-          <a href="/posts/shaderlab/" class="card post-preview h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class="small"
-  data-ts="1609430400"
-  data-df="ll"
-  
->
-  Jan  1, 2021
-</em>
-
-              <h4 class="pt-0 my-2" data-toc-skip>ShaderLab</h4>
-              <div class="text-muted small">
-                <p>
-                  
-
-
-
-
-
-                  Shader &quot;&amp;lt;name&amp;gt;&quot;
-{
-    &amp;lt;optional: Material properties&amp;gt;
-    &amp;lt;One or more SubShader definitions&amp;gt;
-    &amp;lt;optional: custom editor&amp;gt;
-    &amp;lt;optional: fallback&amp;gt;
-} 
-
-
-Signature	Fun...
                 </p>
               </div>
             </div>
@@ -1917,6 +2009,55 @@ Signature	Fun...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
       
         
         
@@ -1967,55 +2108,6 @@ Signature	Fun...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -2147,6 +2239,66 @@ Signature	Fun...
     
     
       
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -2167,13 +2319,13 @@ Signature	Fun...
         <a class="post-tag btn btn-outline-primary" href="/tags/game/">Game</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/ai/">AI</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/gl/">GL</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
@@ -2189,6 +2341,9 @@ Signature	Fun...
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/transformer/">Transformer</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/util/">Util</a>
       
     </div>
   </div>

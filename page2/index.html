@@ -597,6 +597,83 @@
 
 <div id="post-list">
   
+    <a href="/posts/why-opengl-using-4-d-matrix/" class="card-wrapper">
+      <div class="card post-preview flex-md-row-reverse">
+        
+
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">
+            OpenGL 矩阵
+          </h1>
+
+          <div class="card-text post-content mt-0 mb-2">
+            <p>
+              
+
+
+
+
+
+              正常情况下 3 * 3 矩阵已经足够表现 3d 空间内的线性变换
+但线性变换有两个前提
+
+
+  原点在线性变换后还是原点
+  任何直线在线性变换后还是直线
+
+
+但 opengl 不仅仅需要线性变换, 比如
+
+
+  平移变换
+  投影变换
+  旋转变换
+
+
+[ 1, 0, 0, x ]
+[ 0, 1, 0, y ]
+[ 0, 0, 1, z ]
+[ 0, 0, 0, 1 ]
+
+矩阵将坐标平移 ...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class=""
+  data-ts="1609430400"
+  data-df="ll"
+  
+>
+  Jan  1, 2021
+</em>
+
+
+              <!-- categories -->
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+        <!-- .card-body -->
+      </div>
+    </a>
+  
     <a href="/posts/transformer/" class="card-wrapper">
       <div class="card post-preview flex-md-row-reverse">
         
@@ -1159,6 +1236,77 @@ opengameart
       </div>
     </a>
   
+    <a href="/posts/batch-extract-materials/" class="card-wrapper">
+      <div class="card post-preview flex-md-row-reverse">
+        
+
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">
+            BatchExtractMaterials
+          </h1>
+
+          <div class="card-text post-content mt-0 mb-2">
+            <p>
+              
+
+
+
+
+
+              using UnityEngine;
+using UnityEditor;
+using System.Collections.Generic;
+using System.IO;
+
+public class BatchExtractMaterials : EditorWindow
+{
+	private enum ExtractMode { Extract = 0, Remap = 1, Ign...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class=""
+  data-ts="-28800"
+  data-df="ll"
+  
+>
+  Jan  1, 1970
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Game,
+                    Unity,
+                    Util
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+        <!-- .card-body -->
+      </div>
+    </a>
+  
 </div>
 <!-- #post-list -->
 
@@ -1337,6 +1485,55 @@ opengameart
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
       
         
         
@@ -1387,55 +1584,6 @@ opengameart
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -1567,6 +1715,66 @@ opengameart
     
     
       
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -1587,13 +1795,13 @@ opengameart
         <a class="post-tag btn btn-outline-primary" href="/tags/game/">Game</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/ai/">AI</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/gl/">GL</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
@@ -1609,6 +1817,9 @@ opengameart
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/transformer/">Transformer</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/util/">Util</a>
       
     </div>
   </div>
@@ -1673,6 +1884,55 @@ opengameart
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
       
         
         
@@ -1723,55 +1983,6 @@ opengameart
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -1903,6 +2114,66 @@ opengameart
     
     
       
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -1923,13 +2194,13 @@ opengameart
         <a class="post-tag btn btn-outline-primary" href="/tags/game/">Game</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/ai/">AI</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/gl/">GL</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
@@ -1945,6 +2216,9 @@ opengameart
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/transformer/">Transformer</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/util/">Util</a>
       
     </div>
   </div>

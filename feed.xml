@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>航</title>
   <subtitle>航</subtitle>
-  <updated>2023-05-26T20:06:27+08:00</updated>
+  <updated>2023-05-27T13:15:30+08:00</updated>
   <author>
     <name>ratsafalig</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,69 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Unity 反向动力 ( IK )</title>
+    <link href="http://localhost:4000/posts/ik-constraint/" rel="alternate" type="text/html" title="Unity 反向动力 ( IK )" />
+    <published>2023-05-27T00:00:00+08:00</published>
+  
+    <updated>2023-05-27T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/ik-constraint/</id>
+    <content src="http://localhost:4000/posts/ik-constraint/" />
+    <author>
+      <name>ratsafalig</name>
+    </author>
+
+  
+    
+    <category term="Unity" />
+    
+    <category term="Game" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Multi-Aim Constraint
+
+
+
+
+
+Two Bone Constraint
+
+
+
+
+
+例子
+
+
+
+
+
+
+
+procedural animation
+
+实现蜘蛛爬的算法实现:
+
+Link
+
+Unity-Procedural-IK-Wall-Walking-Spider
+
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -193,7 +256,7 @@ Shader "Custom/Sobel"
 
 例子0
 
-对卡车做降采样, 其他场景保持不变
+对卡车做像素化, 场景里的其他GameObject保持不变
 
 
 
@@ -206,7 +269,7 @@ Shader "Custom/Sobel"
 思路
 
 为每一个 camera 准备两个 render-texture, color-rt 和 depth-rt,
-每一个 camera 渲染结束之后都把 camera 的 color-target 和 depth-tar...
+每一个 camera 渲染结束之后都把 camera 的 color-target...
     </summary>
   
 
@@ -257,73 +320,6 @@ OpenPose
 
 
 
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>AI生成动画帧的一次尝试</title>
-    <link href="http://localhost:4000/posts/ai-animation/" rel="alternate" type="text/html" title="AI生成动画帧的一次尝试" />
-    <published>2023-05-19T00:00:00+08:00</published>
-  
-    <updated>2023-05-24T14:42:17+08:00</updated>
-  
-    <id>http://localhost:4000/posts/ai-animation/</id>
-    <content src="http://localhost:4000/posts/ai-animation/" />
-    <author>
-      <name>ratsafalig</name>
-    </author>
-
-  
-    
-    <category term="AI" />
-    
-    <category term="Game" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      工具
-
-checkpoints: delibrate_v2.safetensors
-lora: Small_Monstersv2
-textual inversion: mechasoulall
-https://www.remove.bg/zh/upload
-
-流程
-
-第一步
-
-prompt 是 mantis  mechasoulall &amp;lt;lora:Small_Mostersv2:1&amp;gt; 
-用 controlnet 参数
-
-
-
-这一步生成的结果如下
-
-
-
-controlnet 使用的基准图是
-
-
-
-这张图也是拿AI生成的, 或者也可以直接上网搜一个
-
-第二步
-
-把图传到 image2image, 找一张合适的 pose, 用 openpose controlnet 生成动画的开始帧数
-因为我要做一个格斗动画, 所以我使用了侧面站立的图
-
-使用的 prompt 还是 manti...
     </summary>
   
 

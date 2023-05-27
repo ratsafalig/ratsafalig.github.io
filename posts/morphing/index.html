@@ -1464,6 +1464,55 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
       
         
         
@@ -1514,55 +1563,6 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -1694,6 +1694,66 @@
     
     
       
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -1714,13 +1774,13 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/game/">Game</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/ai/">AI</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/gl/">GL</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
@@ -1736,6 +1796,9 @@
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/transformer/">Transformer</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/util/">Util</a>
       
     </div>
   </div>
@@ -1867,7 +1930,31 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -2132,6 +2219,72 @@ cell.py
         
         
         <div class="col">
+          <a href="/posts/ik-constraint/" class="card post-preview h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class="small"
+  data-ts="1685116800"
+  data-df="ll"
+  
+>
+  May 27, 2023
+</em>
+
+              <h4 class="pt-0 my-2" data-toc-skip>Unity 反向动力 ( IK )</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  Multi-Aim Constraint
+
+
+
+
+
+Two Bone Constraint
+
+
+
+
+
+例子
+
+
+
+
+
+
+
+procedural animation
+
+实现蜘蛛爬的算法实现:
+
+Link
+
+Unity-Procedural-IK-Wall-Walking-Spider
+
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        
+        <div class="col">
           <a href="/posts/gpu-instancing/" class="card post-preview h-100">
             <div class="card-body">
               <!--
@@ -2166,59 +2319,6 @@ cell.py
 场景里有很多 mesh 的时候, 性能下降的主要原因之一是 draw-call 过多, 如果对于每一个 mesh 都要进行一次 draw-call 性能消耗非常大.
 
 这个时候如果多个 mesh 使用相同的 material, 原理上可以把所有相同材质的 mesh 看成一个大 mesh, 然后只进行一次 draw-call 就把这些 mesh 的所有 vertices 和...
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        
-        
-        <div class="col">
-          <a href="/posts/urp-conv/" class="card post-preview h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class="small"
-  data-ts="1684944000"
-  data-df="ll"
-  
->
-  May 25, 2023
-</em>
-
-              <h4 class="pt-0 my-2" data-toc-skip>Unity 渲染管线 卷积</h4>
-              <div class="text-muted small">
-                <p>
-                  
-
-
-
-
-
-                  尝试一下用 Unity 渲染管线实现一些常见的图形学卷积核, 主要思路就是在渲染之后对 Camera 的 color target 做一次 self Blit 然后在 shader 里对 _CameraColorAttachmentA 做卷积
-
-Sobel 卷积
-
-一种边缘检测的图像卷积算子, 卷积核为
-
-1
-2
-3
-[ 1 0 -1 ]
-[ 2 0 -2 ]
-[ 1 0 -1 ]
-
-
-这个...
                 </p>
               </div>
             </div>
@@ -2317,6 +2417,55 @@ Sobel 卷积
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
       
         
         
@@ -2367,55 +2516,6 @@ Sobel 卷积
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -2547,6 +2647,66 @@ Sobel 卷积
     
     
       
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -2567,13 +2727,13 @@ Sobel 卷积
         <a class="post-tag btn btn-outline-primary" href="/tags/game/">Game</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/ai/">AI</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/gl/">GL</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
@@ -2589,6 +2749,9 @@ Sobel 卷积
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/transformer/">Transformer</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/util/">Util</a>
       
     </div>
   </div>

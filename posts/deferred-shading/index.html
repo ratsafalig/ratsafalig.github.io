@@ -1201,6 +1201,55 @@ For each light:
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
       
         
         
@@ -1251,55 +1300,6 @@ For each light:
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -1431,6 +1431,66 @@ For each light:
     
     
       
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -1451,13 +1511,13 @@ For each light:
         <a class="post-tag btn btn-outline-primary" href="/tags/game/">Game</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/ai/">AI</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/gl/">GL</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
@@ -1473,6 +1533,9 @@ For each light:
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/transformer/">Transformer</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/util/">Util</a>
       
     </div>
   </div>
@@ -1712,7 +1775,31 @@ For each light:
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -1855,7 +1942,7 @@ For each light:
         
         
         <div class="col">
-          <a href="/posts/shaderlab/" class="card post-preview h-100">
+          <a href="/posts/urp-conv/" class="card post-preview h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1868,14 +1955,14 @@ For each light:
 
 <em
   class="small"
-  data-ts="1609430400"
+  data-ts="1684944000"
   data-df="ll"
   
 >
-  Jan  1, 2021
+  May 25, 2023
 </em>
 
-              <h4 class="pt-0 my-2" data-toc-skip>ShaderLab</h4>
+              <h4 class="pt-0 my-2" data-toc-skip>Unity 渲染管线 卷积</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -1884,22 +1971,21 @@ For each light:
 
 
 
-                  1
+                  尝试一下用 Unity 渲染管线实现一些常见的图形学卷积核, 主要思路就是在渲染之后对 Camera 的 color target 做一次 self Blit 然后在 shader 里对 _CameraColorAttachmentA 做卷积
+
+Sobel 卷积
+
+一种边缘检测的图像卷积算子, 卷积核为
+
+1
 2
 3
-4
-5
-6
-7
-Shader &quot;&amp;lt;name&amp;gt;&quot;
-{
-    &amp;lt;optional: Material properties&amp;gt;
-    &amp;lt;One or more SubShader definitions&amp;gt;
-    &amp;lt;optional: custom editor&amp;gt;
-    &amp;lt;optional: fallback&amp;gt;
-} 
+[ 1 0 -1 ]
+[ 2 0 -2 ]
+[ 1 0 -1 ]
 
-...
+
+这个...
                 </p>
               </div>
             </div>
@@ -1998,6 +2084,55 @@ Shader &quot;&amp;lt;name&amp;gt;&quot;
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
       
         
         
@@ -2048,55 +2183,6 @@ Shader &quot;&amp;lt;name&amp;gt;&quot;
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -2228,6 +2314,66 @@ Shader &quot;&amp;lt;name&amp;gt;&quot;
     
     
       
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -2248,13 +2394,13 @@ Shader &quot;&amp;lt;name&amp;gt;&quot;
         <a class="post-tag btn btn-outline-primary" href="/tags/game/">Game</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/ai/">AI</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/gl/">GL</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
@@ -2270,6 +2416,9 @@ Shader &quot;&amp;lt;name&amp;gt;&quot;
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/transformer/">Transformer</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/util/">Util</a>
       
     </div>
   </div>
