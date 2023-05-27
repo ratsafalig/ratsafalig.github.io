@@ -45,8 +45,8 @@
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="ShaderLab" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="1 2 3 4 5 6 7 Shader &quot;&lt;name&gt;&quot; { &lt;optional: Material properties&gt; &lt;One or more SubShader definitions&gt; &lt;optional: custom editor&gt; &lt;optional: fallback&gt; }" />
-<meta property="og:description" content="1 2 3 4 5 6 7 Shader &quot;&lt;name&gt;&quot; { &lt;optional: Material properties&gt; &lt;One or more SubShader definitions&gt; &lt;optional: custom editor&gt; &lt;optional: fallback&gt; }" />
+<meta name="description" content="ShaderLab Syntax" />
+<meta property="og:description" content="ShaderLab Syntax" />
 <link rel="canonical" href="http://localhost:4000/posts/shaderlab/" />
 <meta property="og:url" content="http://localhost:4000/posts/shaderlab/" />
 <meta property="og:site_name" content="航" />
@@ -56,7 +56,7 @@
 <meta property="twitter:title" content="ShaderLab" />
 <meta name="twitter:site" content="@ratsafalig" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-01-01T00:00:00+08:00","datePublished":"2021-01-01T00:00:00+08:00","description":"1 2 3 4 5 6 7 Shader &quot;&lt;name&gt;&quot; { &lt;optional: Material properties&gt; &lt;One or more SubShader definitions&gt; &lt;optional: custom editor&gt; &lt;optional: fallback&gt; }","headline":"ShaderLab","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/shaderlab/"},"url":"http://localhost:4000/posts/shaderlab/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-01-01T00:00:00+08:00","datePublished":"2021-01-01T00:00:00+08:00","description":"ShaderLab Syntax","headline":"ShaderLab","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/shaderlab/"},"url":"http://localhost:4000/posts/shaderlab/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -569,9 +569,115 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+
+    
+
+  
 
   
   
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+
+    
 
   
 
@@ -665,9 +771,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="124 words"
+  title="446 words"
 >
-  <em>1 min</em> read</span>
+  <em>2 min</em> read</span>
 
     </div>
 
@@ -676,45 +782,7 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="rouge-code"><pre>Shader "&lt;name&gt;"
-{
-    &lt;optional: Material properties&gt;
-    &lt;One or more SubShader definitions&gt;
-    &lt;optional: custom editor&gt;
-    &lt;optional: fallback&gt;
-} 
-</pre></td></tr></tbody></table></code></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-</pre></td><td class="rouge-code"><pre>Signature	Function
-SubShader
-{
-    &lt;optional: LOD&gt;
-    &lt;optional: tags&gt;
-    &lt;optional: commands&gt;
-    &lt;One or more Pass definitions&gt;
-}
-</pre></td></tr></tbody></table></code></div></div>
-
-<h1 id="built-in-render-pipeline">Built-in Render Pipeline</h1>
+  <h2 id="shaderlab-syntax"><span class="me-2">ShaderLab Syntax</span><a href="#shaderlab-syntax" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
@@ -738,29 +806,233 @@ SubShader
 18
 19
 20
-</pre></td><td class="rouge-code"><pre>Shader "Examples/SinglePass"
+21
+22
+</pre></td><td class="rouge-code"><pre>// colored vertex lighting
+Shader "Simple colored lighting"
 {
+    // a single color property
+    Properties {
+        _Color ("Main Color", Color) = (1,.5,.5,1)
+    }
+    // define one subshader
     SubShader
     {
-        Tags { "ExampleSubShaderTagKey" = "ExampleSubShaderTagValue" }
-        LOD 100
-
-         // ShaderLab commands that apply to the whole SubShader go here. 
-
+        // a single pass in our subshader
         Pass
-        {                
-              Name "ExamplePassName"
-              Tags { "ExamplePassTagKey" = "ExamplePassTagValue" }
-
-              // ShaderLab commands that apply to this Pass go here.
-
-              // HLSL code goes here.
+        {
+            // use fixed function per-vertex lighting
+            Material
+            {
+                Diffuse [_Color]
+            }
+            Lighting On
         }
     }
 }
 </pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="urp">URP</h1>
+<h3 id="properties"><span class="me-2">Properties</span><a href="#properties" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre>Properties { Property [Property ...] }
+
+---
+
+name ("display name", Range (min, max)) = number
+name ("display name", Float) = number
+name ("display name", Int) = number
+
+---
+
+name ("display name", Color) = (number,number,number,number)
+name ("display name", Vector) = (number,number,number,number)
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Example</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre>// properties for a water shader
+Properties
+{
+    _WaveScale ("Wave scale", Range (0.02,0.15)) = 0.07 // sliders
+    _ReflDistort ("Reflection distort", Range (0,1.5)) = 0.5
+    _RefrDistort ("Refraction distort", Range (0,1.5)) = 0.4
+    _RefrColor ("Refraction color", Color) = (.34, .85, .92, 1) // color
+    _ReflectionTex ("Environment Reflection", 2D) = "" {} // textures
+    _RefractionTex ("Environment Refraction", 2D) = "" {}
+    _Fresnel ("Fresnel (A) ", 2D) = "" {}
+    _BumpMap ("Bumpmap (RGB) ", 2D) = "" {}
+}
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="shaderlab-subshader"><span class="me-2">ShaderLab: SubShader</span><a href="#shaderlab-subshader" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>Subshader { [Tags] [CommonState] Passdef [Passdef ...] }
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Example</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre>// ...
+SubShader {
+    Pass {
+        Lighting Off
+        SetTexture [_MainTex] {}
+    }
+}
+// ...
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="shaderlab-pass"><span class="me-2">ShaderLab: Pass</span><a href="#shaderlab-pass" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+</pre></td><td class="rouge-code"><pre>Pass { [Name and Tags] [RenderSetup] }
+
+---
+
+Cull Back | Front | Off
+
+ZTest (Less | Greater | LEqual | GEqual | Equal | NotEqual | Always)
+
+ZWrite On | Off
+
+Offset OffsetFactor, OffsetUnits
+
+Blend sourceBlendMode destBlendMode
+Blend sourceBlendMode destBlendMode, alphaSourceBlendMode alphaDestBlendMode
+BlendOp colorOp
+BlendOp colorOp, alphaOp
+AlphaToMask On | Off
+
+ColorMask RGB | A | 0 | any combination of R, G, B, A
+
+Lighting On | Off
+Material { Material Block }
+SeparateSpecular On | Off
+Color Color-value
+ColorMaterial AmbientAndDiffuse | Emission
+
+Fog { Fog Block }
+
+AlphaTest (Less | Greater | LEqual | GEqual | Equal | NotEqual | Always) CutoffValue
+
+SetTexture textureProperty { combine options }
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="shaderlab-fallback"><span class="me-2">ShaderLab: Fallback</span><a href="#shaderlab-fallback" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre>Fallback "name"
+
+Fallback Off
+
+Shader "example" {
+    // properties and subshaders here...
+    Fallback "otherexample"
+}
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="shaderlab-customeditor"><span class="me-2">ShaderLab: CustomEditor</span><a href="#shaderlab-customeditor" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>CustomEditor "name"
+
+Shader "example" {
+    // properties and subshaders here...
+    CustomEditor "MyCustomEditor"
+}
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="link"><span class="me-2">Link</span><a href="#link" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p><a href="https://docs.unity3d.com/2018.1/Documentation/Manual/SL-Shader.html">SL-Shader</a></p>
 
 </div>
 
@@ -773,7 +1045,8 @@ SubShader
     
       <a href='/categories/unity/'>Unity</a>,
       <a href='/categories/game/'>Game</a>,
-      <a href='/categories/gl/'>GL</a>
+      <a href='/categories/gl/'>GL</a>,
+      <a href='/categories/shader/'>Shader</a>
   </div>
   
 
@@ -790,6 +1063,9 @@ SubShader
       
       <a href="/tags/gl/"
           class="post-tag no-text-decoration" >GL</a>
+      
+      <a href="/tags/shader/"
+          class="post-tag no-text-decoration" >Shader</a>
       
   </div>
   
@@ -1106,6 +1382,47 @@ SubShader
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1167,49 +1484,6 @@ SubShader
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1255,8 +1529,6 @@ SubShader
     
     
     
-    
-      
     
   
     
@@ -1304,10 +1576,10 @@ SubShader
         <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/log/">Log</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/shader/">Shader</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/shader/">Shader</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/log/">Log</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/transformer/">Transformer</a>
@@ -1326,6 +1598,11 @@ SubShader
       
 
 
+
+  <div id="toc-wrapper" class="ps-0 pe-4 mb-5">
+    <div class="panel-heading ps-3 pt-2 mb-2">Contents</div>
+    <nav id="toc"></nav>
+  </div>
 
 
     
@@ -1968,6 +2245,47 @@ Sobel 卷积
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2029,49 +2347,6 @@ Sobel 卷积
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -2117,8 +2392,6 @@ Sobel 卷积
     
     
     
-    
-      
     
   
     
@@ -2166,10 +2439,10 @@ Sobel 卷积
         <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/log/">Log</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/shader/">Shader</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/shader/">Shader</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/log/">Log</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/transformer/">Transformer</a>
@@ -2350,9 +2623,16 @@ Sobel 卷积
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.0/dist/jquery.min.js,npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.7/dayjs.min.js,npm/dayjs@1.11.7/locale/en.min.js,npm/dayjs@1.11.7/plugin/relativeTime.min.js,npm/dayjs@1.11.7/plugin/localizedFormat.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.0/dist/jquery.min.js,npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.7/dayjs.min.js,npm/dayjs@1.11.7/locale/en.min.js,npm/dayjs@1.11.7/plugin/relativeTime.min.js,npm/dayjs@1.11.7/plugin/localizedFormat.min.js,npm/tocbot@4.21.0/dist/tocbot.min.js"></script>
 
 
 

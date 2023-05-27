@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>航</title>
   <subtitle>航</subtitle>
-  <updated>2023-05-27T13:15:30+08:00</updated>
+  <updated>2023-05-27T22:56:05+08:00</updated>
   <author>
     <name>ratsafalig</name>
     <uri>http://localhost:4000/</uri>
@@ -72,10 +72,19 @@ procedural animation
 
 实现蜘蛛爬的算法实现:
 
-Link
+SpiderProceduralAnimation.cs
 
-Unity-Procedural-IK-Wall-Walking-Spider
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
+public class SpiderProceduralAnimation : MonoBehaviour
+{
+    public Transform[] legTargets;
+    public float stepSize = 1f;
+    public int smoothness = 1;
+    public float stepHeight = 0.1f;
+...
     </summary>
   
 

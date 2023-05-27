@@ -62,15 +62,15 @@
 <link rel="canonical" href="http://localhost:4000/posts/ik-constraint/" />
 <meta property="og:url" content="http://localhost:4000/posts/ik-constraint/" />
 <meta property="og:site_name" content="航" />
-<meta property="og:image" content="http://localhost:4000/assets/img/2023-05-27-ik-constraint/spider.gif" />
+<meta property="og:image" content="http://localhost:4000/assets/img/2023-05-27-ik-constraint/crab.gif" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-05-27T00:00:00+08:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="http://localhost:4000/assets/img/2023-05-27-ik-constraint/spider.gif" />
+<meta property="twitter:image" content="http://localhost:4000/assets/img/2023-05-27-ik-constraint/crab.gif" />
 <meta property="twitter:title" content="Unity 反向动力 ( IK )" />
 <meta name="twitter:site" content="@ratsafalig" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-27T00:00:00+08:00","datePublished":"2023-05-27T00:00:00+08:00","description":"Multi-Aim Constraint","headline":"Unity 反向动力 ( IK )","image":"http://localhost:4000/assets/img/2023-05-27-ik-constraint/spider.gif","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/ik-constraint/"},"url":"http://localhost:4000/posts/ik-constraint/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-27T00:00:00+08:00","datePublished":"2023-05-27T00:00:00+08:00","description":"Multi-Aim Constraint","headline":"Unity 反向动力 ( IK )","image":"http://localhost:4000/assets/img/2023-05-27-ik-constraint/crab.gif","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/ik-constraint/"},"url":"http://localhost:4000/posts/ik-constraint/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -1316,7 +1316,7 @@
     
 
     <div class="mt-3 mb-3">
-      <a href="/assets/img/2023-05-27-ik-constraint/spider.gif" class="popup img-link preview-img shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'%3E%3C/svg%3E" data-src="/assets/img/2023-05-27-ik-constraint/spider.gif"  alt="Preview Image" width="1200" height="630"  class="lazyload" data-proofer-ignore></a></div>
+      <a href="/assets/img/2023-05-27-ik-constraint/crab.gif" class="popup img-link preview-img shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'%3E%3C/svg%3E" data-src="/assets/img/2023-05-27-ik-constraint/crab.gif"  alt="Preview Image" width="1200" height="630"  class="lazyload" data-proofer-ignore></a></div>
   
 
   <div class="d-flex justify-content-between">
@@ -1358,9 +1358,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="22 words"
+  title="728 words"
 >
-  <em>1 min</em> read</span>
+  <em>4 min</em> read</span>
 
     </div>
 
@@ -1393,7 +1393,369 @@
 
 <p>实现蜘蛛爬的算法实现:</p>
 
+<p>SpiderProceduralAnimation.cs</p>
+
+<div class="language-cs highlighter-rouge"><div class="code-header">
+        <span data-label-text="C#"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+</pre></td><td class="rouge-code"><pre><span class="k">using</span> <span class="nn">System.Collections</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">SpiderProceduralAnimation</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="n">Transform</span><span class="p">[]</span> <span class="n">legTargets</span><span class="p">;</span>
+    <span class="k">public</span> <span class="kt">float</span> <span class="n">stepSize</span> <span class="p">=</span> <span class="m">1f</span><span class="p">;</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">smoothness</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
+    <span class="k">public</span> <span class="kt">float</span> <span class="n">stepHeight</span> <span class="p">=</span> <span class="m">0.1f</span><span class="p">;</span>
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">bodyOrientation</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+
+    <span class="k">private</span> <span class="kt">float</span> <span class="n">raycastRange</span> <span class="p">=</span> <span class="m">1f</span><span class="p">;</span>
+    <span class="k">private</span> <span class="n">Vector3</span><span class="p">[]</span> <span class="n">defaultLegPositions</span><span class="p">;</span>
+    <span class="k">private</span> <span class="n">Vector3</span><span class="p">[]</span> <span class="n">lastLegPositions</span><span class="p">;</span>
+    <span class="k">private</span> <span class="n">Vector3</span> <span class="n">lastBodyUp</span><span class="p">;</span>
+    <span class="k">private</span> <span class="kt">bool</span><span class="p">[]</span> <span class="n">legMoving</span><span class="p">;</span>
+    <span class="k">private</span> <span class="kt">int</span> <span class="n">nbLegs</span><span class="p">;</span>
+    
+    <span class="k">private</span> <span class="n">Vector3</span> <span class="n">velocity</span><span class="p">;</span>
+    <span class="k">private</span> <span class="n">Vector3</span> <span class="n">lastVelocity</span><span class="p">;</span>
+    <span class="k">private</span> <span class="n">Vector3</span> <span class="n">lastBodyPos</span><span class="p">;</span>
+
+    <span class="k">private</span> <span class="kt">float</span> <span class="n">velocityMultiplier</span> <span class="p">=</span> <span class="m">15f</span><span class="p">;</span>
+
+    <span class="k">static</span> <span class="n">Vector3</span><span class="p">[]</span> <span class="nf">MatchToSurfaceFromAbove</span><span class="p">(</span><span class="n">Vector3</span> <span class="n">point</span><span class="p">,</span> <span class="kt">float</span> <span class="n">halfRange</span><span class="p">,</span> <span class="n">Vector3</span> <span class="n">up</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Vector3</span><span class="p">[]</span> <span class="n">res</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector3</span><span class="p">[</span><span class="m">2</span><span class="p">];</span>
+        <span class="n">RaycastHit</span> <span class="n">hit</span><span class="p">;</span>
+        <span class="n">Ray</span> <span class="n">ray</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Ray</span><span class="p">(</span><span class="n">point</span> <span class="p">+</span> <span class="n">halfRange</span> <span class="p">*</span> <span class="n">up</span><span class="p">,</span> <span class="p">-</span> <span class="n">up</span><span class="p">);</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="n">Physics</span><span class="p">.</span><span class="nf">Raycast</span><span class="p">(</span><span class="n">ray</span><span class="p">,</span> <span class="k">out</span> <span class="n">hit</span><span class="p">,</span> <span class="m">2f</span> <span class="p">*</span> <span class="n">halfRange</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">res</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">=</span> <span class="n">hit</span><span class="p">.</span><span class="n">point</span><span class="p">;</span>
+            <span class="n">res</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="p">=</span> <span class="n">hit</span><span class="p">.</span><span class="n">normal</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">res</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">=</span> <span class="n">point</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">void</span> <span class="nf">Start</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">lastBodyUp</span> <span class="p">=</span> <span class="n">transform</span><span class="p">.</span><span class="n">up</span><span class="p">;</span>
+
+        <span class="n">nbLegs</span> <span class="p">=</span> <span class="n">legTargets</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span>
+        <span class="n">defaultLegPositions</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector3</span><span class="p">[</span><span class="n">nbLegs</span><span class="p">];</span>
+        <span class="n">lastLegPositions</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector3</span><span class="p">[</span><span class="n">nbLegs</span><span class="p">];</span>
+        <span class="n">legMoving</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">bool</span><span class="p">[</span><span class="n">nbLegs</span><span class="p">];</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">nbLegs</span><span class="p">;</span> <span class="p">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">defaultLegPositions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">=</span> <span class="n">legTargets</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">localPosition</span><span class="p">;</span>
+            <span class="n">lastLegPositions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">=</span> <span class="n">legTargets</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">position</span><span class="p">;</span>
+            <span class="n">legMoving</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">lastBodyPos</span> <span class="p">=</span> <span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">IEnumerator</span> <span class="nf">PerformStep</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="n">Vector3</span> <span class="n">targetPoint</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Vector3</span> <span class="n">startPos</span> <span class="p">=</span> <span class="n">lastLegPositions</span><span class="p">[</span><span class="n">index</span><span class="p">];</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;=</span> <span class="n">smoothness</span><span class="p">;</span> <span class="p">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">legTargets</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">position</span> <span class="p">=</span> <span class="n">Vector3</span><span class="p">.</span><span class="nf">Lerp</span><span class="p">(</span><span class="n">startPos</span><span class="p">,</span> <span class="n">targetPoint</span><span class="p">,</span> <span class="n">i</span> <span class="p">/</span> <span class="p">(</span><span class="kt">float</span><span class="p">)(</span><span class="n">smoothness</span> <span class="p">+</span> <span class="m">1f</span><span class="p">));</span>
+            <span class="n">legTargets</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">position</span> <span class="p">+=</span> <span class="n">transform</span><span class="p">.</span><span class="n">up</span> <span class="p">*</span> <span class="n">Mathf</span><span class="p">.</span><span class="nf">Sin</span><span class="p">(</span><span class="n">i</span> <span class="p">/</span> <span class="p">(</span><span class="kt">float</span><span class="p">)(</span><span class="n">smoothness</span> <span class="p">+</span> <span class="m">1f</span><span class="p">)</span> <span class="p">*</span> <span class="n">Mathf</span><span class="p">.</span><span class="n">PI</span><span class="p">)</span> <span class="p">*</span> <span class="n">stepHeight</span><span class="p">;</span>
+            <span class="k">yield</span> <span class="k">return</span> <span class="k">new</span> <span class="nf">WaitForFixedUpdate</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="n">legTargets</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">position</span> <span class="p">=</span> <span class="n">targetPoint</span><span class="p">;</span>
+        <span class="n">lastLegPositions</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="p">=</span> <span class="n">legTargets</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">position</span><span class="p">;</span>
+        <span class="n">legMoving</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+
+    <span class="k">void</span> <span class="nf">FixedUpdate</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">velocity</span> <span class="p">=</span> <span class="n">transform</span><span class="p">.</span><span class="n">position</span> <span class="p">-</span> <span class="n">lastBodyPos</span><span class="p">;</span>
+        <span class="n">velocity</span> <span class="p">=</span> <span class="p">(</span><span class="n">velocity</span> <span class="p">+</span> <span class="n">smoothness</span> <span class="p">*</span> <span class="n">lastVelocity</span><span class="p">)</span> <span class="p">/</span> <span class="p">(</span><span class="n">smoothness</span> <span class="p">+</span> <span class="m">1f</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">velocity</span><span class="p">.</span><span class="n">magnitude</span> <span class="p">&lt;</span> <span class="m">0.000025f</span><span class="p">)</span>
+            <span class="n">velocity</span> <span class="p">=</span> <span class="n">lastVelocity</span><span class="p">;</span>
+        <span class="k">else</span>
+            <span class="n">lastVelocity</span> <span class="p">=</span> <span class="n">velocity</span><span class="p">;</span>
+        
+        
+        <span class="n">Vector3</span><span class="p">[]</span> <span class="n">desiredPositions</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector3</span><span class="p">[</span><span class="n">nbLegs</span><span class="p">];</span>
+        <span class="kt">int</span> <span class="n">indexToMove</span> <span class="p">=</span> <span class="p">-</span><span class="m">1</span><span class="p">;</span>
+        <span class="kt">float</span> <span class="n">maxDistance</span> <span class="p">=</span> <span class="n">stepSize</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">nbLegs</span><span class="p">;</span> <span class="p">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">desiredPositions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">=</span> <span class="n">transform</span><span class="p">.</span><span class="nf">TransformPoint</span><span class="p">(</span><span class="n">defaultLegPositions</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+
+            <span class="kt">float</span> <span class="n">distance</span> <span class="p">=</span> <span class="n">Vector3</span><span class="p">.</span><span class="nf">ProjectOnPlane</span><span class="p">(</span><span class="n">desiredPositions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">+</span> <span class="n">velocity</span> <span class="p">*</span> <span class="n">velocityMultiplier</span> <span class="p">-</span> <span class="n">lastLegPositions</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">transform</span><span class="p">.</span><span class="n">up</span><span class="p">).</span><span class="n">magnitude</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">distance</span> <span class="p">&gt;</span> <span class="n">maxDistance</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">maxDistance</span> <span class="p">=</span> <span class="n">distance</span><span class="p">;</span>
+                <span class="n">indexToMove</span> <span class="p">=</span> <span class="n">i</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">nbLegs</span><span class="p">;</span> <span class="p">++</span><span class="n">i</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="p">!=</span> <span class="n">indexToMove</span><span class="p">)</span>
+                <span class="n">legTargets</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">position</span> <span class="p">=</span> <span class="n">lastLegPositions</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">indexToMove</span> <span class="p">!=</span> <span class="p">-</span><span class="m">1</span> <span class="p">&amp;&amp;</span> <span class="p">!</span><span class="n">legMoving</span><span class="p">[</span><span class="m">0</span><span class="p">])</span>
+        <span class="p">{</span>
+            <span class="n">Vector3</span> <span class="n">targetPoint</span> <span class="p">=</span> <span class="n">desiredPositions</span><span class="p">[</span><span class="n">indexToMove</span><span class="p">]</span> <span class="p">+</span> <span class="n">Mathf</span><span class="p">.</span><span class="nf">Clamp</span><span class="p">(</span><span class="n">velocity</span><span class="p">.</span><span class="n">magnitude</span> <span class="p">*</span> <span class="n">velocityMultiplier</span><span class="p">,</span> <span class="m">0.0f</span><span class="p">,</span> <span class="m">1.5f</span><span class="p">)</span> <span class="p">*</span> <span class="p">(</span><span class="n">desiredPositions</span><span class="p">[</span><span class="n">indexToMove</span><span class="p">]</span> <span class="p">-</span> <span class="n">legTargets</span><span class="p">[</span><span class="n">indexToMove</span><span class="p">].</span><span class="n">position</span><span class="p">)</span> <span class="p">+</span> <span class="n">velocity</span> <span class="p">*</span> <span class="n">velocityMultiplier</span><span class="p">;</span>
+            <span class="n">Vector3</span><span class="p">[]</span> <span class="n">positionAndNormal</span> <span class="p">=</span> <span class="nf">MatchToSurfaceFromAbove</span><span class="p">(</span><span class="n">targetPoint</span><span class="p">,</span> <span class="n">raycastRange</span><span class="p">,</span> <span class="n">transform</span><span class="p">.</span><span class="n">up</span><span class="p">);</span>
+            <span class="n">legMoving</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+            <span class="nf">StartCoroutine</span><span class="p">(</span><span class="nf">PerformStep</span><span class="p">(</span><span class="n">indexToMove</span><span class="p">,</span> <span class="n">positionAndNormal</span><span class="p">[</span><span class="m">0</span><span class="p">]));</span>
+        <span class="p">}</span>
+
+        <span class="n">lastBodyPos</span> <span class="p">=</span> <span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">nbLegs</span> <span class="p">&gt;</span> <span class="m">3</span> <span class="p">&amp;&amp;</span> <span class="n">bodyOrientation</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Vector3</span> <span class="n">v1</span> <span class="p">=</span> <span class="n">legTargets</span><span class="p">[</span><span class="m">0</span><span class="p">].</span><span class="n">position</span> <span class="p">-</span> <span class="n">legTargets</span><span class="p">[</span><span class="m">1</span><span class="p">].</span><span class="n">position</span><span class="p">;</span>
+            <span class="n">Vector3</span> <span class="n">v2</span> <span class="p">=</span> <span class="n">legTargets</span><span class="p">[</span><span class="m">2</span><span class="p">].</span><span class="n">position</span> <span class="p">-</span> <span class="n">legTargets</span><span class="p">[</span><span class="m">3</span><span class="p">].</span><span class="n">position</span><span class="p">;</span>
+            <span class="n">Vector3</span> <span class="n">normal</span> <span class="p">=</span> <span class="n">Vector3</span><span class="p">.</span><span class="nf">Cross</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">).</span><span class="n">normalized</span><span class="p">;</span>
+            <span class="n">Vector3</span> <span class="n">up</span> <span class="p">=</span> <span class="n">Vector3</span><span class="p">.</span><span class="nf">Lerp</span><span class="p">(</span><span class="n">lastBodyUp</span><span class="p">,</span> <span class="n">normal</span><span class="p">,</span> <span class="m">1f</span> <span class="p">/</span> <span class="p">(</span><span class="kt">float</span><span class="p">)(</span><span class="n">smoothness</span> <span class="p">+</span> <span class="m">1</span><span class="p">));</span>
+            <span class="n">transform</span><span class="p">.</span><span class="n">up</span> <span class="p">=</span> <span class="n">up</span><span class="p">;</span>
+            <span class="n">lastBodyUp</span> <span class="p">=</span> <span class="n">up</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">OnDrawGizmosSelected</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">nbLegs</span><span class="p">;</span> <span class="p">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Gizmos</span><span class="p">.</span><span class="n">color</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">red</span><span class="p">;</span>
+            <span class="n">Gizmos</span><span class="p">.</span><span class="nf">DrawWireSphere</span><span class="p">(</span><span class="n">legTargets</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">position</span><span class="p">,</span> <span class="m">0.05f</span><span class="p">);</span>
+            <span class="n">Gizmos</span><span class="p">.</span><span class="n">color</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">green</span><span class="p">;</span>
+            <span class="n">Gizmos</span><span class="p">.</span><span class="nf">DrawWireSphere</span><span class="p">(</span><span class="n">transform</span><span class="p">.</span><span class="nf">TransformPoint</span><span class="p">(</span><span class="n">defaultLegPositions</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">stepSize</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>SpiderController.cs</p>
+
+<p>一个简单的 Input Controller 脚本</p>
+
+<div class="language-cs highlighter-rouge"><div class="code-header">
+        <span data-label-text="C#"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+</pre></td><td class="rouge-code"><pre><span class="k">using</span> <span class="nn">System.Collections</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="p">[</span><span class="nf">RequireComponent</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">Rigidbody</span><span class="p">))]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">SpiderController</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">float</span> <span class="n">_speed</span> <span class="p">=</span> <span class="m">1f</span><span class="p">;</span>
+
+    <span class="k">private</span> <span class="n">Rigidbody</span> <span class="n">_rigidbody</span><span class="p">;</span>
+
+    <span class="c1">// Start is called before the first frame update</span>
+    <span class="k">void</span> <span class="nf">Start</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">_rigidbody</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Rigidbody</span><span class="p">&gt;();</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Update is called once per frame</span>
+    <span class="k">void</span> <span class="nf">FixedUpdate</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kt">float</span> <span class="n">multiplier</span> <span class="p">=</span> <span class="m">1f</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="nf">GetKey</span><span class="p">(</span><span class="n">KeyCode</span><span class="p">.</span><span class="n">LeftShift</span><span class="p">))</span>
+            <span class="n">multiplier</span> <span class="p">=</span> <span class="m">2f</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">_rigidbody</span><span class="p">.</span><span class="n">velocity</span><span class="p">.</span><span class="n">magnitude</span> <span class="p">&lt;</span> <span class="n">_speed</span> <span class="p">*</span> <span class="n">multiplier</span><span class="p">)</span>
+        <span class="p">{</span>
+
+            <span class="kt">float</span> <span class="k">value</span> <span class="p">=</span> <span class="n">Input</span><span class="p">.</span><span class="nf">GetAxis</span><span class="p">(</span><span class="s">"Vertical"</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="k">value</span> <span class="p">!=</span> <span class="m">0</span><span class="p">)</span>
+                <span class="n">_rigidbody</span><span class="p">.</span><span class="nf">AddForce</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="k">value</span> <span class="p">*</span> <span class="n">Time</span><span class="p">.</span><span class="n">fixedDeltaTime</span> <span class="p">*</span> <span class="m">1000f</span><span class="p">);</span>
+            <span class="k">value</span> <span class="p">=</span> <span class="n">Input</span><span class="p">.</span><span class="nf">GetAxis</span><span class="p">(</span><span class="s">"Horizontal"</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="k">value</span> <span class="p">!=</span> <span class="m">0</span><span class="p">)</span>
+                <span class="n">_rigidbody</span><span class="p">.</span><span class="nf">AddForce</span><span class="p">(</span><span class="k">value</span> <span class="p">*</span> <span class="n">Time</span><span class="p">.</span><span class="n">fixedDeltaTime</span> <span class="p">*</span> <span class="m">1000f</span><span class="p">,</span> <span class="m">0f</span><span class="p">,</span> <span class="m">0f</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</pre></td></tr></tbody></table></code></div></div>
+
 <h2 id="link"><span class="me-2">Link</span><a href="#link" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p><a href="https://github.com/lchaumartin/SpiderProceduralAnimation/tree/FirstVideo">SpiderProceduralAnimation</a></p>
 
 <p><a href="https://github.com/PhilS94/Unity-Procedural-IK-Wall-Walking-Spider">Unity-Procedural-IK-Wall-Walking-Spider</a></p>
 
@@ -1737,6 +2099,47 @@
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1798,49 +2201,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1886,8 +2246,6 @@
     
     
     
-    
-      
     
   
     
@@ -1935,10 +2293,10 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/log/">Log</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/shader/">Shader</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/shader/">Shader</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/log/">Log</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/transformer/">Transformer</a>
@@ -2604,6 +2962,47 @@ Sobel 卷积
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2665,49 +3064,6 @@ Sobel 卷积
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -2753,8 +3109,6 @@ Sobel 卷积
     
     
     
-    
-      
     
   
     
@@ -2802,10 +3156,10 @@ Sobel 卷积
         <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/log/">Log</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/shader/">Shader</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/shader/">Shader</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/log/">Log</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/transformer/">Transformer</a>

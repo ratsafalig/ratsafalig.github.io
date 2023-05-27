@@ -889,16 +889,16 @@ how-stable-diffusion-work
 
 
 
-              Shader &quot;&amp;lt;name&amp;gt;&quot;
+              ShaderLab Syntax
+
+// colored vertex lighting
+Shader &quot;Simple colored lighting&quot;
 {
-    &amp;lt;optional: Material properties&amp;gt;
-    &amp;lt;One or more SubShader definitions&amp;gt;
-    &amp;lt;optional: custom editor&amp;gt;
-    &amp;lt;optional: fallback&amp;gt;
-} 
-
-
-Signature	Fun...
+    // a single color property
+    Properties {
+        _Color (&quot;Main Color&quot;, Color) = (1,.5,.5,1)
+    }
+    // defin...
             </p>
           </div>
 
@@ -932,7 +932,8 @@ Signature	Fun...
                   
                     Unity,
                     Game,
-                    GL
+                    GL,
+                    Shader
                 </span>
               
             </div>
@@ -1191,6 +1192,8 @@ poly.pizza
 kenney
 
 opengameart
+
+quaternius
 
             </p>
           </div>
@@ -1612,6 +1615,47 @@ public class BatchExtractMaterials : EditorWindow
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1673,49 +1717,6 @@ public class BatchExtractMaterials : EditorWindow
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1761,8 +1762,6 @@ public class BatchExtractMaterials : EditorWindow
     
     
     
-    
-      
     
   
     
@@ -1810,10 +1809,10 @@ public class BatchExtractMaterials : EditorWindow
         <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/log/">Log</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/shader/">Shader</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/shader/">Shader</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/log/">Log</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/transformer/">Transformer</a>
@@ -2011,6 +2010,47 @@ public class BatchExtractMaterials : EditorWindow
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2072,49 +2112,6 @@ public class BatchExtractMaterials : EditorWindow
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -2160,8 +2157,6 @@ public class BatchExtractMaterials : EditorWindow
     
     
     
-    
-      
     
   
     
@@ -2209,10 +2204,10 @@ public class BatchExtractMaterials : EditorWindow
         <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/log/">Log</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/shader/">Shader</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/shader/">Shader</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/log/">Log</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/transformer/">Transformer</a>
