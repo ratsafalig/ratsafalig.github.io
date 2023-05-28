@@ -10,7 +10,9 @@ image:
 ---
 
 
-# 局部像素化 ( Local Pixelation )
+## 局部像素化 ( Local Pixelation )
+
+### Canvas 叠加实现
 
 如果要实现，某个物体是像素化的，其他物体是正常渲染的，可以使用局部像素化的技术：  
 
@@ -28,7 +30,11 @@ image:
 3. 在 main camera 前加一个 canvas，在上面把 depth texture 当作深度测试，把 pixel texture 画出来
 ![](/assets/img/2023-05-01-pixelation-shader/canvas.png)
 
-# 全局像素化 ( Global Pixelation )
+### 定制渲染管线实现
+
+自定义渲染管线, 在另一篇 Blog 里实现了 [custom-urp](/posts/custom-urp)
+
+## 全局像素化 ( Global Pixelation )
 
 借助 on-render-image, 可以简单的实现场景的全局像素风格化  
 

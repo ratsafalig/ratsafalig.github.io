@@ -22,7 +22,7 @@ image:
 
 ### 例子0
 
-对卡车做降采样, 其他场景保持不变
+对卡车做像素化, 场景里的其他GameObject保持不变
 
 ![](/assets/img/2023-05-24-custom-urp/example.gif)
 
