@@ -1152,6 +1152,74 @@
     
 
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+      
+    
+
+    <!-- combine -->
+    
+
+  
 
   
 
@@ -1358,7 +1426,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="728 words"
+  title="797 words"
 >
   <em>4 min</em> read</span>
 
@@ -1383,15 +1451,25 @@
 
 <h3 id="例子"><span class="me-2">例子</span><a href="#例子" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p><a href="/assets/img/2023-05-27-ik-constraint/test-two-bone.gif" class="popup img-link "><img data-src="/assets/img/2023-05-27-ik-constraint/test-two-bone.gif" alt="" class="lazyload" data-proofer-ignore></a></p>
+<p><a href="/assets/img/2023-05-27-ik-constraint/cube-two-bone.gif" class="popup img-link "><img data-src="/assets/img/2023-05-27-ik-constraint/cube-two-bone.gif" alt="" class="lazyload" data-proofer-ignore></a></p>
 
-<p><a href="/assets/img/2023-05-27-ik-constraint/test-two-bone.png" class="popup img-link "><img data-src="/assets/img/2023-05-27-ik-constraint/test-two-bone.png" alt="" class="lazyload" data-proofer-ignore></a></p>
-
-<p><a href="/assets/img/2023-05-27-ik-constraint/test-two-bone1.png" class="popup img-link "><img data-src="/assets/img/2023-05-27-ik-constraint/test-two-bone1.png" alt="" class="lazyload" data-proofer-ignore></a></p>
+<p><a href="/assets/img/2023-05-27-ik-constraint/cube-two-bone.png" class="popup img-link "><img data-src="/assets/img/2023-05-27-ik-constraint/cube-two-bone.png" alt="" class="lazyload" data-proofer-ignore></a></p>
 
 <h2 id="procedural-animation"><span class="me-2">procedural animation</span><a href="#procedural-animation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>实现蜘蛛爬的算法实现:</p>
+
+<ul>
+  <li>4 个 two-bone-ik 的脚当作蜘蛛的四个脚, 分别固定到各自的 target, 像这样</li>
+</ul>
+
+<p><a href="/assets/img/2023-05-27-ik-constraint/spider1.gif" class="popup img-link "><img data-src="/assets/img/2023-05-27-ik-constraint/spider1.gif" alt="" class="lazyload" data-proofer-ignore></a></p>
+
+<ul>
+  <li>移动蜘蛛的时候, 判断每只脚移动的距离, 如果超过了必须走一步的距离, 开启一个 coroutine, 移动这只脚</li>
+</ul>
+
+<p><a href="/assets/img/2023-05-27-ik-constraint/crab.gif" class="popup img-link "><img data-src="/assets/img/2023-05-27-ik-constraint/crab.gif" alt="" class="lazyload" data-proofer-ignore></a></p>
 
 <p>SpiderProceduralAnimation.cs</p>
 
