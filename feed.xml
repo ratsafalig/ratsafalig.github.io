@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>航</title>
   <subtitle>航</subtitle>
-  <updated>2023-05-28T15:34:05+08:00</updated>
+  <updated>2023-05-28T15:38:26+08:00</updated>
   <author>
     <name>ratsafalig</name>
     <uri>http://localhost:4000/</uri>
@@ -48,7 +48,11 @@
 
 
 
-      这里是实现细节的 prefab
+      花了一小时玩了一下用 Unity 弄一个机械臂
+
+可能可以实现一个简单的小游戏, 先把 prefab 放出来
+
+这里是实现细节的 prefab
 
 Arm.prefab
 
@@ -145,7 +149,7 @@ public class SpiderProceduralAnimation : MonoBehaviour
     <link href="http://localhost:4000/posts/gpu-instancing/" rel="alternate" type="text/html" title="Batching 技术 和 GPU Instancing 技术" />
     <published>2023-05-26T00:00:00+08:00</published>
   
-    <updated>2023-05-26T00:00:00+08:00</updated>
+    <updated>2023-05-28T15:34:23+08:00</updated>
   
     <id>http://localhost:4000/posts/gpu-instancing/</id>
     <content src="http://localhost:4000/posts/gpu-instancing/" />
@@ -279,7 +283,7 @@ Shader "Custom/Sobel"
     <link href="http://localhost:4000/posts/custom-urp/" rel="alternate" type="text/html" title="Unity URP 定制渲染管线" />
     <published>2023-05-24T00:00:00+08:00</published>
   
-    <updated>2023-05-24T00:00:00+08:00</updated>
+    <updated>2023-05-28T15:34:23+08:00</updated>
   
     <id>http://localhost:4000/posts/custom-urp/</id>
     <content src="http://localhost:4000/posts/custom-urp/" />
