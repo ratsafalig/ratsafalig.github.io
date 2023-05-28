@@ -1645,6 +1645,18 @@ up 向量和 view-dir 是新坐标系的 z, x 轴, camera-pos 是新坐标系的
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -1873,7 +1885,7 @@ Sobel 卷积
         
         
         <div class="col">
-          <a href="/posts/deferred-shading/" class="card post-preview h-100">
+          <a href="/posts/gpu-instancing/" class="card post-preview h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1886,14 +1898,14 @@ Sobel 卷积
 
 <em
   class="small"
-  data-ts="1609430400"
+  data-ts="1685030400"
   data-df="ll"
   
 >
-  Jan  1, 2021
+  May 26, 2023
 </em>
 
-              <h4 class="pt-0 my-2" data-toc-skip>Deferred Shading</h4>
+              <h4 class="pt-0 my-2" data-toc-skip>Batching 技术 和 GPU Instancing 技术</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -1902,11 +1914,11 @@ Sobel 卷积
 
 
 
-                  Deferred shading和Forward shading是两种3D图形渲染技术。
+                  Batching
 
-在Forward shading中，所有物体都将进行逐像素着色，所以它直接使用几何中的信息。每个像素都被处理，以确定它是最终图像中的颜色。Forward shading的主要优点是它在实时渲染方面的速度非常快，但缺点是它在真正大型场景中的效率可能会下降。
+场景里有很多 mesh 的时候, 性能下降的主要原因之一是 draw-call 过多, 如果对于每一个 mesh 都要进行一次 draw-call 性能消耗非常大.
 
-相比而言，Deferred shading只...
+这个时候如果多个 mesh 使用相同的 material, 原理上可以把所有相同材质的 mesh 看成一个大 mesh, 然后只进行一次 draw-call 就把这些 mesh 的所有 vertices 和...
                 </p>
               </div>
             </div>

@@ -1938,6 +1938,18 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -2215,6 +2227,52 @@ cell.py
         
         
         <div class="col">
+          <a href="/posts/mechanical-hand/" class="card post-preview h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class="small"
+  data-ts="1685203200"
+  data-df="ll"
+  
+>
+  May 28, 2023
+</em>
+
+              <h4 class="pt-0 my-2" data-toc-skip>用 Unity 的 Primitive Mesh 做一个的机械臂实验</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  这里是实现细节的 prefab
+
+Arm.prefab
+
+Claw.prefab
+
+Spider.prefab
+
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        
+        <div class="col">
           <a href="/posts/ik-constraint/" class="card post-preview h-100">
             <div class="card-body">
               <!--
@@ -2274,49 +2332,6 @@ procedural animation
 
 
   移动蜘蛛的时候, 判断每只脚移动的距离, 如果超过了必须走一步的距离, 开启一个 cor...
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        
-        
-        <div class="col">
-          <a href="/posts/gpu-instancing/" class="card post-preview h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class="small"
-  data-ts="1685030400"
-  data-df="ll"
-  
->
-  May 26, 2023
-</em>
-
-              <h4 class="pt-0 my-2" data-toc-skip>Batching 技术 和 GPU Instancing 技术</h4>
-              <div class="text-muted small">
-                <p>
-                  
-
-
-
-
-
-                  Batching
-
-场景里有很多 mesh 的时候, 性能下降的主要原因之一是 draw-call 过多, 如果对于每一个 mesh 都要进行一次 draw-call 性能消耗非常大.
-
-这个时候如果多个 mesh 使用相同的 material, 原理上可以把所有相同材质的 mesh 看成一个大 mesh, 然后只进行一次 draw-call 就把这些 mesh 的所有 vertices 和...
                 </p>
               </div>
             </div>

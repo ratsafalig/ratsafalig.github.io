@@ -688,7 +688,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="31 words"
+  title="34 words"
 >
   <em>1 min</em> read</span>
 
@@ -734,6 +734,12 @@
 <p><a href="https://opengameart.org/">opengameart</a></p>
 
 <p><a href="https://quaternius.com/">quaternius</a></p>
+
+<p><a href="https://mywis.cn/wisl/fmg">wisl</a></p>
+
+<p><a href="https://inkarnate.com/">inkarnate</a></p>
+
+<p><a href="https://www.dungeonscrawl.com/">dungeonscrawl</a></p>
 
 </div>
 
@@ -1543,6 +1549,18 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -1602,6 +1620,52 @@
       Further Reading
     </h3>
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        
+        
+        <div class="col">
+          <a href="/posts/mechanical-hand/" class="card post-preview h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class="small"
+  data-ts="1685203200"
+  data-df="ll"
+  
+>
+  May 28, 2023
+</em>
+
+              <h4 class="pt-0 my-2" data-toc-skip>用 Unity 的 Primitive Mesh 做一个的机械臂实验</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  这里是实现细节的 prefab
+
+Arm.prefab
+
+Claw.prefab
+
+Spider.prefab
+
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
       
         
         
@@ -1708,59 +1772,6 @@ procedural animation
 场景里有很多 mesh 的时候, 性能下降的主要原因之一是 draw-call 过多, 如果对于每一个 mesh 都要进行一次 draw-call 性能消耗非常大.
 
 这个时候如果多个 mesh 使用相同的 material, 原理上可以把所有相同材质的 mesh 看成一个大 mesh, 然后只进行一次 draw-call 就把这些 mesh 的所有 vertices 和...
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        
-        
-        <div class="col">
-          <a href="/posts/urp-conv/" class="card post-preview h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class="small"
-  data-ts="1684944000"
-  data-df="ll"
-  
->
-  May 25, 2023
-</em>
-
-              <h4 class="pt-0 my-2" data-toc-skip>Unity 渲染管线 卷积</h4>
-              <div class="text-muted small">
-                <p>
-                  
-
-
-
-
-
-                  尝试一下用 Unity 渲染管线实现一些常见的图形学卷积核, 主要思路就是在渲染之后对 Camera 的 color target 做一次 self Blit 然后在 shader 里对 _CameraColorAttachmentA 做卷积
-
-Sobel 卷积
-
-一种边缘检测的图像卷积算子, 卷积核为
-
-1
-2
-3
-[ 1 0 -1 ]
-[ 2 0 -2 ]
-[ 1 0 -1 ]
-
-
-这个...
                 </p>
               </div>
             </div>
