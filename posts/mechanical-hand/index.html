@@ -1099,17 +1099,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1139,6 +1128,15 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     
@@ -1163,15 +1161,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -1184,30 +1173,6 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -1252,16 +1217,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -1273,6 +1232,21 @@
     
     
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1319,6 +1293,28 @@
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1359,13 +1355,16 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/ai/">AI</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/gl/">GL</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/ai/">AI</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/util/">Util</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
@@ -1378,9 +1377,6 @@
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/transformer/">Transformer</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/util/">Util</a>
       
     </div>
   </div>
@@ -1428,7 +1424,31 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -1785,7 +1805,7 @@ Sobel 卷积
         
         
         <div class="col">
-          <a href="/posts/batch-extract-materials/" class="card post-preview h-100">
+          <a href="/posts/gpu-instancing/" class="card post-preview h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1798,14 +1818,14 @@ Sobel 卷积
 
 <em
   class="small"
-  data-ts="-28800"
+  data-ts="1685030400"
   data-df="ll"
   
 >
-  Jan  1, 1970
+  May 26, 2023
 </em>
 
-              <h4 class="pt-0 my-2" data-toc-skip>BatchExtractMaterials</h4>
+              <h4 class="pt-0 my-2" data-toc-skip>Batching 技术 和 GPU Instancing 技术</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -1814,14 +1834,11 @@ Sobel 卷积
 
 
 
-                  using UnityEngine;
-using UnityEditor;
-using System.Collections.Generic;
-using System.IO;
+                  Batching
 
-public class BatchExtractMaterials : EditorWindow
-{
-	private enum ExtractMode { Extract = 0, Remap = 1, Ign...
+场景里有很多 mesh 的时候, 性能下降的主要原因之一是 draw-call 过多, 如果对于每一个 mesh 都要进行一次 draw-call 性能消耗非常大.
+
+这个时候如果多个 mesh 使用相同的 material, 原理上可以把所有相同材质的 mesh 看成一个大 mesh, 然后只进行一次 draw-call 就把这些 mesh 的所有 vertices 和...
                 </p>
               </div>
             </div>
@@ -1850,12 +1867,13 @@ public class BatchExtractMaterials : EditorWindow
   
 
   
-    <div
-      class="btn btn-outline-primary disabled"
+    <a
+      href="/posts/smoke-vfx/"
+      class="btn btn-outline-primary"
       prompt="Newer"
     >
-      <p>-</p>
-    </div>
+      <p>Unity 烟雾效果 Smoke VFX</p>
+    </a>
   
 </div>
 
@@ -1968,17 +1986,6 @@ public class BatchExtractMaterials : EditorWindow
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -2008,6 +2015,15 @@ public class BatchExtractMaterials : EditorWindow
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     
@@ -2032,15 +2048,6 @@ public class BatchExtractMaterials : EditorWindow
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -2053,30 +2060,6 @@ public class BatchExtractMaterials : EditorWindow
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -2121,16 +2104,10 @@ public class BatchExtractMaterials : EditorWindow
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -2142,6 +2119,21 @@ public class BatchExtractMaterials : EditorWindow
     
     
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2188,6 +2180,28 @@ public class BatchExtractMaterials : EditorWindow
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2228,13 +2242,16 @@ public class BatchExtractMaterials : EditorWindow
         <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/ai/">AI</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/gl/">GL</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/ai/">AI</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/util/">Util</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
@@ -2247,9 +2264,6 @@ public class BatchExtractMaterials : EditorWindow
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/transformer/">Transformer</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/util/">Util</a>
       
     </div>
   </div>

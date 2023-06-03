@@ -712,7 +712,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="34 words"
+  title="35 words"
 >
   <em>1 min</em> read</span>
 
@@ -765,6 +765,8 @@
 
 <p><a href="https://www.dungeonscrawl.com/">dungeonscrawl</a></p>
 
+<p><a href="https://unitycodemonkey.com/">unitycodemonkey</a></p>
+
 </div>
 
 <div class="post-tail-wrapper text-muted">
@@ -774,7 +776,8 @@
   <div class="post-meta mb-3">
     <i class="far fa-folder-open fa-fw me-1"></i>
     
-      <a href='/categories/log/'>Log</a>
+      <a href='/categories/log/'>Log</a>,
+      <a href='/categories/util/'>Util</a>
   </div>
   
 
@@ -785,6 +788,9 @@
       
       <a href="/tags/log/"
           class="post-tag no-text-decoration" >Log</a>
+      
+      <a href="/tags/util/"
+          class="post-tag no-text-decoration" >Util</a>
       
   </div>
   
@@ -1037,17 +1043,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1077,6 +1072,15 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     
@@ -1101,15 +1105,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -1122,30 +1117,6 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -1190,16 +1161,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -1211,6 +1176,21 @@
     
     
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1257,6 +1237,28 @@
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1297,13 +1299,16 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/ai/">AI</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/gl/">GL</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/ai/">AI</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/util/">Util</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
@@ -1316,9 +1321,6 @@
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/transformer/">Transformer</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/util/">Util</a>
       
     </div>
   </div>
@@ -1599,7 +1601,31 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -1629,26 +1655,6 @@
         
         
         
-      
-    
-  
-    
-    
-      
-      
-        
-        
-        
-      
-    
-  
-    
-    
-      
-      
-        
-        
-        
           
 
 
@@ -1662,7 +1668,7 @@
         
         
         <div class="col">
-          <a href="/posts/mechanical-hand/" class="card post-preview h-100">
+          <a href="/posts/batch-extract-materials/" class="card post-preview h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1675,14 +1681,14 @@
 
 <em
   class="small"
-  data-ts="1685203200"
+  data-ts="-28800"
   data-df="ll"
   
 >
-  May 28, 2023
+  Jan  1, 1970
 </em>
 
-              <h4 class="pt-0 my-2" data-toc-skip>用 Unity 的 Primitive Mesh 做一个的机械臂实验</h4>
+              <h4 class="pt-0 my-2" data-toc-skip>BatchExtractMaterials</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -1691,18 +1697,14 @@
 
 
 
-                  花了一小时玩了一下用 Unity 弄一个机械臂
+                  using UnityEngine;
+using UnityEditor;
+using System.Collections.Generic;
+using System.IO;
 
-可能可以实现一个简单的小游戏, 先把 prefab 放出来
-
-这里是实现细节的 prefab
-
-Arm.prefab
-
-Claw.prefab
-
-Spider.prefab
-
+public class BatchExtractMaterials : EditorWindow
+{
+	private enum ExtractMode { Extract = 0, Remap = 1, Ign...
                 </p>
               </div>
             </div>
@@ -1712,7 +1714,7 @@ Spider.prefab
         
         
         <div class="col">
-          <a href="/posts/ik-constraint/" class="card post-preview h-100">
+          <a href="/posts/camera/" class="card post-preview h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1725,14 +1727,14 @@ Spider.prefab
 
 <em
   class="small"
-  data-ts="1685116800"
+  data-ts="-28800"
   data-df="ll"
   
 >
-  May 27, 2023
+  Jan  1, 1970
 </em>
 
-              <h4 class="pt-0 my-2" data-toc-skip>Unity 反向动力 ( IK )</h4>
+              <h4 class="pt-0 my-2" data-toc-skip>U3D Camera Util</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -1741,36 +1743,14 @@ Spider.prefab
 
 
 
-                  Multi-Aim Constraint
+                  CameraAbstract
 
+/* 
+ * This file is part of Unity-Procedural-IK-Wall-Walking-Spider on github.com/PhilS94
+ * Copyright (C) 2020 Philipp Schofield - All Rights Reserved
+ */
 
-
-
-
-Two Bone Constraint
-
-
-
-
-
-例子
-
-
-
-
-
-procedural animation
-
-实现蜘蛛爬的算法实现:
-
-
-  4 个 two-bone-ik 的脚当作蜘蛛的四个脚, 分别固定到各自的 target, 像这样
-
-
-
-
-
-  移动蜘蛛的时候, 判断每只脚移动的距离, 如果超过了必须走一步的距离, 开启一个 cor...
+using System.Collections...
                 </p>
               </div>
             </div>
@@ -1780,7 +1760,7 @@ procedural animation
         
         
         <div class="col">
-          <a href="/posts/gpu-instancing/" class="card post-preview h-100">
+          <a href="/posts/smoke-vfx/" class="card post-preview h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1793,14 +1773,14 @@ procedural animation
 
 <em
   class="small"
-  data-ts="1685030400"
+  data-ts="1685462400"
   data-df="ll"
   
 >
-  May 26, 2023
+  May 31, 2023
 </em>
 
-              <h4 class="pt-0 my-2" data-toc-skip>Batching 技术 和 GPU Instancing 技术</h4>
+              <h4 class="pt-0 my-2" data-toc-skip>Unity 烟雾效果 Smoke VFX</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -1809,11 +1789,8 @@ procedural animation
 
 
 
-                  Batching
+                  
 
-场景里有很多 mesh 的时候, 性能下降的主要原因之一是 draw-call 过多, 如果对于每一个 mesh 都要进行一次 draw-call 性能消耗非常大.
-
-这个时候如果多个 mesh 使用相同的 material, 原理上可以把所有相同材质的 mesh 看成一个大 mesh, 然后只进行一次 draw-call 就把这些 mesh 的所有 vertices 和...
                 </p>
               </div>
             </div>
@@ -1833,11 +1810,11 @@ procedural animation
 <div class="post-navigation d-flex justify-content-between">
   
     <a
-      href="/posts/batch-extract-materials/"
+      href="/posts/camera/"
       class="btn btn-outline-primary"
       prompt="Older"
     >
-      <p>BatchExtractMaterials</p>
+      <p>U3D Camera Util</p>
     </a>
   
 
@@ -1961,17 +1938,6 @@ procedural animation
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -2001,6 +1967,15 @@ procedural animation
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     
@@ -2025,15 +2000,6 @@ procedural animation
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -2046,30 +2012,6 @@ procedural animation
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -2114,16 +2056,10 @@ procedural animation
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -2135,6 +2071,21 @@ procedural animation
     
     
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2181,6 +2132,28 @@ procedural animation
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2221,13 +2194,16 @@ procedural animation
         <a class="post-tag btn btn-outline-primary" href="/tags/unity/">Unity</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/ai/">AI</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/gl/">GL</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/ai/">AI</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/diffusion/">Diffusion</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/util/">Util</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">Algorithm</a>
@@ -2240,9 +2216,6 @@ procedural animation
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/transformer/">Transformer</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/util/">Util</a>
       
     </div>
   </div>

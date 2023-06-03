@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>航</title>
   <subtitle>航</subtitle>
-  <updated>2023-05-28T15:38:26+08:00</updated>
+  <updated>2023-06-03T12:31:00+08:00</updated>
   <author>
     <name>ratsafalig</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,47 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Unity 烟雾效果 Smoke VFX</title>
+    <link href="http://localhost:4000/posts/smoke-vfx/" rel="alternate" type="text/html" title="Unity 烟雾效果 Smoke VFX" />
+    <published>2023-05-31T00:00:00+08:00</published>
+  
+    <updated>2023-05-31T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/smoke-vfx/</id>
+    <content src="http://localhost:4000/posts/smoke-vfx/" />
+    <author>
+      <name>ratsafalig</name>
+    </author>
+
+  
+    
+    <category term="VFX" />
+    
+    <category term="Unity" />
+    
+    <category term="Game" />
+    
+    <category term="GL" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      
+
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -272,66 +313,6 @@ Shader "Custom/Sobel"
     Properties
     {
         _Offset("Offse...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Unity URP 定制渲染管线</title>
-    <link href="http://localhost:4000/posts/custom-urp/" rel="alternate" type="text/html" title="Unity URP 定制渲染管线" />
-    <published>2023-05-24T00:00:00+08:00</published>
-  
-    <updated>2023-05-28T15:34:23+08:00</updated>
-  
-    <id>http://localhost:4000/posts/custom-urp/</id>
-    <content src="http://localhost:4000/posts/custom-urp/" />
-    <author>
-      <name>ratsafalig</name>
-    </author>
-
-  
-    
-    <category term="Unity" />
-    
-    <category term="Game" />
-    
-    <category term="GL" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      本意是想做一个渲染效果, 几个 camera 始终在同一个 transform, 各自渲染到各自的 render-texture, 然后把每一个 camera 的 render-texture 做一个融合.
-然后按照各自的 depth-texture 决定哪个像素点显示在上面
-
-因为我一直用 URP ( 因为 shader graph ), 所以要达到这样的效果必须定制管线了
-
-例子
-
-例子0
-
-对卡车做像素化, 场景里的其他GameObject保持不变
-
-
-
-例子1
-
-红绿方块在不同的 camera 的不同 render-texture 里, 让它在主相机里用 depth 做融合
-
-
-
-思路
-
-为每一个 camera 准备两个 render-texture, color-rt 和 depth-rt,
-每一个 camera 渲染结束之后都把 camera 的 color-target...
     </summary>
   
 
