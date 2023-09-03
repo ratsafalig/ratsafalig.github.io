@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>航</title>
   <subtitle>航</subtitle>
-  <updated>2023-06-03T12:31:00+08:00</updated>
+  <updated>2023-09-03T15:13:36+08:00</updated>
   <author>
     <name>ratsafalig</name>
     <uri>http://localhost:4000/</uri>
@@ -20,23 +20,19 @@
 
   
   <entry>
-    <title>Unity 烟雾效果 Smoke VFX</title>
-    <link href="http://localhost:4000/posts/smoke-vfx/" rel="alternate" type="text/html" title="Unity 烟雾效果 Smoke VFX" />
-    <published>2023-05-31T00:00:00+08:00</published>
+    <title>Learn Open GL</title>
+    <link href="http://localhost:4000/posts/learn-open-gl/" rel="alternate" type="text/html" title="Learn Open GL" />
+    <published>2023-09-03T00:00:00+08:00</published>
   
-    <updated>2023-05-31T00:00:00+08:00</updated>
+    <updated>2023-09-03T00:00:00+08:00</updated>
   
-    <id>http://localhost:4000/posts/smoke-vfx/</id>
-    <content src="http://localhost:4000/posts/smoke-vfx/" />
+    <id>http://localhost:4000/posts/learn-open-gl/</id>
+    <content src="http://localhost:4000/posts/learn-open-gl/" />
     <author>
       <name>ratsafalig</name>
     </author>
 
   
-    
-    <category term="VFX" />
-    
-    <category term="Unity" />
     
     <category term="Game" />
     
@@ -89,11 +85,7 @@
 
 
 
-      花了一小时玩了一下用 Unity 弄一个机械臂
-
-可能可以实现一个简单的小游戏, 先把 prefab 放出来
-
-这里是实现细节的 prefab
+      这里是实现细节的 prefab
 
 Arm.prefab
 

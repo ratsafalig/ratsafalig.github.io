@@ -29,17 +29,11 @@ const resource = [
         '/assets/img/favicons/favicon.ico',
         '/assets/img/favicons/mstile-150x150.png',
         '/assets/js/dist/categories.min.js',
-        '/assets/js/dist/categories.min.js.map',
         '/assets/js/dist/commons.min.js',
-        '/assets/js/dist/commons.min.js.map',
         '/assets/js/dist/home.min.js',
-        '/assets/js/dist/home.min.js.map',
         '/assets/js/dist/misc.min.js',
-        '/assets/js/dist/misc.min.js.map',
         '/assets/js/dist/page.min.js',
-        '/assets/js/dist/page.min.js.map',
-        '/assets/js/dist/post.min.js',
-        '/assets/js/dist/post.min.js.map'
+        '/assets/js/dist/post.min.js'
 ];
 
 /* The request url with below domain will be cached */
